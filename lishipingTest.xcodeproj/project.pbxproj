@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D731FF389A500CA80FC /* SPPushManager.m */; };
+		1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */; };
 		96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96165CC41FCD6333001D98F3 /* NotificationCenter.framework */; };
 		96165CC91FCD6333001D98F3 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96165CC81FCD6333001D98F3 /* TodayViewController.m */; };
 		96165CCC1FCD6333001D98F3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96165CCA1FCD6333001D98F3 /* MainInterface.storyboard */; };
@@ -108,6 +110,10 @@
 
 /* Begin PBXFileReference section */
 		0EE1D2F13321D0D3D35A1CA0 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		1E0D1D721FF389A500CA80FC /* SPPushManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPushManager.h; sourceTree = "<group>"; };
+		1E0D1D731FF389A500CA80FC /* SPPushManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPushManager.m; sourceTree = "<group>"; };
+		1E0D1D751FF389CC00CA80FC /* SPLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLocationManager.h; sourceTree = "<group>"; };
+		1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLocationManager.m; sourceTree = "<group>"; };
 		215C14150A2520B979314DA6 /* Pods-lishipingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2F9294A0CE39565024DF82B0 /* libPods-lishipingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lishipingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318F81A5D873B69C3651676B /* Pods-lishipingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +210,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0D1D701FF3897700CA80FC /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				1E0D1D721FF389A500CA80FC /* SPPushManager.h */,
+				1E0D1D731FF389A500CA80FC /* SPPushManager.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		1E0D1D711FF3898100CA80FC /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1E0D1D751FF389CC00CA80FC /* SPLocationManager.h */,
+				1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		2CD8AD4940738AF683D5C013 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +297,8 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E0D1D711FF3898100CA80FC /* Location */,
+				1E0D1D701FF3897700CA80FC /* Push */,
 				96F4383B1FD8084000F10335 /* SPNetWork */,
 				96ACE6FE1FAB14EC005B7CB0 /* AppDelegate.h */,
 				96ACE6FF1FAB14EC005B7CB0 /* AppDelegate.m */,
@@ -681,8 +707,10 @@
 			files = (
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
+				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
+				1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
