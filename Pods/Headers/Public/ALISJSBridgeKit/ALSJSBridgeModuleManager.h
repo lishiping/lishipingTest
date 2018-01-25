@@ -1,0 +1,1 @@
+../../../ALISJSBridgeKit/ALISJSBridgeKit/Classes/JSModules/ALSJSBridgeModuleManager.h

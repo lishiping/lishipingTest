@@ -1,1 +1,1 @@
-../../../SPCategory/SPCategory/Category/NSString+SPEnCode.h
+../../../SPCategory/SPCategory/Category/Foundation/NSString+SPEnCode.h

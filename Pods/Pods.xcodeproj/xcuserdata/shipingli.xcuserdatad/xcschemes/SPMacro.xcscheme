@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '55B25BAEB7D2D5E58FFA0B0A36A18D54'
+               BlueprintIdentifier = '91AF81101CB2E5534C16201334AED46E'
                BlueprintName = 'SPMacro'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSPMacro.a'>

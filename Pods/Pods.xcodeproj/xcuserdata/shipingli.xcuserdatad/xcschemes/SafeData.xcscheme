@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7D381E2F7D0E3142CC2477E02D32DA3A'
+               BlueprintIdentifier = 'EED635EF3D59C1CD26FFE887545DC1D3'
                BlueprintName = 'SafeData'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSafeData.a'>

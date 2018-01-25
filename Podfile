@@ -22,8 +22,16 @@ target 'lishipingTest' do
     pod 'Reachability'
 
     pod 'JSONModel'
+    pod 'Mantle'
+
     pod 'FLEX'
     pod 'FMDB'
+    pod 'JSBridge'
+    pod 'ALISJSBridgeKit'
+#    pod 'JavaScriptBridge'
+    pod 'JavaScriptCoreOpalAdditions'
+    pod 'WebViewJavascriptBridge'
+
 #    pod 'MWPhotoBrowser'
 #    pod 'CocoaLumberjack'
     #    pod 'BlocksKit'

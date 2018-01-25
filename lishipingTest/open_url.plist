@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>login</key>
+	<dict>
+		<key>remark</key>
+		<string>这里是备注信息，方便维护时候查看</string>
+		<key>class</key>
+		<string>LoginVC</string>
+	</dict>
+</dict>
+</plist>

@@ -1,1 +1,1 @@
-../../../SPCategory/SPCategory/Category/NSString+SPSize.h
+../../../SPCategory/SPCategory/Category/Foundation/NSString+SPSize.h

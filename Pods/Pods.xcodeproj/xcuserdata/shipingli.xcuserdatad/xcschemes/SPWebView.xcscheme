@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CF6EBA21EF8856B23CD87B669454AB20'
+               BlueprintIdentifier = '38291E34D7857E7502467D297840CFF5'
                BlueprintName = 'SPWebView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSPWebView.a'>

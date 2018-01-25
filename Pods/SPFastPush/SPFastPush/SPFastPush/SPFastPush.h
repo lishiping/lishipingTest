@@ -18,6 +18,7 @@
 
 #import <UIKit/UIKit.h>
 
+//李世平，version（0.7.0）
 
 /*********************push pop************************/
 
@@ -102,7 +103,7 @@
  
  使用宏定义快速present一个VC，原理是遍历得到当前控制器，present 一个新的VC，dict字典里面可以传参数，实现原理是KVC动态赋值（默认有动画）
  
- 例如：//SP_PUSH_VC(@"OtherVC", @{@"titleStr":@"other"});
+ 例如：//SP_PRESENT_VC_BY_CLASSNAME(@"OtherVC", @{@"titleStr":@"other"});
  
  @param className VC类名
  @param dict      VC所需的参数
@@ -117,6 +118,13 @@
 #define SP_PRESENT_VC(vc)               [SPFastPush presentVC:vc animated:YES];
 
 #define SP_PRESENT_VC_NO_ANIMATED(vc)   [SPFastPush presentVC:vc animated:NO];
+
+/**
+ 从window.rootViewController弹出一个VC对象
+ */
+#define SP_ROOT_PRESENT_VC(vc)               [SPFastPush rootVCpresentVC:vc animated:YES];
+
+#define SP_ROOT_PRESENT_VC_NO_ANIMATED(vc)   [SPFastPush rootVCpresentVC:vc animated:NO];
 
 /**
  dismissViewController Animated
@@ -141,7 +149,7 @@
 #define SP_CREATE_VC_BY_CLASSNAME(className, dict)               [SPFastPush createVC:className withParams:(dict)];
 
 
-/*********************get Navc topVC rootVC************************/
+/***************get Navc topVC TabVC rootVC window*******************/
 
 /**
  Get the current navigation controller by  traversing
@@ -154,20 +162,11 @@
 
 /**
  Get the current display controller object
- 获得当前显示的控制器对象
+ 获得当前最上层显示的控制器对象
  
  @return vc object
  */
 #define SP_GET_TOP_VC   [SPFastPush topVC];
-
-
-/**
- Get rootViewController
- 获取APP根视图控制器
- 
- @return rootViewController
- */
-#define SP_GET_ROOT_VC   [SPFastPush rootVC];
 
 /**
  获取根部的tabBarController
@@ -184,9 +183,63 @@
  */
 #define SP_CURRENT_TABVC_SET_SELECTINDEX(selectIndex)  [SPFastPush currentTabVCSetToSelectIndex:(selectIndex)];
 
+/**
+ Get rootViewController
+ 获取APP根视图控制器
+ 
+ @return rootViewController
+ */
+#define SP_GET_ROOT_VC   [SPFastPush rootVC];
+
+/**
+ Get window
+ 获取APP主窗口
+ 
+ @return 主窗口
+ */
+#define SP_GET_MAIN_WINDOW   [SPFastPush mainWindow];
+
+
+/***************open URL*******************/
+
+
+/**
+ APP打开系统或者其他APP的方法，传入其他app的scheme等方式
+
+ @param urlString 打开的urlString
+ */
+#define SP_APP_OPEN_URL_STRING(urlString) [SPFastPush appOpenURLString:urlString option:@{} completionHandler:nil];
+
+/**
+ 打开系统通知
+ */
+#define SP_APP_OPEN_SYSTEM_SETTING_NOTIFICATION [SPFastPush appOpenSystemSettingNotification];
+
+/**
+ 打开系统定位
+ */
+#define SP_APP_OPEN_SYSTEM_SETTING_LOCATION [SPFastPush appOpenSystemSettingLocation];
+
+/**
+ 打开系统设置
+ */
+#define SP_APP_OPEN_SYSTEM_SETTING [SPFastPush appOpenSystemSetting];
+
+/**
+ Call the system call
+ 调用系统拨打电话
+ 
+ @param phoneNumber 电话号码
+ @param isNeedAlert 是否弹出alert询问
+ 
+ */
+#define SP_APP_OPEN_TELPHONE(phoneNumber,isNeedAlert) [SPFastPush appOpenTelPhone:phoneNumber needAlert:isNeedAlert];
+
 
 
 @interface SPFastPush : NSObject
+
+#pragma mark - push & pop
 
 /**
  创建VC并push到VC
@@ -234,6 +287,8 @@
  */
 +(void)popToVCWithClassName:(NSString*)className animated:(BOOL)animated;
 
+#pragma mark - present & dismiss
+
 /**
  创建一个VC，并使用KVC赋值，然后弹出
 
@@ -252,12 +307,20 @@
  */
 +(void)presentVC:(UIViewController *)vc animated:(BOOL)animated;
 
+/**
+ 从window.rootViewController弹出一个VC对象
+ 
+ @param vc ViewController对象
+ @param animated 是否动画
+ */
++(void)rootVCpresentVC:(UIViewController *)vc animated:(BOOL)animated;
 
 /**
  收回弹出的VC
  */
 + (void)dismissVCAnimated:(BOOL)animated;
 
+#pragma mark - create VC object 
 
 /**
  创建一个VC，并使用KVC赋值
@@ -267,6 +330,8 @@
  @return 返回VC对象
  */
 + (UIViewController *)createVC:(NSString *)className withParams:(NSDictionary *)params;
+
+#pragma mark - get VC
 
 /**
 Get the current navigation controller by  traversing
@@ -293,6 +358,13 @@ Get the current navigation controller by  traversing
  */
 + (UIViewController *)topVC;
 
+/**
+ 获取根部的tabBarController
+ 
+ @return tabBarController
+ */
++ (UITabBarController *)getCurrentTabVC;
+
 
 /**
  Get rootViewController
@@ -302,22 +374,63 @@ Get the current navigation controller by  traversing
  */
 + (UIViewController *)rootVC;
 
-
 /**
- 获取根部的tabBarController
+ Get window
+ 获取APP主窗口
 
- @return tabBarController
+ @return 主窗口
  */
-+ (UITabBarController *)getCurrentTabVC;
++ (UIWindow*)mainWindow;
 
+#pragma mark - TabBarViewController
 
 /**
  设置根部tabBarController的selectIndex
-
+ 
  @param selectIndex 位置
  @return 设置是否成功
  */
 + (BOOL)currentTabVCSetToSelectIndex:(NSUInteger)selectIndex;
+
+#pragma mark - APP open URL
+
+/*********************open URL************************/
+
+/**
+ UIApplication打开url字符串
+
+ @param urlString url字符串
+ @param option 可选参数
+ @param completion 完成回调
+ */
++(void)appOpenURLString:(NSString *)urlString option:(NSDictionary*)option completionHandler:(void (^ __nullable)(BOOL success))completion;
+
+/**
+ UIApplication打开URL
+
+ @param url url地址
+ @param option 可选参数
+ @param completion 完成回调
+ */
++(void)appOpenURL:(NSURL *)url option:(NSDictionary*)option completionHandler:(void (^ __nullable)(BOOL success))completion;
+
+//打开系统通知
++(void)appOpenSystemSettingNotification;
+
+//打开系统定位
++(void)appOpenSystemSettingLocation;
+
+//打开系统设置
++(void)appOpenSystemSetting;
+
+/**
+ 调用系统拨打电话
+ 
+ @param phoneNumber 电话号码
+ @param isNeedAlert 是否需要弹出警告框确认
+ */
++(void)appOpenTelPhone:(NSString *)phoneNumber needAlert:(BOOL)isNeedAlert;
+
 
 @end
 

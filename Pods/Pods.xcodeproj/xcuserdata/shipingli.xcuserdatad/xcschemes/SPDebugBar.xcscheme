@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '15345840753B5245975DB9B0E66A8DB6'
+               BlueprintIdentifier = '782D6D598A6F87ED10C59A517B4AB532'
                BlueprintName = 'SPDebugBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSPDebugBar.a'>

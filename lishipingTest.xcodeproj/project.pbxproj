@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E03C3902010D531002EEDA4 /* SPHandleOpenURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E03C38F2010D531002EEDA4 /* SPHandleOpenURLManager.m */; };
 		1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D731FF389A500CA80FC /* SPPushManager.m */; };
 		1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */; };
+		1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D7C1FF39C6B00CA80FC /* SPUser.m */; };
+		1E0E430E2019848100493C05 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E430D2019848100493C05 /* LoginVC.m */; };
+		1E0E4310201984FF00493C05 /* open_url.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E0E430F201984FE00493C05 /* open_url.plist */; };
 		96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96165CC41FCD6333001D98F3 /* NotificationCenter.framework */; };
 		96165CC91FCD6333001D98F3 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96165CC81FCD6333001D98F3 /* TodayViewController.m */; };
 		96165CCC1FCD6333001D98F3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96165CCA1FCD6333001D98F3 /* MainInterface.storyboard */; };
@@ -110,10 +114,18 @@
 
 /* Begin PBXFileReference section */
 		0EE1D2F13321D0D3D35A1CA0 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		1E03C38C2010AAD7002EEDA4 /* lishipingTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lishipingTest-Prefix.pch"; sourceTree = "<group>"; };
+		1E03C38E2010D531002EEDA4 /* SPHandleOpenURLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHandleOpenURLManager.h; sourceTree = "<group>"; };
+		1E03C38F2010D531002EEDA4 /* SPHandleOpenURLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHandleOpenURLManager.m; sourceTree = "<group>"; };
 		1E0D1D721FF389A500CA80FC /* SPPushManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPushManager.h; sourceTree = "<group>"; };
 		1E0D1D731FF389A500CA80FC /* SPPushManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPushManager.m; sourceTree = "<group>"; };
 		1E0D1D751FF389CC00CA80FC /* SPLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLocationManager.h; sourceTree = "<group>"; };
 		1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLocationManager.m; sourceTree = "<group>"; };
+		1E0D1D7B1FF39C6B00CA80FC /* SPUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
+		1E0D1D7C1FF39C6B00CA80FC /* SPUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUser.m; sourceTree = "<group>"; };
+		1E0E430C2019848100493C05 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		1E0E430D2019848100493C05 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		1E0E430F201984FE00493C05 /* open_url.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = open_url.plist; sourceTree = "<group>"; };
 		215C14150A2520B979314DA6 /* Pods-lishipingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2F9294A0CE39565024DF82B0 /* libPods-lishipingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lishipingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318F81A5D873B69C3651676B /* Pods-lishipingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +222,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */ = {
+			isa = PBXGroup;
+			children = (
+				1E03C38E2010D531002EEDA4 /* SPHandleOpenURLManager.h */,
+				1E03C38F2010D531002EEDA4 /* SPHandleOpenURLManager.m */,
+			);
+			path = HandleOpenURL;
+			sourceTree = "<group>";
+		};
 		1E0D1D701FF3897700CA80FC /* Push */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +247,17 @@
 				1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		1E0D1D7A1FF39C5200CA80FC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1E0D1D7B1FF39C6B00CA80FC /* SPUser.h */,
+				1E0D1D7C1FF39C6B00CA80FC /* SPUser.m */,
+				1E0E430C2019848100493C05 /* LoginVC.h */,
+				1E0E430D2019848100493C05 /* LoginVC.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		2CD8AD4940738AF683D5C013 /* Pods */ = {
@@ -297,6 +329,8 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */,
+				1E0D1D7A1FF39C5200CA80FC /* User */,
 				1E0D1D711FF3898100CA80FC /* Location */,
 				1E0D1D701FF3897700CA80FC /* Push */,
 				96F4383B1FD8084000F10335 /* SPNetWork */,
@@ -308,6 +342,8 @@
 				96ACE7071FAB14EC005B7CB0 /* Assets.xcassets */,
 				96ACE7091FAB14EC005B7CB0 /* LaunchScreen.storyboard */,
 				96ACE70C1FAB14EC005B7CB0 /* Info.plist */,
+				1E0E430F201984FE00493C05 /* open_url.plist */,
+				1E03C38C2010AAD7002EEDA4 /* lishipingTest-Prefix.pch */,
 				96ACE70D1FAB14EC005B7CB0 /* main.m */,
 			);
 			path = lishipingTest;
@@ -565,6 +601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E0E4310201984FF00493C05 /* open_url.plist in Resources */,
 				96ACE70B1FAB14EC005B7CB0 /* LaunchScreen.storyboard in Resources */,
 				96ACE7081FAB14EC005B7CB0 /* Assets.xcassets in Resources */,
 				96ACE7061FAB14EC005B7CB0 /* Main.storyboard in Resources */,
@@ -632,7 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D1613CA75B6BE53DA64CA015 /* [CP] Check Pods Manifest.lock */ = {
@@ -650,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */ = {
@@ -707,6 +744,9 @@
 			files = (
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
+				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
+				1E03C3902010D531002EEDA4 /* SPHandleOpenURLManager.m in Sources */,
+				1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
@@ -949,6 +989,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -964,6 +1006,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

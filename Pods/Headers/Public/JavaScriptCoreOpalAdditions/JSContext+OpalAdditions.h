@@ -1,0 +1,1 @@
+../../../JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Classes/JSContext+OpalAdditions.h

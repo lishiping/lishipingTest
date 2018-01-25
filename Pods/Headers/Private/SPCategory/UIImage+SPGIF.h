@@ -1,1 +1,1 @@
-../../../SPCategory/SPCategory/Category/UIImage+SPGIF.h
+../../../SPCategory/SPCategory/Category/UIKit/UIImage+SPGIF.h

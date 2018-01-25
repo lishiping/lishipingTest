@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1D766DDBCE965337668F510DEB343495'
+               BlueprintIdentifier = 'E455A42555D6D568C4D9F1E5FD32E408'
                BlueprintName = 'SPFastPush'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSPFastPush.a'>

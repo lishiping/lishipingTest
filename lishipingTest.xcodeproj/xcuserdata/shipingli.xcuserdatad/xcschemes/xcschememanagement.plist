@@ -7,17 +7,17 @@
 		<key>Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>28</integer>
 		</dict>
 		<key>TodayExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>27</integer>
 		</dict>
 		<key>lishipingTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>26</integer>
 		</dict>
 	</dict>
 </dict>
