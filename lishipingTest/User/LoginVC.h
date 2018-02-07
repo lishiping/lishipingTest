@@ -6,10 +6,11 @@
 //  Copyright © 2018年 shiping1. All rights reserved.
 //
 
-#import <SPBaseVC.h>
+#import <SPBaseClass/SPBaseVC.h>
 
 @interface LoginVC : SPBaseVC
 
-@property(nonatomic,copy)NSString *title;
+@property(nonatomic,copy)NSString *username;
+@property(nonatomic,copy)NSString *password;
 
 @end

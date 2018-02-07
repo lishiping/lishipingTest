@@ -10,6 +10,9 @@
 #import "ViewController.h"
 #import <SPDebugBar.h>
 #import "SPHandleOpenURLManager.h"
+#import "SPNetworkManager.h"
+#import <SPBaseTabBarController.h>
+#import <SPBaseVC.h>
 
 @interface AppDelegate ()
 
@@ -25,22 +28,109 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    self.window.rootViewController =nav;
+    self.window.rootViewController =[self addTabBarController];
     
-    [self.window makeKeyAndVisible];
+    //配置服务器地址，为了测试服切换和正式服设定
+    [self configServerURL];
     
     [[SPHandleOpenURLManager manager] setViewControllerClassPlist:@"open_url"];
     
-#if DEBUG
-
-    [SPDebugBar sharedInstanceWithServerArray:@[@[@"www.baidu.com",@"pan.baidu.com"]] SelectArrayBlock:^(NSArray *objects, NSError *error) {
-        
-    }];
+    [self.window makeKeyAndVisible];
     
-#endif
     
     return YES;
+}
+
+//服务器地址配置方法
+-(void)configServerURL
+{
+    //检测当前是否是测试包
+    _isTest =[[[NSBundle mainBundle] infoDictionary] objectForKey:@"TEST"];
+    
+    if (DEBUG || _isTest)
+    {
+        NSArray* serverArr = @[
+                               @"https://www.baidu.com",
+                               @"http://www.baidu.com",
+                               @"http://www.ceshi.baidu.com"
+                               ];
+        
+        NSArray *panServerArr = @[
+                                  @"https://api.pan.baidu.com",
+                                  @"http://api.pan.baidu.com",
+                                  @"http://api.ceshi.pan.baidu.com"
+                                  ];
+        
+        NSArray *serverArray = [NSArray arrayWithObjects:serverArr,panServerArr, nil];
+        
+        [SPDebugBar sharedInstanceWithServerArray:serverArray SelectArrayBlock:^(NSArray *objects, NSError *error)
+         {
+             SP_LOG(@"select server address：%@",objects);
+             NSAssert(!error,error.description);
+             if (error) {
+                 //设置线上正式服地址
+                 [SPNetworkManager manager].host = @"https://www.baidu.com";
+             }
+             else
+             {
+                 [SPNetworkManager manager].host = objects[0];
+             }
+         }];
+    }
+    else
+    {
+        //set up online server address
+        //设置线上正式服地址
+        [SPNetworkManager manager].host = @"https://www.baidu.com";
+    }
+    
+}
+
+
+-(UITabBarController*)addTabBarController
+{
+    SPBaseTabBarController *tab = [[SPBaseTabBarController alloc] init_didSelectViewControllerBlock:^(UITabBarController *tabBarViewcontroller, UIViewController *viewcontroller) {
+        NSLog(@"选中后处理%lu",(unsigned long)tabBarViewcontroller.selectedIndex);
+        viewcontroller.tabBarItem.badgeValue = nil;
+    }];
+    
+    [tab addItemController:[ViewController new]
+          tabBarItem_title:@"微信"
+      tabBarItem_titleFont:[UIFont systemFontOfSize:14]
+tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
+tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
+          tabBarItem_image:nil
+  tabBarItem_selectedImage:nil
+     tabBarItem_badgeValue:@"20"];
+    
+    [tab addItemController:[SPBaseVC new]
+          tabBarItem_title:@"通讯录"
+      tabBarItem_titleFont:[UIFont systemFontOfSize:14]
+tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
+tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
+          tabBarItem_image:nil
+  tabBarItem_selectedImage:nil
+     tabBarItem_badgeValue:nil];
+    
+    [tab addItemController:[SPBaseVC new]
+          tabBarItem_title:@"发现"
+      tabBarItem_titleFont:[UIFont systemFontOfSize:14]
+tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
+tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
+          tabBarItem_image:nil
+  tabBarItem_selectedImage:nil
+     tabBarItem_badgeValue:nil];
+    
+    [tab addItemController:[SPBaseVC new]
+          tabBarItem_title:@"我的"
+      tabBarItem_titleFont:[UIFont systemFontOfSize:14]
+tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
+tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
+          tabBarItem_image:nil
+  tabBarItem_selectedImage:nil
+     tabBarItem_badgeValue:nil];
+    
+    return tab;
 }
 
 //说明：当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了
@@ -132,29 +222,27 @@
  
  UIApplicationStateBackground
  
-
-if([UIApplicationsharedApplication].applicationState==UIApplicationStateInactive){
-    
-    NSLog(@"程序在运行状态");
-    
-}
-
-4.阻止屏幕变暗进入休眠状态
-
-//阻止屏幕变暗，慎重使用,缺省为no 2.0
-
-[UIApplicationsharedApplication].idleTimerDisabled=YES;
-
-慎重使用本功能，因为非常耗电。
-
-5.显示联网状态
-
-//显示联网标记2.0
-
-[UIApplicationsharedApplication].networkActivityIndicatorVisible=YES;
-
-链接：https://www.jianshu.com/p/e8ef5d35c20c
-
+ 
+ if([UIApplicationsharedApplication].applicationState==UIApplicationStateInactive){
+ 
+ NSLog(@"程序在运行状态");
+ 
+ }
+ 
+ 4.阻止屏幕变暗进入休眠状态
+ 
+ //阻止屏幕变暗，慎重使用,缺省为no 2.0
+ 
+ [UIApplicationsharedApplication].idleTimerDisabled=YES;
+ 
+ 慎重使用本功能，因为非常耗电。
+ 
+ 5.显示联网状态
+ 
+ //显示联网标记2.0
+ 
+ [UIApplicationsharedApplication].networkActivityIndicatorVisible=YES;
+ 
  */
 
 #pragma mark - handle open url
@@ -167,12 +255,12 @@ if([UIApplicationsharedApplication].applicationState==UIApplicationStateInactive
 //当用户通过其它应用启动本应用时，会回调这个方法，url参数是其它应用调用openURL:方法时传过来的。
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation NS_DEPRECATED_IOS(4_2, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED;
 {
-   return [SPHandleOpenURLManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return [SPHandleOpenURLManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options NS_AVAILABLE_IOS(9_0)
 {
-   return  [SPHandleOpenURLManager application:app openURL:url options:options];
+    return  [SPHandleOpenURLManager application:app openURL:url options:options];
 }
 
 + (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler

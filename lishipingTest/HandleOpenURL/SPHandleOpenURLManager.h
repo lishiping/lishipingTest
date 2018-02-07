@@ -16,7 +16,13 @@
 
 //- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //{
+//    //在工程建立一个open_url.plist的文件，在plist里面添加一个key=login，value=@{@"class":@"LoginVC",@"remark":@"这个是备注信息，本类是登录页"}，使用下面的方法就可以弹出登录页面
 //    [[SPHandleOpenURLManager manager] setViewControllerClassPlist:@"open_url"];
+
+//当appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
+//当animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
+//SP_APP_OPEN_URL_STRING(@"lishiping://login?title=nihao&appear_type=0&animated=1")
+
 //}
 
 //
@@ -45,7 +51,6 @@
 
 
 
-
 + (instancetype)manager;
 
 /**
@@ -56,6 +61,8 @@
 //接受url打开的处理
 + (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url;
 
+//使用宏直接打开一个网页或者scheme方式打开程序内部页面
+#define SP_OPEN_URL_STRING(urlString) [SPHandleOpenURLManager application:nil openURL:[NSURL URLWithString:urlString] options:nil];
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation;
 
 + (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options;

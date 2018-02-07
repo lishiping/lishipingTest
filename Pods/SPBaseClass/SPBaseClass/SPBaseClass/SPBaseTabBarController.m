@@ -22,7 +22,7 @@
 
 @interface SPBaseTabBarController ()<UITabBarControllerDelegate>
 
-@property UITabBarControllerBlock block;
+@property (nonatomic,copy) UITabBarControllerBlock block;
 
 @end
 
@@ -32,7 +32,7 @@
 -(instancetype)init_didSelectViewControllerBlock:(UITabBarControllerBlock)block
 {
     self = [super init];
-    self.block = block;
+    self.block = [block copy];
     __weak typeof(self) weakself = self;
     self.delegate = weakself;
     return self;
@@ -67,19 +67,14 @@
     tabBarItem_badgeValue:(NSString*)badgeValue
 
 {
-    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title
-                                                             image:image
-                                                     selectedImage:selectedImage];
-    tabBarItem.badgeValue = badgeValue;
-        
-    [self addItemController:itemController tabBarItem_title:title tabBarItem_titleFont:nil tabBarItem_titleunselectColor:nil tabBarItem_titleselectColor:nil tabBarItem_image:image tabBarItem_selectedImage:selectedImage tabBarItem_badgeValue:badgeValue];
+    [self addItemController:itemController tabBarItem_title:title tabBarItem_titleFont:nil tabBarItem_normalTitleColor:nil tabBarItem_selectTitleColor:nil tabBarItem_image:image tabBarItem_selectedImage:selectedImage tabBarItem_badgeValue:badgeValue];
 }
 
 - (void)addItemController:(UIViewController*)itemController
          tabBarItem_title:(NSString*)title
      tabBarItem_titleFont:(UIFont*)titleFont
-tabBarItem_titleunselectColor:(UIColor*)titleunselectColor
-tabBarItem_titleselectColor:(UIColor*)titleselectColor
+tabBarItem_normalTitleColor:(UIColor*)normalTitleColor
+tabBarItem_selectTitleColor:(UIColor*)selectTitleColor
          tabBarItem_image:(UIImage*)image
  tabBarItem_selectedImage:(UIImage*)selectedImage
     tabBarItem_badgeValue:(NSString*)badgeValue
@@ -90,43 +85,42 @@ tabBarItem_titleselectColor:(UIColor*)titleselectColor
                                                      selectedImage:selectedImage];
     tabBarItem.badgeValue = badgeValue;
     
-    
-    if ([titleunselectColor isKindOfClass:[UIColor class]] &&
-        [titleselectColor isKindOfClass:[UIColor class]] &&
+    if ([normalTitleColor isKindOfClass:[UIColor class]] &&
+        [selectTitleColor isKindOfClass:[UIColor class]] &&
         [titleFont isKindOfClass:[UIFont class]])
     {
         //未选中颜色
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleunselectColor,NSFontAttributeName:titleFont} forState:UIControlStateNormal];
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleselectColor,NSFontAttributeName:titleFont} forState:UIControlStateSelected];
-
+        [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:normalTitleColor,NSFontAttributeName:titleFont} forState:UIControlStateNormal];
+        [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:selectTitleColor,NSFontAttributeName:titleFont} forState:UIControlStateSelected];
     }
-        
+    
     [self addNavigationController:itemController tabBarItem:tabBarItem];
 }
 
 - (void)addNavigationController:(UIViewController*)itemController tabBarItem:(UITabBarItem*)tabBarItem
 {
-    if ([itemController isKindOfClass:[UIViewController class]]) {
+    if ([itemController isKindOfClass:[UIViewController class]])
+    {
         //如果是导航控制器
         if ([itemController isKindOfClass:[UINavigationController class]])
         {
-            itemController.tabBarItem = tabBarItem;
-            [self addChildViewController:itemController];
+            [self addItemController:itemController tabBarItem:tabBarItem];
         }
-        //如果不是标签控制器，就应该是视图控制器了
-        else if (![itemController isKindOfClass:[UITabBarController class]])
+        else
         {
             SPBaseNavigationController *navi = [[SPBaseNavigationController alloc] initWithRootViewController:itemController];
-            navi.tabBarItem = tabBarItem;
-            [self addChildViewController:navi];
+            [self addItemController:navi tabBarItem:tabBarItem];
         }
     }
 }
 
 - (void)addItemController:(UIViewController*)itemController tabBarItem:(UITabBarItem*)tabBarItem
 {
-    itemController.tabBarItem = tabBarItem;
-    [self addChildViewController:itemController];
+    if ([itemController isKindOfClass:UIViewController.class] && [tabBarItem isKindOfClass:UITabBarItem.class])
+    {
+        itemController.tabBarItem = tabBarItem;
+        [self addChildViewController:itemController];
+    }
 }
 
 #pragma mark - delegate

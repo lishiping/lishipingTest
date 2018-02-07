@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Test.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
-		</dict>
 		<key>TodayExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +13,39 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>26</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>96165CC21FCD6333001D98F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96ACE6FA1FAB14EC005B7CB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96ACE7121FAB14EC005B7CB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96ACE71D1FAB14EC005B7CB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96CFE4D01FD6A98000645143</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96CFE4D81FD6A98000645143</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

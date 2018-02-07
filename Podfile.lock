@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - ALISJSBridgeKit (0.1.0)
   - FLEX (2.4.0)
@@ -39,11 +39,11 @@ PODS:
   - ObjectiveSugar (1.1.0)
   - Reachability (3.2)
   - SafeData (0.1.2)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
-  - SPBaseClass (0.0.2)
-  - SPCategory (0.3.0):
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - SPBaseClass (0.0.3)
+  - SPCategory (0.4.0):
     - MBProgressHUD (= 1.0.0)
     - SafeData
     - SPMacro
@@ -79,7 +79,7 @@ DEPENDENCIES:
   - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   ALISJSBridgeKit: 8e3dd8d7b9198318ef961b3b28a1b991d92f9ff6
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
@@ -95,9 +95,9 @@ SPEC CHECKSUMS:
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SafeData: d654eee95046a2c25ab67dec883977bb6699a83a
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  SPBaseClass: 4b13b0df9b80c52630c8248c0955fd3b26d95af6
-  SPCategory: 3e9ecf291750c7ffc74f77cdc7959bcf3314d2a8
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SPBaseClass: c91058f6494eebec78fb2956c7e66d536d21e8f0
+  SPCategory: 3901b77bfe20f38a971648682b3b74443b56ecaa
   SPDebugBar: 7faf249619696a4fc23e0d17920c383a51e4f8e1
   SPFastPush: 97a9ea11fad992bedd840b77c0c59243b130267f
   SPMacro: 86e8a72b5b991465c68f2e153d5563d2c8335153
@@ -106,4 +106,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b1262593448d458a98207566a01b8b7b1567cb8d
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

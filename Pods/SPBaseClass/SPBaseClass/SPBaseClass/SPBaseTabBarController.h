@@ -81,13 +81,13 @@ typedef void(^UITabBarControllerBlock)(UITabBarController *tabBarViewcontroller,
     tabBarItem_badgeValue:(NSString*)badgeValue;
 
 /**
- 加入自定义tabbar的VC
+ 加入自定义tabbar的子视图控制器
 
  @param itemController vc
  @param title 标题
  @param titleFont 标题字体
- @param titleunselectColor 标题未选中颜色
- @param titleselectColor 标题选中颜色
+ @param normalTitleColor 标题未选中颜色
+ @param selectTitleColor 标题选中颜色
  @param image 标题图片
  @param selectedImage 标题选中图片
  @param badgeValue 标题角标
@@ -95,8 +95,8 @@ typedef void(^UITabBarControllerBlock)(UITabBarController *tabBarViewcontroller,
 - (void)addItemController:(UIViewController*)itemController
          tabBarItem_title:(NSString*)title
      tabBarItem_titleFont:(UIFont*)titleFont
-tabBarItem_titleunselectColor:(UIColor*)titleunselectColor
-tabBarItem_titleselectColor:(UIColor*)titleselectColor
+tabBarItem_normalTitleColor:(UIColor*)normalTitleColor
+tabBarItem_selectTitleColor:(UIColor*)selectTitleColor
          tabBarItem_image:(UIImage*)image
  tabBarItem_selectedImage:(UIImage*)selectedImage
     tabBarItem_badgeValue:(NSString*)badgeValue;

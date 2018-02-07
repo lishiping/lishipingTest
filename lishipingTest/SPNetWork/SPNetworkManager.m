@@ -107,6 +107,14 @@
         completionBlock(task,responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //        NSLog(@"错误 = %@",error);
+        
+        //如果想要在这里做全局的错误拦截弹出页面就在这里做好了，例如
+        if (error.code==20034 && [error.userInfo objectForKey:@"errorurl"])
+        {
+            
+            SP_OPEN_URL_STRING([error.userInfo objectForKey:@"errorurl"])
+        }
+        
         completionBlock(task,nil,error);
     }];
 }
@@ -123,8 +131,6 @@
     if ([path isKindOfClass:[NSString class]] && path.length>0) {
         urlStr = [urlStr stringByAppendingPathComponent:path];
     }
-    
-//    NSURL *url = [NSURL fileURLWithPath:@"sinaweibo://gotohome?isWidget=1&luicode=%@&widgetActionType=4&lfid=iphone_widget_dongtai_171215"];
     
     return urlStr;
 }
@@ -149,7 +155,7 @@
         return [ret copy];
         
 //        //这一步是为了整理参数排序计算md5值校验可以选用
-//        NSString *tempStr = [self stringForHTTPBySortParameters:parameters];
+//        NSString *tempStr = [[NSString alloc] stringForHTTPBySortParameters:parameters];
 //        tempStr.md5.lowercaseString//这个md5值可以加在参数里
         
     }
@@ -177,44 +183,6 @@
         resultString = [NSString stringWithFormat:@"%@%@",baseURL,resultString];
     }
     return [resultString stringByReplacingPercentEscapesUsingEncoding:encoding];
-}
-
-
-//对请求参数排序并生成字符串，为了计算md5值
-- (NSString *)stringForHTTPBySortParameters:(NSDictionary*)param;
-{
-    NSString *ret = nil;
-    NSArray *arr = [self sortedParametersKey:param];
-    if (arr.count > 0)
-    {
-        NSMutableArray *mArr = [NSMutableArray array];
-        
-        for (NSString *key in arr)
-        {
-            NSString *str = [NSString stringWithFormat:@"%@=%@", key, [param safe_stringForKey:key]];
-            [mArr addObject:str];
-        }
-        
-        //数组中间加上地址符
-        ret = [mArr componentsJoinedByString:@"&"];
-    }
-    return ret;
-}
-
-//对参数的key排序有时候为了计算参数的md5值与服务端统一所以要排序
-- (NSArray *)sortedParametersKey:(NSDictionary*)param;
-{
-    // 对字典key排序，保证param的顺序不影响最后结果
-    NSArray *arr = [[param allKeys] sortedArrayWithOptions:NSSortConcurrent
-                                           usingComparator:^NSComparisonResult(id obj1, id obj2){
-                                               if (([obj1 isKindOfClass:[NSString class]]) &&
-                                                   ([obj2 isKindOfClass:[NSString class]]))
-                                               {
-                                                   return ([obj1 compare:obj2]);
-                                               }
-                                               return (NSOrderedSame);
-                                           }];
-    return arr;
 }
 
 

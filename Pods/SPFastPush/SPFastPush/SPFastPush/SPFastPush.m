@@ -351,7 +351,18 @@
     return NO;
 }
 
+
 #pragma mark - APP Open URL
++(void)appOpenURLStringByEncode:(NSString *)urlString option:(NSDictionary*)option completionHandler:(void (^ __nullable)(BOOL success))completion
+{
+    if ([urlString isKindOfClass:[NSString class]]&&urlString.length>0) {
+        
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        [self appOpenURL:[NSURL URLWithString:urlString] option:option completionHandler:completion];
+    }
+}
+
 
 +(void)appOpenURLString:(NSString *)urlString option:(NSDictionary*)option completionHandler:(void (^ __nullable)(BOOL success))completion
 {

@@ -23,7 +23,22 @@
 
 + (SPUser*)currentUser
 {
-   return [SPUser manager];
+    //判断有uid才有用户
+    return [SPUser manager].uid.length>0?[self manager]:nil;
+}
+
++ (SPUser*)checkUserAndPresentLoginVC
+{
+    if (![self currentUser]) {
+        NSString *urlString =@"lishiping://login?&username=lishiping&password=123456&appear_type=0&animated=1";
+        SP_APP_OPEN_URL_STRING(urlString)
+        
+        return nil;
+    }
+    else
+    {
+        return  [self currentUser];
+    }
 }
 
 @end

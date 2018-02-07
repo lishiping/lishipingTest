@@ -145,7 +145,7 @@ alpha   :(hexValue & 0xFF)        / (float)0xFF]
 //--------------------AlertView---------------------------
 //--------------------警告框---------------------------
 
-#define SP_SHOW_ALERT(message)   SP_SHOW_ALERTVIEW(0, nil, (message), nil, @"确定", nil)
+#define SP_SHOW_ALERT(message)   SP_SHOW_ALERTVIEW(0, @"", (message), nil, @"确定", nil)
 
 #define SP_SHOW_ALERTVIEW(_tag_, title, msg, _delegate_, cancelTitle, ...) {\
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title\

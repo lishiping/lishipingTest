@@ -15,8 +15,12 @@
 @property(nonatomic,copy)NSString *phoneNumber;//用户电话
 @property(nonatomic,assign)BOOL isGuest;//是否是游客用户
 
++ (instancetype)manager;
+
+//返回当前用户
 + (SPUser*)currentUser;
 
-+ (instancetype)manager;
+//检查是否登录，如果未登录则要弹出登录页
++ (SPUser*)checkUserAndPresentLoginVC;
 
 @end

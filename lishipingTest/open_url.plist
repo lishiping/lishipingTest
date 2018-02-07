@@ -2,10 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>register</key>
+	<dict>
+		<key>class</key>
+		<string>RegisterVC</string>
+		<key>remark</key>
+		<string>注册页面</string>
+	</dict>
 	<key>login</key>
 	<dict>
 		<key>remark</key>
-		<string>这里是备注信息，方便维护时候查看</string>
+		<string>这里是备注信息，方便维护时候查看，本类是登录页面</string>
 		<key>class</key>
 		<string>LoginVC</string>
 	</dict>

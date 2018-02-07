@@ -66,7 +66,6 @@
 @interface SPNetworkManager : NSObject
 
 @property (nonatomic, copy) NSString * _Nonnull host;//默认的host服务器地址
-@property (nonatomic, assign) NSTimeInterval timestamp; //时间戳
 
 @property (nonatomic, copy) NSString * _Nullable city;//请求参数的城市名称
 @property (nonatomic, assign) NSUInteger cityID; //请求参数的城市ID

@@ -8,6 +8,8 @@
 
 #import "SPHandleOpenURLManager.h"
 #import <SPFastPush.h>
+#import <SPCategory/NSString+SPEnCode.h>
+#import <SPWebViewController.h>
 
 @interface SPHandleOpenURLManager()
 
@@ -34,7 +36,7 @@
 
 + (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [[self class] application:application openURL:url options:@{UIApplicationLaunchOptionsSourceApplicationKey:@"unkown"}];
+    return [self application:application openURL:url options:@{UIApplicationLaunchOptionsSourceApplicationKey:@"unkown"}];
 }
 
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation;
@@ -51,49 +53,61 @@
     //    NSString *bundleID = [options objectForKey:UIApplicationLaunchOptionsSourceApplicationKey];
     //    id annotation = [options objectForKey:UIApplicationLaunchOptionsAnnotationKey];
     
-    NSMutableDictionary *mDic = [self getParamFromURL:url.query];
-    NSString *classStr = [self getViewControllerClassFromBundle:[SPHandleOpenURLManager manager].plistName urlKey:url.host];
-    
-    if (classStr.length>0 && [self checkSchemeIsWhiteList:url.scheme])
+    if (url.scheme.length>0 && [self checkSchemeIsWhiteList:url.scheme])
     {
-        //当animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
-        //当appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
+        NSMutableDictionary *mDic = [self getParamFromURL:url.query];
+        NSString *classStr = [self getViewControllerClassFromBundle:[SPHandleOpenURLManager manager].plistName urlKey:url.host];
         
-        //无动画
-        if ([[mDic objectForKey:@"animated"] isEqualToString:@"0"])
-        {
-            [mDic removeObjectForKey:@"animated"];
+        Class cls =NSClassFromString(classStr);
+        NSAssert((cls && [cls isSubclassOfClass:[UIViewController class]]), @"类列表取出的类不是viewController类");
+
+        if (cls && [cls isSubclassOfClass:[UIViewController class]]) {
             
-            //present
-            if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
-            {
-                [mDic removeObjectForKey:@"appear_type"];
-                SP_PRESENT_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
-            }else
-            {
-                //push
-                [mDic removeObjectForKey:@"appear_type"];
-                SP_PUSH_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
-            }
-        }
-        else
-        {
-            //有动画
-            [mDic removeObjectForKey:@"animated"];
+            //当字典参数中animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
+            //当字典参数中appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
             
-            //present
-            if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
+            //无动画
+            if ([[mDic objectForKey:@"animated"] isEqualToString:@"0"])
             {
-                [mDic removeObjectForKey:@"appear_type"];
-                SP_PRESENT_VC_BY_CLASSNAME(classStr, mDic)
+                [mDic removeObjectForKey:@"animated"];
+                
+                //present
+                if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
+                {
+                    [mDic removeObjectForKey:@"appear_type"];
+                    SP_PRESENT_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
+                }else
+                {
+                    //push
+                    [mDic removeObjectForKey:@"appear_type"];
+                    SP_PUSH_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
+                }
             }
             else
             {
-                //push
-                [mDic removeObjectForKey:@"appear_type"];
-                SP_PUSH_VC_BY_CLASSNAME(classStr, mDic)
+                //有动画
+                [mDic removeObjectForKey:@"animated"];
+                
+                //present
+                if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
+                {
+                    [mDic removeObjectForKey:@"appear_type"];
+                    SP_PRESENT_VC_BY_CLASSNAME(classStr, mDic)
+                }
+                else
+                {
+                    //push
+                    [mDic removeObjectForKey:@"appear_type"];
+                    SP_PUSH_VC_BY_CLASSNAME(classStr, mDic)
+                }
             }
         }
+    }
+    else if(url)
+    {
+        SPWebViewController *web = [[SPWebViewController alloc] initWithURL:url];
+        
+        SP_PUSH_VC(web)
     }
     
     return YES;
@@ -109,6 +123,14 @@
     return YES;
 }
 
+//验证是否是url地址
++ (BOOL)isUrlAddress:(NSString *)url
+{
+    NSString *reg = @"/^(http|https)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?$/";
+    NSPredicate *urlPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
+    return [urlPredicate evaluateWithObject:url];
+}
+
 //从url得到请求参数
 +(NSMutableDictionary*)getParamFromURL:(NSString*)urlQuery
 {
@@ -119,7 +141,8 @@
     for (NSString *querytemp in queryArr) {
         
         NSArray *keyvalue = [querytemp componentsSeparatedByString:@"="];
-        [mDic setObject:keyvalue[1] forKey:keyvalue[0]];
+        NSString *valuString =keyvalue[1];
+        [mDic setObject:valuString.urlDecode forKey:keyvalue[0]];
     }
     
     return mDic;
@@ -148,7 +171,7 @@
     return schemeMArr;
 }
 
-//读取info.plist的白名单
+//从open_url.plist取出对应类
 +(NSString*)getViewControllerClassFromBundle:(NSString*)plistName urlKey:(NSString*)urlKey
 {
     NSDictionary *dictem = [[NSDictionary alloc] initWithContentsOfFile:
