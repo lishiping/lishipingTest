@@ -62,7 +62,7 @@
 + (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url;
 
 //使用宏直接打开一个网页或者scheme方式打开程序内部页面
-#define SP_OPEN_URL_STRING(urlString) [SPHandleOpenURLManager application:nil openURL:[NSURL URLWithString:urlString] options:nil];
+#define SP_INAPP_OPEN_URL_STRING(urlString) [SPHandleOpenURLManager application:nil openURL:[NSURL URLWithString:urlString] options:nil];
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation;
 
 + (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options;

@@ -19,6 +19,8 @@
 #import <NSString+SPEnCode.h>
 #import "SPHandleOpenURLManager.h"
 #import "RegisterVC.h"
+#import "SPAlert.h"
+#import "SPHUD.h"
 
 
 @interface ViewController ()
@@ -127,8 +129,10 @@
 //    SP_PUSH_VC_BY_CLASSNAME(@"RegisterVC", @{@"title":@"注册页面"})
     
     //推出对象
-    RegisterVC *registerVC = [[RegisterVC alloc] init];
-    SP_PUSH_VC(registerVC)
+//    RegisterVC *registerVC = [[RegisterVC alloc] init];
+//    SP_PUSH_VC(registerVC)
+    
+//    [SPHUD sp_showHUD];
 }
 
 - (void)button3OnClick:(id)sender
@@ -138,7 +142,7 @@
     //    [SPHandleOpenURLManager application:nil openURL:[NSURL URLWithString:@"https://www.baidu.com/"] options:nil];
     
     //宏实现更方便
-    SP_OPEN_URL_STRING(@"https://www.baidu.com/")
+    SP_INAPP_OPEN_URL_STRING(@"https://mp.weixin.qq.com/s/2xT3AR8GJ4-vtBYKQhzqlw")
 }
 
 

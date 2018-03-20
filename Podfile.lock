@@ -48,7 +48,7 @@ PODS:
     - SafeData
     - SPMacro
   - SPDebugBar (0.9.0)
-  - SPFastPush (0.7.0)
+  - SPFastPush (0.8.0)
   - SPMacro (0.2.2)
   - SPWebView (0.0.14):
     - SPWebView/Core (= 0.0.14)
@@ -99,7 +99,7 @@ SPEC CHECKSUMS:
   SPBaseClass: c91058f6494eebec78fb2956c7e66d536d21e8f0
   SPCategory: 3901b77bfe20f38a971648682b3b74443b56ecaa
   SPDebugBar: 7faf249619696a4fc23e0d17920c383a51e4f8e1
-  SPFastPush: 97a9ea11fad992bedd840b77c0c59243b130267f
+  SPFastPush: 732746c2a1b333acfda6500c2d1293f0abd14207
   SPMacro: 86e8a72b5b991465c68f2e153d5563d2c8335153
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29

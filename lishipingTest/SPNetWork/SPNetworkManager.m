@@ -10,7 +10,6 @@
 #import <AFHTTPSessionManager.h>
 #import <SPMacro.h>
 #import "SPUser.h"
-#import <SPSafeData.h>
 #import <SPCategory/NSString+SPEnCode.h>
 
 @interface SPNetworkManager()
@@ -46,6 +45,9 @@
     [self.afHTTPSessionManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     self.afHTTPSessionManager.requestSerializer.timeoutInterval = 30.0f;
     [self.afHTTPSessionManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    
+    //设置版本
+    self.appVersion = SP_APP_VERSION;
 }
 
 
@@ -109,10 +111,10 @@
         //        NSLog(@"错误 = %@",error);
         
         //如果想要在这里做全局的错误拦截弹出页面就在这里做好了，例如
-        if (error.code==20034 && [error.userInfo objectForKey:@"errorurl"])
+        NSString *errorurlString =[error.userInfo objectForKey:@"errorurl"];
+        if (error.code==20034 && [errorurlString isKindOfClass:NSString.class] &&errorurlString.length>0)
         {
-            
-            SP_OPEN_URL_STRING([error.userInfo objectForKey:@"errorurl"])
+            SP_INAPP_OPEN_URL_STRING(errorurlString)
         }
         
         completionBlock(task,nil,error);
