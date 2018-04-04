@@ -85,11 +85,13 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle"
   install_resource "${PODS_ROOT}/SPWebView/SPWebView/SPWebView/Resource/SPWebView.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle"
   install_resource "${PODS_ROOT}/SPWebView/SPWebView/SPWebView/Resource/SPWebView.bundle"
 fi

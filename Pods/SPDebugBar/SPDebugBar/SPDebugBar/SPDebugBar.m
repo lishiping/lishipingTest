@@ -7,14 +7,24 @@
 
 #import "SPDebugBar.h"
 #import "UIDevice-SPHardware.h"
+#import "SPDebugVC.h"
+#import "SPServerListVC.h"
+#import "SPNSUserDefaultsVC.h"
+
+#define SP_ChangeAddress_KEY SP_LANGUAGE_IS_CHINESE? @"切换服务器" : @"Change Server"
+#define SP_ChangeNSUserDefaults_KEY SP_LANGUAGE_IS_CHINESE? @"修改NSUserDefaults":@"Change NSUserDefaults"//服务器列表每组的名称键值
 
 @interface SPDebugBar ()
 
 @property (strong, nonatomic) UILabel* tipLabel;//显示标签
 //@property (strong, nonatomic) NSTimer* monitorTimer;//计时器
 @property (strong, nonatomic) NSArray *serverArray;//预给定服务器列表
-@property (copy, nonatomic) SPArrayResultBlock selectArrayBlock; //选择的服务地址回调
+@property (copy, nonatomic) SPArrayResultBlock selectedServerArrayBlock; //选择的服务地址回调
 @property (assign, nonatomic) NSUInteger isStartWarningNum;
+
+@property (strong, nonatomic) NSArray *otherSectionArray;//调试工具自定义传进来的数组名字列表
+@property (copy, nonatomic) SPNavigationStringErrorBlock otherSectionArrayBlock; //调试工具自定义传进来的数组名字列表回调
+
 
 /****0.2.0加入刷新fps使用的****/
 @property (nonatomic, strong) CADisplayLink *displayLink;//更精确的计时器
@@ -30,24 +40,40 @@
 #pragma mark - shareInstance
 static SPDebugBar* instance = nil;
 
-+ (id)sharedInstanceWithServerArray:(NSArray *)serverArray SelectArrayBlock:(SPArrayResultBlock)selectArrayBlock
++ (id)sharedInstanceWithServerArray:(NSArray*)serverArray
+           selectedServerArrayBlock:(SPArrayResultBlock)selectedServerArrayBlock
+                  otherSectionArray:(NSArray *)otherSectionArray
+             otherSectionArrayBlock:(SPNavigationStringErrorBlock)otherSectionArrayBlock
 {
-    CGFloat ScreenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
-    return [[self class] sharedInstanceWithFrame:CGRectMake(ScreenWidth-250, 0, 250, 20) ServerArray:serverArray SelectArrayBlock:selectArrayBlock];
+    CGRect frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-250, 0, 250, 20);
+    return [self sharedInstanceWithFrame:frame ServerArray:serverArray selectedServerArrayBlock:selectedServerArrayBlock otherSectionArray:otherSectionArray otherSectionArrayBlock:otherSectionArrayBlock];
 }
 
-+ (id)sharedInstanceWithFrame:(CGRect)frame ServerArray:(NSArray *)serverArray SelectArrayBlock:(SPArrayResultBlock)selectArrayBlock
++ (id)sharedInstanceWithFrame:(CGRect)frame
+                  ServerArray:(NSArray*)serverArray
+     selectedServerArrayBlock:(SPArrayResultBlock)selectedServerArrayBlock
+            otherSectionArray:(NSArray *)otherSectionArray
+       otherSectionArrayBlock:(SPNavigationStringErrorBlock)otherSectionArrayBlock
+{
+    SPDebugBar *sharedInstance =  [[self class] sharedInstanceWithFrame:frame];
+    [sharedInstance configServerArray:serverArray selectedServerArrayBlock:selectedServerArrayBlock];
+    sharedInstance.otherSectionArray = otherSectionArray;
+    sharedInstance.otherSectionArrayBlock = otherSectionArrayBlock;
+    return sharedInstance;
+}
+
+#pragma mark - init
+
++ (id)sharedInstanceWithFrame:(CGRect)frame
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[[self class] alloc] initWithFrame:frame];
-        [instance setRootViewController:[SPServerBaseVC new]]; // Xcode7 之后的版本 必须 设置rootViewController
-        [instance configServerArray:serverArray selectArrayBlock:selectArrayBlock];
+        [instance setRootViewController:[SPDebugBaseVC new]]; //Xcode7之后的版本必须设置rootViewController
     });
     return instance;
 }
 
-#pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -61,6 +87,9 @@ static SPDebugBar* instance = nil;
 -(void)initialize
 {
     _isStartWarningNum =0;
+    _screenUpdatesCount = 0;
+    _screenUpdatesBeginTime = 0.0f;
+    _averageScreenUpdatesTime = 0.017f;
     
     //UIWindowLevel级别高于状态栏，这样才能显示在状态栏之上
     self.windowLevel = UIWindowLevelStatusBar + 1.0;
@@ -75,7 +104,7 @@ static SPDebugBar* instance = nil;
     [self addSubview:_tipLabel];
     
     //添加长按手势弹出配置界面
-    UILongPressGestureRecognizer* longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(presentConfigPageVC)];
+    UILongPressGestureRecognizer* longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(presentDebugVC)];
     [self addGestureRecognizer:longPressGesture];
     
     //添加单击手势隐藏和显示页面
@@ -85,63 +114,8 @@ static SPDebugBar* instance = nil;
     //收到内存警告时调试条背景变色
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMemoryWarningTip:) name:@"UIApplicationDidReceiveMemoryWarningNotification" object:nil];
     
-    self.screenUpdatesCount = 0;
-    self.screenUpdatesBeginTime = 0.0f;
-    self.averageScreenUpdatesTime = 0.017f;
-}
-
--(void)configServerArray:(NSArray *)serverArray selectArrayBlock:(SPArrayResultBlock)selectArrayBlock
-{
-    self.serverArray = serverArray;
-    self.selectArrayBlock = selectArrayBlock;
-    
-    //检查服务器地址数组是否合法
-    if ([self checkArray:serverArray]) {
-        //服务器地址合法返回本地缓存选择过得地址，没有选择过得地址，默认选择每一组的第一个作为该组的选中地址
-        NSArray *selectArr =[SPServerListVC getSelectArrayWithServerArray:_serverArray];
-        
-        if (self.selectArrayBlock && selectArr.count>0) {
-            self.selectArrayBlock([selectArr copy],nil);
-        }
-    }
-    else
-    {
-        //如果地址不合法，返回错误信息
-        if (self.selectArrayBlock) {
-            self.selectArrayBlock(nil,[NSError errorWithDomain:@"url is illegal，url must Be NSString" code:-2 userInfo:nil]);
-            self.selectArrayBlock = nil;
-        }
-    }
-    
-    //开始监听设备，获取活动消息
+    //    //开始监听设备，获取活动消息
     [self startMonitorDevice];
-}
-
-#pragma mark - check
-//检查给定服务器地址是否合法,只检查了字符串，没检查url地址的正则表达式
--(BOOL)checkArray:(NSArray*)serverArr
-{
-    BOOL ret = YES;
-    if ([serverArr isKindOfClass:[NSArray class]] && serverArr.count>0) {
-        for (NSArray *arr in serverArr) {
-            if ([arr isKindOfClass:[NSArray class]] && arr.count>0) {
-                for (NSString *serverUrl in arr) {
-                    if (![serverUrl isKindOfClass:[NSString class]] || serverUrl.length<1) {
-                        ret = NO;
-                    }
-                }
-            }
-            else
-            {
-                ret = NO;
-            }
-        }
-    }
-    else
-    {
-        ret = NO;
-    }
-    return ret;
 }
 
 #pragma mark - events
@@ -173,40 +147,13 @@ static SPDebugBar* instance = nil;
     _tipLabel.text = [NSString stringWithFormat:@"%@ %@ %@", cpuInfo,fpsInfo,memoryInfo];
 }
 
-//弹出配置页面
-- (void)presentConfigPageVC
-{
-    self.tipLabel.hidden= NO;
-    
-    UIViewController *vc = [[UIApplication sharedApplication].delegate window].rootViewController;
-    if ([vc presentedViewController]) {
-        return;
-    }
-    
-    //弹出配置页面
-    SPServerListVC* serverListVC = [[SPServerListVC alloc] init];
-    serverListVC.tempserverArr =self.serverArray;
-    
-    //页面选择回调地址
-    __weak __typeof(self) weakSelf = self;
-    serverListVC.selectServerArrayBlock = ^(NSArray *array){
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        
-        if (strongSelf.selectArrayBlock && array.count>0) {
-            strongSelf.selectArrayBlock([array copy],nil);
-        }
-    };
-    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:serverListVC];
-    [vc presentViewController:navigationController animated:YES completion:nil];
-}
-
 //收到内存警告，启动动画
 - (void)didReceiveMemoryWarningTip:(NSNotification*)noti
 {
     _isStartWarningNum = 1;
 }
 
-//调试条动画
+//内存警告时候，调试条动画闪烁
 -(void)tipLabelAnimation
 {
     [UIView animateWithDuration:0.5f animations:^{
@@ -227,7 +174,7 @@ static SPDebugBar* instance = nil;
     //
     //    [_monitorTimer fire];
     
-    //开始使用timer刷新，但是我想加入刷新fps功能，所以就得改成使用displayLink刷新
+    //之前使用timer刷新，但是我想加入刷新fps功能，所以就得改成使用displayLink刷新
     [self setupDisplayLink];
 }
 
@@ -280,6 +227,94 @@ static SPDebugBar* instance = nil;
     self.screenUpdatesBeginTime = 0.0f;
     
     [self refreshDeviceInfo];
+}
+
+#pragma mark - 配置服务器地址
+-(void)configServerArray:(NSArray *)serverArray selectedServerArrayBlock:(SPArrayResultBlock)selectedServerArrayBlock
+{
+    self.serverArray = serverArray;
+    self.selectedServerArrayBlock = selectedServerArrayBlock;
+    //检查服务器地址数组是否合法
+    if ([SPServerListVC checkArray:serverArray]) {
+        //服务器地址合法返回本地缓存选择过得地址，没有选择过得地址，默认选择每一组的第一个作为该组的选中地址
+        NSArray *selectArr =[SPServerListVC getSelectArrayWithServerArray:serverArray];
+        
+        if (self.selectedServerArrayBlock && selectArr.count>0) {
+            self.selectedServerArrayBlock(selectArr,nil);
+        }
+    }
+    else
+    {
+        //如果地址不合法，返回错误信息
+        if (self.selectedServerArrayBlock) {
+            self.selectedServerArrayBlock(nil,[NSError errorWithDomain:SP_LANGUAGE_IS_CHINESE? @"url必须是字符串类型" : @"url is illegal，url must Be NSString" code:-2 userInfo:nil]);
+            self.selectedServerArrayBlock = nil;
+        }
+    }
+}
+
+#pragma mark - 弹出调试工具栏
+//弹出配置页面
+- (void)presentDebugVC
+{
+    self.tipLabel.hidden= NO;
+    
+    UIViewController *rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
+    if ([rootVC presentedViewController]) {
+        return;
+    }
+    
+    //弹出调试工具栏
+    SPDebugVC* debugVC = [[SPDebugVC alloc] init];
+    
+    NSDictionary *dic =@{
+                         SP_TITLE_KEY:@"第三方自带功能(不断更新中)",
+                         SP_ARRAY_KEY: @[SP_ChangeAddress_KEY,SP_ChangeNSUserDefaults_KEY]};
+    NSMutableArray *marr = [NSMutableArray arrayWithObject:dic];
+    
+    //调试工具栏头部留给自带功能
+    [marr addObjectsFromArray:self.otherSectionArray];
+    
+    debugVC.tableArr = marr;
+    
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:debugVC];
+    [rootVC presentViewController:navigationController animated:NO completion:nil];
+
+    //tableview点击回调
+    debugVC.tableBlock = ^(NSIndexPath *indexPath)
+    {
+        NSDictionary *dic = [marr objectAtIndex:indexPath.section];
+        NSArray *array = [dic objectForKey:SP_ARRAY_KEY];
+        NSString *string =[array objectAtIndex:indexPath.row];
+        
+        //自带切换服务器功能
+        if ([string isEqualToString:SP_ChangeAddress_KEY])
+        {
+            //弹出配置页面
+            SPServerListVC* serverListVC = [[SPServerListVC alloc] init];
+            serverListVC.tempserverArr =self.serverArray;
+            serverListVC.selectServerArrayBlock = self.selectedServerArrayBlock;
+            [navigationController pushViewController:serverListVC animated:YES];
+        }
+        //自带更改NSUserDefaults功能
+        else if ([string isEqualToString:SP_ChangeNSUserDefaults_KEY])
+        {
+            SPNSUserDefaultsVC *userDefaultsVC = [[SPNSUserDefaultsVC alloc] init];
+            [navigationController pushViewController:userDefaultsVC animated:YES];
+        }
+        else
+        {
+            if (self.otherSectionArrayBlock)
+            {
+                if (string.length>0 && navigationController) {
+                    self.otherSectionArrayBlock(navigationController,string, nil);
+                }else
+                {
+                    self.otherSectionArrayBlock(navigationController,string, [NSError errorWithDomain:@"字符串为空" code:-2 userInfo:nil]);
+                }
+            }
+        }
+    };
 }
 
 

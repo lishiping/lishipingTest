@@ -8,7 +8,6 @@
 
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
-#import <Masonry/Masonry.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 
@@ -19,18 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    
-    UIView *view = [[UIView alloc] init];
-    
-    view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view];
-     
-     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(40);
-         make.right.mas_equalTo(-40);
-        make.height.mas_equalTo(40);
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

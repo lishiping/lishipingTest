@@ -26,64 +26,102 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //检测当前是否是测试包
+    _isTest =[[[NSBundle mainBundle] infoDictionary] objectForKey:@"TEST"];
+    //配置服务器地址，为了测试服切换和正式服设定
+    [self loadDebugTool];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.rootViewController =[self addTabBarController];
-    
-    //配置服务器地址，为了测试服切换和正式服设定
-    [self configServerURL];
     
     [[SPHandleOpenURLManager manager] setViewControllerClassPlist:@"open_url"];
     
     [self.window makeKeyAndVisible];
     
-    
     return YES;
 }
 
-//服务器地址配置方法
--(void)configServerURL
+//加载调试工具
+-(void)loadDebugTool
 {
-    //检测当前是否是测试包
-    _isTest =[[[NSBundle mainBundle] infoDictionary] objectForKey:@"TEST"];
-    
-    if (DEBUG || _isTest)
+    //当debug和打测试包的时候为了测试人员切换服务器调试，调试工具要显示，线上包的时候该调试工具不显示
+    if (_isTest||DEBUG)
     {
-        NSArray* serverArr = @[
-                               @"https://www.baidu.com",
-                               @"http://www.baidu.com",
-                               @"http://www.ceshi.baidu.com"
-                               ];
+        NSDictionary* serverDic = @{
+                                    SP_TITLE_KEY:@"百度服务器地址",
+                                    SP_ARRAY_KEY: @[
+                                            @"https://api.baidu.com",
+                                            @"http://api.baidu.com",
+                                            @"http://api.ceshi.baidu.com"
+                                            ]
+                                    };
         
-        NSArray *panServerArr = @[
-                                  @"https://api.pan.baidu.com",
-                                  @"http://api.pan.baidu.com",
-                                  @"http://api.ceshi.pan.baidu.com"
-                                  ];
+        NSDictionary *panServerDic = @{
+                                       SP_TITLE_KEY:@"百度网盘地址",
+                                       SP_ARRAY_KEY: @[
+                                               @"https://api.pan.baidu.com",
+                                               @"http://api.pan.baidu.com",
+                                               @"http://api.ceshi.pan.baidu.com",
+                                               @"http://api.test.pan.baidu.com"
+                                               ]};
         
-        NSArray *serverArray = [NSArray arrayWithObjects:serverArr,panServerArr, nil];
+        NSDictionary *imServerDic = @{
+                                      SP_TITLE_KEY:@"百度聊天地址",
+                                      SP_ARRAY_KEY: @[
+                                              @"https://api.pan.baidu.com",
+                                              @"http://api.pan.baidu.com",
+                                              @"http://api.ceshi.pan.baidu.com",
+                                              @"http://api.test.pan.baidu.com"
+                                              ]};
         
-        [SPDebugBar sharedInstanceWithServerArray:serverArray SelectArrayBlock:^(NSArray *objects, NSError *error)
-         {
-             SP_LOG(@"select server address：%@",objects);
-             NSAssert(!error,error.description);
-             if (error) {
-                 //设置线上正式服地址
-                 [SPNetworkManager manager].host = @"https://www.baidu.com";
-             }
-             else
-             {
-                 [SPNetworkManager manager].host = objects[0];
-             }
-         }];
+        NSArray *serverArray = [NSArray arrayWithObjects:serverDic,panServerDic,imServerDic, nil];
+        
+        NSDictionary* secondDic = @{
+                                    SP_TITLE_KEY:@"灰度功能",
+                                    SP_ARRAY_KEY: @[
+                                            @"ABTestSDK",
+                                            @"AB放量"
+                                            ]
+                                    };
+        
+        NSDictionary *thirdDic = @{
+                                   SP_TITLE_KEY:@"商业化功能",
+                                   SP_ARRAY_KEY: @[
+                                           @"商业放量",
+                                           @"商业灰度"
+                                           ]};
+        
+        NSArray *otherArray = [NSArray arrayWithObjects:secondDic,thirdDic, nil];
+        
+        [SPDebugBar sharedInstanceWithServerArray:serverArray selectedServerArrayBlock:^(NSArray *objects, NSError *error) {
+            SP_LOG(@"选中的服务器地址：%@",objects);
+            NSAssert(!error,error.description);
+            if (error) {
+                //设置线上正式服地址
+                [SPNetworkManager manager].host = @"https://www.baidu.com";
+            }
+            else
+            {
+                [SPNetworkManager manager].host = objects[0];
+            }
+            
+        } otherSectionArray:otherArray otherSectionArrayBlock:^(UINavigationController *navigationController,NSString *string, NSError *error) {
+            SP_LOG(@"你点击了:%@",string);
+            
+            //            ABTestVC *abTestVC = [[ABTestVC alloc] init];
+            //            abTestVC.title = string;
+            //
+            //            [navigationController pushViewController:abTestVC animated:YES];
+        }];
     }
     else
     {
         //set up online server address
         //设置线上正式服地址
         [SPNetworkManager manager].host = @"https://www.baidu.com";
+        
     }
-    
 }
 
 

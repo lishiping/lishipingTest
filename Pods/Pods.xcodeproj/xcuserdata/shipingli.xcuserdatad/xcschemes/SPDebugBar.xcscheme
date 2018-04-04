@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '782D6D598A6F87ED10C59A517B4AB532'
-               BlueprintName = 'SPDebugBar'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSPDebugBar.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "221805FD811B2B0B7BF95FD83769D776"
+               BlueprintName = "SPDebugBar"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libSPDebugBar.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

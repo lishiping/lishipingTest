@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E455A42555D6D568C4D9F1E5FD32E408'
-               BlueprintName = 'SPFastPush'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSPFastPush.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0EC57720625B854089D84A2644E7FFD0"
+               BlueprintName = "SPFastPush"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libSPFastPush.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

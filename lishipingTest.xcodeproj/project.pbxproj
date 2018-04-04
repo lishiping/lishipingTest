@@ -35,7 +35,6 @@
 		96F4383F1FD80B9D00F10335 /* SPNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F4383D1FD80B9D00F10335 /* SPNetworkManager.m */; };
 		96F438401FD80B9D00F10335 /* SPNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F4383D1FD80B9D00F10335 /* SPNetworkManager.m */; };
 		D03853AAD893BCA0ED7A6CBC /* libPods-lishipingTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9294A0CE39565024DF82B0 /* libPods-lishipingTest.a */; };
-		E79D94F150F5EEDC67DCC3EA /* libPods-TodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 373B8538BB065024FB4FF0A1 /* libPods-TodayExtension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EE1D2F13321D0D3D35A1CA0 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		1E03C38C2010AAD7002EEDA4 /* lishipingTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lishipingTest-Prefix.pch"; sourceTree = "<group>"; };
 		1E03C38E2010D531002EEDA4 /* SPHandleOpenURLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHandleOpenURLManager.h; sourceTree = "<group>"; };
 		1E03C38F2010D531002EEDA4 /* SPHandleOpenURLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHandleOpenURLManager.m; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 		96ACE7241FAB14EC005B7CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F4383C1FD80B9D00F10335 /* SPNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNetworkManager.h; sourceTree = "<group>"; };
 		96F4383D1FD80B9D00F10335 /* SPNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNetworkManager.m; sourceTree = "<group>"; };
-		CC77359B59C5B26535BB08D2 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */,
-				E79D94F150F5EEDC67DCC3EA /* libPods-TodayExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +230,6 @@
 			children = (
 				215C14150A2520B979314DA6 /* Pods-lishipingTest.debug.xcconfig */,
 				318F81A5D873B69C3651676B /* Pods-lishipingTest.release.xcconfig */,
-				0EE1D2F13321D0D3D35A1CA0 /* Pods-TodayExtension.debug.xcconfig */,
-				CC77359B59C5B26535BB08D2 /* Pods-TodayExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -349,11 +343,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96165CD31FCD6333001D98F3 /* Build configuration list for PBXNativeTarget "TodayExtension" */;
 			buildPhases = (
-				D1613CA75B6BE53DA64CA015 /* [CP] Check Pods Manifest.lock */,
 				96165CBF1FCD6333001D98F3 /* Sources */,
 				96165CC01FCD6333001D98F3 /* Frameworks */,
 				96165CC11FCD6333001D98F3 /* Resources */,
-				E62A2F63BB5FC3703873DA35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -543,24 +535,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1613CA75B6BE53DA64CA015 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TodayExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,31 +543,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh",
 				"${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle",
 				"${PODS_ROOT}/SPWebView/SPWebView/SPWebView/Resource/SPWebView.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Opal.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPCategory.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPWebView.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E62A2F63BB5FC3703873DA35 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -697,7 +660,6 @@
 /* Begin XCBuildConfiguration section */
 		96165CD11FCD6333001D98F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EE1D2F13321D0D3D35A1CA0 /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
@@ -711,7 +673,6 @@
 		};
 		96165CD21FCD6333001D98F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC77359B59C5B26535BB08D2 /* Pods-TodayExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodayExtension/Info.plist;

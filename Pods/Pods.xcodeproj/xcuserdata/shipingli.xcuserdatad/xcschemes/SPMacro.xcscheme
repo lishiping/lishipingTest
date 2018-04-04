@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '91AF81101CB2E5534C16201334AED46E'
-               BlueprintName = 'SPMacro'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSPMacro.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F26BC8C7F3ABB63D5B998495217B01B2"
+               BlueprintName = "SPMacro"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libSPMacro.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -7,6 +7,8 @@
 //
 
 #import "LoginVC.h"
+#import <UIImageView+WebCache.h>
+#import <UIView+WebCache.h>
 
 @interface LoginVC ()
 
@@ -32,6 +34,31 @@
     passwordLabel.text = self.password;
     
     SP_LOG(@"用户名密码username=%@，password=%@",_username,_password)
+    
+    
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(100, 300, 200, 200)];
+    
+    [self.view addSubview:iv];
+    [iv sd_setShowActivityIndicatorView:YES];
+
+    
+    [iv sd_setImageWithURL:[NSURL URLWithString:@"http://wx2.sinaimg.cn/or360/76a1b64dly1fjtw4932h7g20be0631ky.gif"] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        SP_LOG(@"宽==%f,高==%f",image.size.width,image.size.height)
+    }];
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 500, 200, 200)];
+//
+//    [self.view addSubview:view];
+//
+//    [view sd_setShowActivityIndicatorView:YES];
+//
+//    [view sd_internalSetImageWithURL:[NSURL URLWithString:@"http://wx2.sinaimg.cn/or360/76a1b64dly1fjtw4932h7g20be0631ky.gif"]
+//               placeholderImage:nil
+//                        options:nil
+//                   operationKey:nil
+//                  setImageBlock:nil
+//                       progress:progressBlock
+//                      completed:completedBlock];
 }
 
 - (void)didReceiveMemoryWarning {

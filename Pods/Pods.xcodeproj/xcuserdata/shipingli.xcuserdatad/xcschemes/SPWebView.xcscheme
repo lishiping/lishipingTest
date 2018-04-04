@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '38291E34D7857E7502467D297840CFF5'
-               BlueprintName = 'SPWebView'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSPWebView.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00FD045C13F3856BFCCBF107FBD95797"
+               BlueprintName = "SPWebView"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libSPWebView.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

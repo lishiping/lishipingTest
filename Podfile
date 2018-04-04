@@ -7,6 +7,7 @@ platform :ios, '8.0'
 
 target 'lishipingTest' do
     
+    #自己封装的
     pod 'SafeData'
     pod 'SPMacro'
     pod 'SPWebView'
@@ -14,54 +15,37 @@ target 'lishipingTest' do
     pod 'SPDebugBar'
     pod 'SPCategory'
     pod 'SPBaseClass'
-    pod 'Masonry'
     
+    #第三方使用过的
+    pod 'Masonry'
     pod 'SDWebImage'
     pod 'MJExtension'
+    pod 'MJRefresh'
     pod 'AFNetworking'
     pod 'Reachability'
-
     pod 'JSONModel'
-    pod 'Mantle'
-
-    pod 'FLEX'
     pod 'FMDB'
+    
+    #第三方未使用过的，需要了解
+    pod 'FLAnimatedImage'
+    pod 'Mantle'
+    pod 'FLEX'
     pod 'JSBridge'
     pod 'ALISJSBridgeKit'
-#    pod 'JavaScriptBridge'
     pod 'JavaScriptCoreOpalAdditions'
     pod 'WebViewJavascriptBridge'
+    
+    pod 'RDVTabBarController'
+    pod 'SCNavigationController'
+    pod 'MMProgressHUD'
+#    pod 'GData'
+#    pod 'UIImageGIF'
 
-#    pod 'MWPhotoBrowser'
-#    pod 'CocoaLumberjack'
+    #    pod 'JavaScriptBridge'
+    #    pod 'MWPhotoBrowser'
+    #    pod 'CocoaLumberjack'
     #    pod 'BlocksKit'
+    #    pod 'XCGLogger'
+    
     
 end
-
-target 'TodayExtension' do
-    
-    pod 'Masonry'
-    
-end
-
-
-#    pod 'SafeData'
-#    pod 'SPMacro'
-#    pod 'SPWebView'
-#    pod 'SPFastPush'
-#    pod 'SPDebugBar'
-#    pod 'SPCategory'
-#    pod 'SPBaseClass'
-#    pod 'SDWebImage'
-#pod 'Masonry'
-#    pod 'JSONModel'
-#    pod 'XCGLogger'
-#    pod 'FLEX'
-#    pod 'AFNetworking'
-#    pod 'Reachability'
-#    pod 'FMDB'
-#    pod 'MBProgressHUD'
-#    pod 'MWPhotoBrowser'
-#    pod 'CocoaLumberjack'
-#    pod 'MJExtension'
-#    pod 'BlocksKit'

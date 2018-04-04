@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FLEX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +59,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -74,17 +89,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TodayExtension.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-lishipingTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RDVTabBarController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCNavigationController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCStackViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

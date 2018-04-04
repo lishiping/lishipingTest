@@ -129,8 +129,8 @@
 //    SP_PUSH_VC_BY_CLASSNAME(@"RegisterVC", @{@"title":@"注册页面"})
     
     //推出对象
-//    RegisterVC *registerVC = [[RegisterVC alloc] init];
-//    SP_PUSH_VC(registerVC)
+    RegisterVC *registerVC = [[RegisterVC alloc] init];
+    SP_PUSH_VC(registerVC)
     
 //    [SPHUD sp_showHUD];
 }
