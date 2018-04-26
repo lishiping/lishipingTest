@@ -7,7 +7,7 @@
 //
 
 #import "SPAlert.h"
-#import <SPFastPush.h>
+#import <SPFastPush/SPFastPush.h>
 
 @implementation SPAlert
 

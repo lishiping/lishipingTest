@@ -9,6 +9,7 @@
 #ifndef lishipingTest_Prefix_pch
 #define lishipingTest_Prefix_pch
 
+#define TEST [[[NSBundle mainBundle].infoDictionary objectForKey:@"TEST"] isEqualToString:@"TEST"]
 #import <SPMacro.h>
 #import <SPFastPush.h>
 #import "SPHandleOpenURLManager.h"

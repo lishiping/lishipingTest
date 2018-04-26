@@ -7,9 +7,9 @@
 //
 
 #import "SPHUD.h"
-#import <SPFastPush.h>
-#import<UIViewController+SPHUD.h>
-#import <UIImage+SPGIF.h>
+#import <SPFastPush/SPFastPush.h>
+#import <SPCategory/UIViewController+SPHUD.h>
+#import <SPCategory/UIImage+SPGIF.h>
 
 @implementation SPHUD
 

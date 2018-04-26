@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <SPBaseVC.h>
+@interface ViewController : SPBaseVC
 
 
 @end

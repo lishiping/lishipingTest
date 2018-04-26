@@ -15,6 +15,8 @@
 		<string>这里是备注信息，方便维护时候查看，本类是登录页面</string>
 		<key>class</key>
 		<string>LoginVC</string>
+		<key>emergency_class</key>
+		<string>OldLoginVC</string>
 	</dict>
 </dict>
 </plist>

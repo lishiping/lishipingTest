@@ -39,7 +39,7 @@
 		<true/>
 	</dict>
 	<key>TEST</key>
-	<true/>
+	<string>TEST</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

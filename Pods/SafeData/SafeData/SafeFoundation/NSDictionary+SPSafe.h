@@ -18,6 +18,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSDictionary (SPSafe)
 
 //本类是字典安全方便的使用，方便直接转化为要使用的的对象等
@@ -94,23 +95,14 @@
 
 /****get JSON  Data method***/
 
-- (nullable NSData *)toJSONData;
+//得到jsondata
+- (nullable NSData *)safe_toJSONData;
+
+//得到jsondata的编码字符串
+-(NSString *_Nullable)safe_toJSONString_NSUTF8StringEncoding;
+
+//得到jsondata的编码字符串（自定义编码）
+-(NSString *_Nullable)safe_toJSONStringWithEncoding:(NSStringEncoding)encoding;
 
 @end
 
-
-
-#pragma mark - NSMutableDictionary + Safe
-
-@interface NSMutableDictionary<KeyType, ObjectType> (SPSafe)
-
-//safe set object
-- (BOOL)safe_setObject:(nullable ObjectType)anObject forKey:(nullable KeyType)aKey;
-
-// safe set string
-- (BOOL)safe_setString:(nullable NSString *)anObject forKey:(nullable KeyType)aKey;
-
-- (void)safe_addEntriesFromDictionary:(nullable NSDictionary *)otherDictionary;
-
-
-@end

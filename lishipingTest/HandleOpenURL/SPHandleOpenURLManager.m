@@ -48,71 +48,6 @@
     return [self application:application openURL:url options:dict];
 }
 
-+ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
-{
-    //    NSString *bundleID = [options objectForKey:UIApplicationLaunchOptionsSourceApplicationKey];
-    //    id annotation = [options objectForKey:UIApplicationLaunchOptionsAnnotationKey];
-    
-    if (url.scheme.length>0 && [self checkSchemeIsWhiteList:url.scheme])
-    {
-        NSMutableDictionary *mDic = [self getParamFromURL:url.query];
-        NSString *classStr = [self getViewControllerClassFromBundle:[SPHandleOpenURLManager manager].plistName urlKey:url.host];
-        
-        Class cls =NSClassFromString(classStr);
-        NSAssert((cls && [cls isSubclassOfClass:[UIViewController class]]), @"类列表取出的类不是viewController类");
-
-        if (cls && [cls isSubclassOfClass:[UIViewController class]]) {
-            
-            //当字典参数中animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
-            //当字典参数中appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
-            
-            //无动画
-            if ([[mDic objectForKey:@"animated"] isEqualToString:@"0"])
-            {
-                [mDic removeObjectForKey:@"animated"];
-                
-                //present
-                if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
-                {
-                    [mDic removeObjectForKey:@"appear_type"];
-                    SP_PRESENT_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
-                }else
-                {
-                    //push
-                    [mDic removeObjectForKey:@"appear_type"];
-                    SP_PUSH_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
-                }
-            }
-            else
-            {
-                //有动画
-                [mDic removeObjectForKey:@"animated"];
-                
-                //present
-                if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
-                {
-                    [mDic removeObjectForKey:@"appear_type"];
-                    SP_PRESENT_VC_BY_CLASSNAME(classStr, mDic)
-                }
-                else
-                {
-                    //push
-                    [mDic removeObjectForKey:@"appear_type"];
-                    SP_PUSH_VC_BY_CLASSNAME(classStr, mDic)
-                }
-            }
-        }
-    }
-    else if(url)
-    {
-        SPWebViewController *web = [[SPWebViewController alloc] initWithURL:url];
-        
-        SP_PUSH_VC(web)
-    }
-    
-    return YES;
-}
-
 + (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
 {
     if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb])
@@ -123,13 +58,76 @@
     return YES;
 }
 
-//验证是否是url地址
-+ (BOOL)isUrlAddress:(NSString *)url
++ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    NSString *reg = @"/^(http|https)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?$/";
-    NSPredicate *urlPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
-    return [urlPredicate evaluateWithObject:url];
+    //    NSString *bundleID = [options objectForKey:UIApplicationLaunchOptionsSourceApplicationKey];
+    //    id annotation = [options objectForKey:UIApplicationLaunchOptionsAnnotationKey];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        if (url.scheme.length>0 && [self checkSchemeIsWhiteList:url.scheme])
+        {
+            NSMutableDictionary *mDic = [self getParamFromURL:url.query];
+            NSString *classStr = [self getViewControllerClassFromBundle:[SPHandleOpenURLManager manager].plistName urlKey:url.host];
+            
+            Class cls =NSClassFromString(classStr);
+            NSAssert((cls && [cls isSubclassOfClass:[UIViewController class]]), @"类列表取出的类不是viewController类");
+            
+            if (cls && [cls isSubclassOfClass:[UIViewController class]]) {
+                
+                //当字典参数中animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
+                //当字典参数中appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
+                
+                //无动画
+                if ([[mDic objectForKey:@"animated"] isEqualToString:@"0"])
+                {
+                    [mDic removeObjectForKey:@"animated"];
+                    
+                    //present
+                    if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
+                    {
+                        [mDic removeObjectForKey:@"appear_type"];
+                        SP_PRESENT_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
+                    }else
+                    {
+                        //push
+                        [mDic removeObjectForKey:@"appear_type"];
+                        SP_PUSH_VC_BY_CLASSNAME_NO_ANIMATED(classStr, mDic)
+                    }
+                }
+                else
+                {
+                    //有动画
+                    [mDic removeObjectForKey:@"animated"];
+                    
+                    //present
+                    if ([[mDic objectForKey:@"appear_type"] isEqualToString:@"1"])
+                    {
+                        [mDic removeObjectForKey:@"appear_type"];
+                        SP_PRESENT_VC_BY_CLASSNAME(classStr, mDic)
+                    }
+                    else
+                    {
+                        //push
+                        [mDic removeObjectForKey:@"appear_type"];
+                        SP_PUSH_VC_BY_CLASSNAME(classStr, mDic)
+                    }
+                }
+            }
+        }
+        else if(url)
+        {
+            SPWebViewController *web = [[SPWebViewController alloc] initWithURL:url];
+            
+            SP_PUSH_VC(web)
+        }
+        
+    });
+    
+    return YES;
 }
+
+
 
 //从url得到请求参数
 +(NSMutableDictionary*)getParamFromURL:(NSString*)urlQuery
@@ -177,11 +175,28 @@
     NSDictionary *dictem = [[NSDictionary alloc] initWithContentsOfFile:
                             [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"]];
     
-    NSString *classStr =  [[dictem objectForKey:urlKey] objectForKey:@"class"];
-    //这是备注信息，方便查看用的
-    //    NSString *remark =  [[dictem objectForKey:urlKey] objectForKey:@"remark"];
+    NSString *className = nil;
     
-    return classStr;
+    //这是备注信息，方便查看用的
+    //    NSString *remark =  [class_info objectForKey:@"remark"];
+    NSDictionary *class_info = [dictem objectForKey:urlKey];
+    className =  [class_info objectForKey:@"class"];
+    
+    //以下是备用类，做ABTest使用使用
+    if ([className isEqualToString:@"LoginVC"])
+    {
+        //这里获取网络ABTest控制
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ab_login"])
+        {
+            className =  [[dictem objectForKey:urlKey] objectForKey:@"emergency_class"];
+        }
+    }
+    else if ([className isEqualToString:@"RegisterVC"])
+    {
+        
+    }
+    
+    return className;
 }
 
 @end

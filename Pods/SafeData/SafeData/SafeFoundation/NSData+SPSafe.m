@@ -17,28 +17,6 @@
 //github address//https://github.com/lishiping/SPBaseClass
 
 
-#define SP_IS_KIND_OF(obj, cls) [(obj) isKindOfClass:[cls class]]
-
-#if DEBUG
-
-#define SP_LOG(...) NSLog(__VA_ARGS__)
-
-#define SP_ASSERT(obj)               assert((obj)) //断言实例对象
-
-#define SP_ASSERT_CLASS(obj, cls)  SP_ASSERT((obj) && SP_IS_KIND_OF(obj,cls))//断言实例有值和类型
-
-
-#else
-
-#define SP_LOG(...)
-
-#define SP_ASSERT(obj)
-
-#define SP_ASSERT_CLASS(obj, cls)
-
-#endif
-
-
 #import "NSData+SPSafe.h"
 
 @implementation NSData (SPSafe)
@@ -53,7 +31,8 @@
     SP_ASSERT_CLASS(self,NSData);
     
     id ret = nil;
-    if (SP_IS_KIND_OF(self, NSData) && self.length>0) {
+    if (SP_IS_KIND_OF(self, NSData) && self.length>0)
+    {
         NSError *error;
         ret = [NSJSONSerialization JSONObjectWithData:self options:opt error:&error];
         
@@ -102,21 +81,40 @@
     return nil;
 }
 
-- (nullable NSData *)safe_JSONDataFromObject:(id _Nonnull)obj
++ (NSData*)safe_JSONDataFromObject:(id)obj
 {
     SP_ASSERT(obj);
     
     NSData *ret = nil;
     NSError *err = nil;
-    ret = [NSJSONSerialization dataWithJSONObject:obj
-                                          options:0
-                                            error:&err];
+    if (obj) {
+        ret = [NSJSONSerialization dataWithJSONObject:obj
+                                              options:0
+                                                error:&err];
+    }
     if (err)
     {
         SP_LOG(@"Object to JsonData Error:%@",err);
         ret = nil;
     }
     return (ret);
+}
+
+-(NSString *)safe_getJSONString_NSUTF8StringEncoding
+{
+    return [self safe_getJSONStringWithEncoding:NSUTF8StringEncoding];
+}
+
+-(NSString *)safe_getJSONStringWithEncoding:(NSStringEncoding)encoding
+{
+    SP_ASSERT_CLASS(self,NSData);
+    
+    NSString *ret = nil;
+    
+    if (SP_IS_KIND_OF(self, NSData) && self.length > 0) {
+        ret = [[NSString alloc] initWithData:self encoding:encoding];
+    }
+    return ret;
 }
 
 @end

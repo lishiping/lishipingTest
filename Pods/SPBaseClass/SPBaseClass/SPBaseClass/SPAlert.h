@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void (^SPUIAlertActionBlock)(UIAlertAction * _Nullable action);
 
 @interface SPAlert : NSObject
 
 /*本类的特点：
- 1.旨在实现快捷的方法，一个方法代替了以往的创建初始化显示等过程，实现代码复用，利于可读性可维护性
- 2.由于该类可以写在任何地方弹出alert，如果写在网络层等非UI层，要明确注释方便以后维护，否则后期维护艰难。
- 3.如果调用类是ViewController建议使用ViewController+SPUIAlertViewController类别更方便，要遵循MVC模式下，尽量不让Alert被引入到网络层在底层拦截弹出警告框，这也是苹果开发文档的要求，所以苹果方面废弃了UIAlertView直接show的方式。
+ 1.如果是在ViewController类调用Alert方法建议使用ViewController+SPUIAlertViewController类别更方便，要遵循MVC模式下，尽量不让Alert被引入到非UI层（例如：网络层在底层拦截弹出警告框），这也是苹果开发文档的要求，所以苹果方面废弃了UIAlertView直接show的方式。
+ 2.旨在实现快捷的方法，一行代码代替了以往的创建初始化显示等过程，实现代码复用，利于可读性可维护性
+ 3.由于该类可以写在任何类弹出Alert，如果写在网络层等非UI层，要明确注释使用原因方便以后维护，否则后期维护艰难。
  4.方法顺序是使用频率顺序，不常用的方法作为其他常用方法的基础方法
  5.缺点只扩展了一个和两个按钮的方法，两个以上按钮的没做处理，因为多个按钮的无法控制，而且使用频率不高，可以自行创建
  */

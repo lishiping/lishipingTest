@@ -63,22 +63,21 @@
                     completionBlock:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject, NSError * _Nullable error))completionBlock
 {
     SP_ASSERT_CLASS(path, NSString);
-    SP_ASSERT_CLASS(host, NSString);
     
     NSString *urlStr = [self urlStringFromPath:path host:host];
     
-    if (urlStr.length==0) {
-        completionBlock(nil,nil,[NSError errorWithDomain:@"url is nil" code:-2 userInfo:nil]);
+    //如果URL地址不正确则返回错误信息
+    if (![NSURL URLWithString:urlStr])
+    {
+        completionBlock(nil,nil,[NSError errorWithDomain:@"url is error" code:-2 userInfo:nil]);
     }
     
     
     NSDictionary *param = [self parametersAddOther:parameters];
     
     return [self.afHTTPSessionManager GET:urlStr parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //        NSLog(@"错误 = %@",[responseObject description]);
         completionBlock(task,responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //        NSLog(@"错误 = %@",error);
         completionBlock(task,nil,error);
     }];
 }
@@ -94,21 +93,20 @@
                      completionBlock:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject, NSError * _Nullable error))completionBlock
 {
     SP_ASSERT_CLASS(path, NSString);
-    SP_ASSERT_CLASS(host, NSString);
     
     NSString *urlStr = [self urlStringFromPath:path host:host];
     
-    if (urlStr.length==0) {
-        completionBlock(nil,nil,[NSError errorWithDomain:@"url is nil" code:-2 userInfo:nil]);
+    //如果URL地址不正确则返回错误信息
+    if (![NSURL URLWithString:urlStr])
+    {
+        completionBlock(nil,nil,[NSError errorWithDomain:@"url is error" code:-2 userInfo:nil]);
     }
     
     NSDictionary *param = [self parametersAddOther:parameters];
     
     return  [self.afHTTPSessionManager POST:urlStr parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //        NSLog(@"响应 = %@",responseObject);
         completionBlock(task,responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //        NSLog(@"错误 = %@",error);
         
         //如果想要在这里做全局的错误拦截弹出页面就在这里做好了，例如
         NSString *errorurlString =[error.userInfo objectForKey:@"errorurl"];
@@ -143,7 +141,7 @@
  */
 -(NSDictionary*)parametersAddOther:(NSDictionary*)parameters
 {
-    if (parameters && [parameters isKindOfClass:[NSDictionary class]])
+    if ([parameters isKindOfClass:[NSDictionary class]] && parameters.count>0)
     {
         NSMutableArray *ret = [parameters mutableCopy];
         

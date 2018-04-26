@@ -13,6 +13,8 @@
 #import "SPNetworkManager.h"
 #import <SPBaseTabBarController.h>
 #import <SPBaseVC.h>
+#import <SDWebImageManager.h>
+#import <SPMacro/SPMacro.h>
 
 @interface AppDelegate ()
 
@@ -26,8 +28,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //检测当前是否是测试包
-    _isTest =[[[NSBundle mainBundle] infoDictionary] objectForKey:@"TEST"];
     //配置服务器地址，为了测试服切换和正式服设定
     [self loadDebugTool];
     
@@ -45,13 +45,14 @@
 //加载调试工具
 -(void)loadDebugTool
 {
+    //检测当前是否是测试包
     //当debug和打测试包的时候为了测试人员切换服务器调试，调试工具要显示，线上包的时候该调试工具不显示
-    if (_isTest||DEBUG)
+    if (TEST||DEBUG)
     {
         NSDictionary* serverDic = @{
                                     SP_TITLE_KEY:@"百度服务器地址",
                                     SP_ARRAY_KEY: @[
-                                            @"https://api.baidu.com",
+                                            @"https://172.16.142.122:8686",
                                             @"http://api.baidu.com",
                                             @"http://api.ceshi.baidu.com"
                                             ]
@@ -127,6 +128,31 @@
 
 -(UITabBarController*)addTabBarController
 {
+//    [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:@"https://h5.sinaimg.cn/upload/1078/660/2018/03/30/1111111111.png"] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+//    }];
+//
+//    UIImage *ima = [[SDImageCache sharedImageCache] imageFromCacheForKey:@"https://h5.sinaimg.cn/upload/1078/660/2018/03/30/1111111111.png"];
+    
+    
+    NSArray *normalImages = [NSArray arrayWithObjects:
+                             @"home_normal",
+                             @"search_normal",
+                             @"zixun_hover_nor",
+                             @"interact_normal",
+                             @"user_normal",
+                             //                                 @"icon_tabbar_qa_d",
+                             //                               @"icon_tabbar_me_d",
+                             nil];
+    NSArray *selectedImages = [NSArray arrayWithObjects:
+                               @"home_hover",
+                               @"search_hover",
+                               @"zixun_hover_nor",
+                               @"interact_hover",
+                               @"user_hover",
+                               //                                   @"icon_tabbar_qa_h",
+                               //                                   @"icon_tabbar_me_h",
+                               nil];
+    
     SPBaseTabBarController *tab = [[SPBaseTabBarController alloc] init_didSelectViewControllerBlock:^(UITabBarController *tabBarViewcontroller, UIViewController *viewcontroller) {
         NSLog(@"选中后处理%lu",(unsigned long)tabBarViewcontroller.selectedIndex);
         viewcontroller.tabBarItem.badgeValue = nil;
@@ -137,8 +163,8 @@
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
-          tabBarItem_image:nil
-  tabBarItem_selectedImage:nil
+          tabBarItem_image:SP_IMAGE(normalImages[0])
+  tabBarItem_selectedImage:SP_IMAGE(selectedImages[0])
      tabBarItem_badgeValue:@"20"];
     
     [tab addItemController:[SPBaseVC new]
@@ -146,8 +172,8 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
-          tabBarItem_image:nil
-  tabBarItem_selectedImage:nil
+          tabBarItem_image:SP_IMAGE(normalImages[1])
+  tabBarItem_selectedImage:SP_IMAGE(selectedImages[1])
      tabBarItem_badgeValue:nil];
     
     [tab addItemController:[SPBaseVC new]
@@ -155,8 +181,8 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
-          tabBarItem_image:nil
-  tabBarItem_selectedImage:nil
+          tabBarItem_image:SP_IMAGE(normalImages[2])
+  tabBarItem_selectedImage:SP_IMAGE(selectedImages[2])
      tabBarItem_badgeValue:nil];
     
     [tab addItemController:[SPBaseVC new]
@@ -164,8 +190,8 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
-          tabBarItem_image:nil
-  tabBarItem_selectedImage:nil
+          tabBarItem_image:SP_IMAGE(normalImages[3])
+  tabBarItem_selectedImage:SP_IMAGE(selectedImages[3])
      tabBarItem_badgeValue:nil];
     
     return tab;

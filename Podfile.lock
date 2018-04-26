@@ -42,7 +42,7 @@ PODS:
   - ObjectiveSugar (1.1.0)
   - RDVTabBarController (1.1.9)
   - Reachability (3.2)
-  - SafeData (0.1.2)
+  - SafeData (1.0.0)
   - SCNavigationController (1.1.3):
     - SCStackViewController (~> 3.3.3)
   - SCScrollView (1.1.8)
@@ -51,14 +51,17 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - SPBaseClass (0.0.3)
-  - SPCategory (0.4.0):
+  - SPBaseClass (0.1.4):
+    - SafeData
+    - SPCategory
+    - SPFastPush
+  - SPCategory (0.4.1):
     - MBProgressHUD (= 1.0.0)
     - SafeData
     - SPMacro
-  - SPDebugBar (1.0.1)
+  - SPDebugBar (1.0.2)
   - SPFastPush (0.8.0)
-  - SPMacro (0.2.2)
+  - SPMacro (0.3.1)
   - SPWebView (0.0.14):
     - SPWebView/Core (= 0.0.14)
   - SPWebView/Core (0.0.14):
@@ -112,19 +115,19 @@ SPEC CHECKSUMS:
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SafeData: d654eee95046a2c25ab67dec883977bb6699a83a
+  SafeData: 10b127503021438cc10ae8b7ef3b24438c3a0a83
   SCNavigationController: c107959a6967bd4b80b087d660a7e013dc2d44ea
   SCScrollView: 247186f377f0b3b8eb4c0a96a2c742b322414f9f
   SCStackViewController: 4c39a60338cd18f8d2d6c95683a48ece35e2ef9b
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SPBaseClass: c91058f6494eebec78fb2956c7e66d536d21e8f0
-  SPCategory: 3901b77bfe20f38a971648682b3b74443b56ecaa
-  SPDebugBar: f19ead2395b7d0679b18453ef8da9da993ea2a3f
+  SPBaseClass: 8db64d664be3bab77bd71f1694a6d9497d110ed2
+  SPCategory: fab67c388d3fb632cc97b11532f32c0f3492e56c
+  SPDebugBar: 7a8af5988f7560d7c4b4140f11143dbf568aecbd
   SPFastPush: 732746c2a1b333acfda6500c2d1293f0abd14207
-  SPMacro: 86e8a72b5b991465c68f2e153d5563d2c8335153
+  SPMacro: 6ad947b6dd58cdf33a2f9238d081df6de6178efe
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
 PODFILE CHECKSUM: c83c4b1c4f8632828fed25eba793857a0ba96113
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.1.1
