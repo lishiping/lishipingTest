@@ -10,9 +10,15 @@
 #define lishipingTest_Prefix_pch
 
 #define TEST [[[NSBundle mainBundle].infoDictionary objectForKey:@"TEST"] isEqualToString:@"TEST"]
-#import <SPMacro.h>
-#import <SPFastPush.h>
-#import "SPHandleOpenURLManager.h"
+
+
+
+#import <SPMacro/SPMacro.h>
+#import <SPFastPush/SPFastPush.h>
+#import <SafeData/SPSafeData.h>
+#import <SPBaseClass/SPBaseClass.h>
+
+#import "SPURLRouter.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

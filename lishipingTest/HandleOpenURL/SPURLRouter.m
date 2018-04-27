@@ -1,27 +1,26 @@
 //
-//  SPHandleOpenURLManager.m
+//  SPURLRouter.m
 //  lishipingTest
 //
 //  Created by shiping li on 2018/1/18.
 //  Copyright © 2018年 shiping1. All rights reserved.
 //
 
-#import "SPHandleOpenURLManager.h"
-#import <SPFastPush.h>
+#import "SPURLRouter.h"
 #import <SPCategory/NSString+SPEnCode.h>
 #import <SPWebViewController.h>
 
-@interface SPHandleOpenURLManager()
+@interface SPURLRouter()
 
 @property(nonatomic,copy)NSString *plistName;
 
 @end
 
-@implementation SPHandleOpenURLManager
+@implementation SPURLRouter
 
 + (instancetype)manager
 {
-    static SPHandleOpenURLManager *gs_manager = nil;
+    static SPURLRouter *gs_manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         gs_manager = [[[self class] alloc] init];
@@ -68,7 +67,7 @@
         if (url.scheme.length>0 && [self checkSchemeIsWhiteList:url.scheme])
         {
             NSMutableDictionary *mDic = [self getParamFromURL:url.query];
-            NSString *classStr = [self getViewControllerClassFromBundle:[SPHandleOpenURLManager manager].plistName urlKey:url.host];
+            NSString *classStr = [self getViewControllerClassFromBundle:[SPURLRouter manager].plistName urlKey:url.host];
             
             Class cls =NSClassFromString(classStr);
             NSAssert((cls && [cls isSubclassOfClass:[UIViewController class]]), @"类列表取出的类不是viewController类");

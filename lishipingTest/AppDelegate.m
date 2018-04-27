@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <SPDebugBar.h>
-#import "SPHandleOpenURLManager.h"
+#import "SPURLRouter.h"
 #import "SPNetworkManager.h"
 #import <SPBaseTabBarController.h>
 #import <SPBaseVC.h>
@@ -35,7 +35,7 @@
     
     self.window.rootViewController =[self addTabBarController];
     
-    [[SPHandleOpenURLManager manager] setViewControllerClassPlist:@"open_url"];
+    [[SPURLRouter manager] setViewControllerClassPlist:@"open_url"];
     
     [self.window makeKeyAndVisible];
     
@@ -314,22 +314,22 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
 //说明：当通过url执行
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url NS_DEPRECATED_IOS(2_0, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED;
 {
-    return [SPHandleOpenURLManager application:application handleOpenURL:url];
+    return [SPURLRouter application:application handleOpenURL:url];
 }
 //当用户通过其它应用启动本应用时，会回调这个方法，url参数是其它应用调用openURL:方法时传过来的。
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation NS_DEPRECATED_IOS(4_2, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED;
 {
-    return [SPHandleOpenURLManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return [SPURLRouter application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options NS_AVAILABLE_IOS(9_0)
 {
-    return  [SPHandleOpenURLManager application:app openURL:url options:options];
+    return  [SPURLRouter application:app openURL:url options:options];
 }
 
 + (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
 {
-    return [SPHandleOpenURLManager application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
+    return [SPURLRouter application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
 
 
