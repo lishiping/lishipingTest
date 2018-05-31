@@ -114,11 +114,19 @@
                 }
             }
         }
-        else if(url)
+//        else if(url.scheme.length>0)
+//        {
+//            SP_APP_OPEN_URL(url)
+//        }
+        else if([url.absoluteString hasPrefix:@"http"] || [url.absoluteString hasPrefix:@"https"])
         {
             SPWebViewController *web = [[SPWebViewController alloc] initWithURL:url];
             
             SP_PUSH_VC(web)
+        }
+        else
+        {
+            SP_APP_OPEN_URL(url)
         }
         
     });
@@ -158,12 +166,19 @@
 //读取info.plist的白名单
 +(NSArray*)getSchemeFromBundle
 {
-    NSArray *URLTypesArr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleURLTypes"];
+    NSArray *bundleURLTypesArr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleURLTypes"];
     
     NSMutableArray *schemeMArr = [NSMutableArray arrayWithCapacity:0];
-    for (NSDictionary *type in URLTypesArr) {
+    for (NSDictionary *type in bundleURLTypesArr)
+    {
         NSArray *WhitelistArr = [type objectForKey:@"CFBundleURLSchemes"];
-        [schemeMArr addObjectsFromArray:WhitelistArr];
+        NSString *bundleURLName = [type objectForKey:@"CFBundleURLName"];
+
+        //这一步是为了区分当前APP可以接受内部使用URL做页面跳转的scheme白名单,每个工程不一样，所以这里需要手动修改
+        if ([bundleURLName isEqualToString:@"com.lishipingTest"]&&WhitelistArr.count>0)
+        {
+            [schemeMArr addObjectsFromArray:WhitelistArr];
+        }
     }
     return schemeMArr;
 }

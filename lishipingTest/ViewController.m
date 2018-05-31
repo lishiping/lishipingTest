@@ -24,7 +24,16 @@
 #import <UIButton+WebCache.h>
 #import <UIImage+SPGIF.h>
 #import <UIImage+GIF.h>
+#import <SafeData/NSArray+SPSafe.h>
 
+typedef struct BTree
+{
+    int identificer;
+  struct  BTree *first;
+  struct  BTree *next;
+  struct  BTree *parent;
+
+} BTree;
 
 @interface ViewController ()
 
@@ -38,6 +47,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"首页";
     self.view.backgroundColor = [UIColor greenColor];
+    
+    SP_LOG(@"比例%f",SP_SCREEN_SCALE)
+
+
+    [self blockTest];
     
     UIButton *testbutton = [UIButton buttonWithType:UIButtonTypeCustom];
     testbutton.frame = CGRectMake(50, 50, SP_ADJUST_WIDTH(300), SP_ADJUST_HEIGHT(50));
@@ -112,14 +126,14 @@
     //    SP_PRESENT_VC_BY_CLASSNAME(@"RegisterVC", nil)
     
     //简单推出方式
-    //    SP_PUSH_VC_BY_CLASSNAME(@"RegisterVC", @{@"title":@"注册页面"})
+//        SP_PUSH_VC_BY_CLASSNAME(@"RegisterVC", @{@"title":@"注册页面"})
     
-    //推出对象
-//    RegisterVC *registerVC = [[RegisterVC alloc] init];
-//    SP_PUSH_VC(registerVC)
+//    推出对象
+    RegisterVC *registerVC = [[RegisterVC alloc] init];
+    SP_PUSH_VC(registerVC)
     
     //通过safari打开站外的地址
-    SP_APP_OPEN_URL_STRING(@"https://www.baidu.com/")
+//    SP_APP_OPEN_URL_STRING(@"https://www.baidu.com/")
     
 }
 
@@ -127,7 +141,10 @@
 {
     //在本APP内部打开一个url
     //宏实现更方便
-    SP_INAPP_OPEN_URL_STRING(@"https://www.baidu.com/")
+//    SP_INAPP_OPEN_URL_STRING(@"https://www.baidu.com/")
+    
+    SP_INAPP_OPEN_URL_STRING(@"sinaweibo://gotohome")
+
 }
 
 
@@ -139,6 +156,42 @@
         
     }];
 }
+
+-(void)blockTest
+{
+//    void (^blk)(void) = ^{printf("Block\n");};
+    
+    NSString *a = @"testa";
+    
+    __block int x = 2;
+//    NSLog(@"block前,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+    NSLog(@"block前,x在堆中的地址%p,x在栈中的地址%p",x,&x);
+
+    void(^testBlock)(void) = ^(void){
+//        NSLog(@"block内,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+        NSLog(@"block内,x在堆中的地址%p,x在栈中的地址%p",x,&x);
+
+        NSLog(@"block内前,x==%d",x);
+
+        x= 5;
+        
+        NSLog(@"block内后,x==%d",x);
+        NSLog(@"block内后,x在堆中的地址%p,x在栈中的地址%p",x,&x);
+
+    };
+
+
+    testBlock();
+
+    NSLog(@"block后前,x==%d",x);
+    NSLog(@"block后前,x在堆中的地址%p,x在栈中的地址%p",x,&x);
+
+        x = 3;
+//        NSLog(@"block后,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+        NSLog(@"block后,x在堆中的地址%p,x在栈中的地址%p",x,&x);
+        NSLog(@"block后,x==%d",x);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
