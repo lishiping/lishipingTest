@@ -15,6 +15,7 @@
 #import <SPBaseVC.h>
 #import <SDWebImageManager.h>
 #import <SPMacro/SPMacro.h>
+#import "SecondHomeVC.h"
 
 @interface AppDelegate ()
 
@@ -167,8 +168,8 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
   tabBarItem_selectedImage:SP_IMAGE(selectedImages[0])
      tabBarItem_badgeValue:@"20"];
     
-    [tab addItemController:[SPBaseVC new]
-          tabBarItem_title:@"通讯录"
+    [tab addItemController:[SecondHomeVC new]
+          tabBarItem_title:@"测试demo"
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]

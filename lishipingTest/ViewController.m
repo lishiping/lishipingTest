@@ -51,7 +51,11 @@ typedef struct BTree
     SP_LOG(@"比例%f",SP_SCREEN_SCALE)
 
 
-    [self blockTest];
+//    [self blockTest];
+    
+//    [self printClass];
+    
+//    [self gcdTest];
     
     UIButton *testbutton = [UIButton buttonWithType:UIButtonTypeCustom];
     testbutton.frame = CGRectMake(50, 50, SP_ADJUST_WIDTH(300), SP_ADJUST_HEIGHT(50));
@@ -192,11 +196,41 @@ typedef struct BTree
         NSLog(@"block后,x==%d",x);
 }
 
+//测试打印类
+-(void)printClass
+{
+    
+    SP_LOG(@"[obj class]==%@",[self class]);
+    
+    SP_LOG(@"objc_getclass==%s",object_getClassName(self));
+    
+    SP_LOG(@"self.class==%@",self.class);
+
+}
+
+-(void)gcdTest
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+       
+        SP_LOG(@"A");
+
+        dispatch_sync(dispatch_get_main_queue(), ^{
+           
+            SP_LOG(@"B");
+
+        });
+        
+        SP_LOG(@"C");
+
+    });
+    
+    SP_LOG(@"D");
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

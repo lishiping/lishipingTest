@@ -13,6 +13,14 @@
 		1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D7C1FF39C6B00CA80FC /* SPUser.m */; };
 		1E0E430E2019848100493C05 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E430D2019848100493C05 /* LoginVC.m */; };
 		1E0E4310201984FF00493C05 /* open_url.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E0E430F201984FE00493C05 /* open_url.plist */; };
+		1E27B80521A64F0400E44C35 /* NSArray+MaxValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E27B80421A64F0400E44C35 /* NSArray+MaxValue.m */; };
+		1E27B80C21AE7F0200E44C35 /* SecondHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E27B80B21AE7F0200E44C35 /* SecondHomeVC.m */; };
+		1E38696F21B44C010066F030 /* AMapiPhoneAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E38696E21B44C010066F030 /* AMapiPhoneAppDelegate.mm */; };
+		1E38698321B4514E0066F030 /* WINVAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38697521B4514E0066F030 /* WINVAppManager.m */; };
+		1E38698421B4514E0066F030 /* WINVAppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38697621B4514E0066F030 /* WINVAppService.m */; };
+		1E38698521B4514E0066F030 /* WINOldTaskVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38697A21B4514E0066F030 /* WINOldTaskVAppDelegate.m */; };
+		1E38698621B4514E0066F030 /* WINOtherOldTaskVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38697D21B4514E0066F030 /* WINOtherOldTaskVAppDelegate.m */; };
+		1E38698821B4514E0066F030 /* WINVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38698221B4514E0066F030 /* WINVAppDelegate.m */; };
 		1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9482652091D87B00B5F82C /* OldLoginVC.m */; };
 		1E9482692092025600B5F82C /* ViewController+All.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9482682092025600B5F82C /* ViewController+All.m */; };
 		1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50A20204D6600007899 /* RegisterVC.m */; };
@@ -98,6 +106,24 @@
 		1E0E430C2019848100493C05 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		1E0E430D2019848100493C05 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		1E0E430F201984FE00493C05 /* open_url.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = open_url.plist; sourceTree = "<group>"; };
+		1E27B80321A64F0400E44C35 /* NSArray+MaxValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MaxValue.h"; sourceTree = "<group>"; };
+		1E27B80421A64F0400E44C35 /* NSArray+MaxValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MaxValue.m"; sourceTree = "<group>"; };
+		1E27B80A21AE7F0200E44C35 /* SecondHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondHomeVC.h; sourceTree = "<group>"; };
+		1E27B80B21AE7F0200E44C35 /* SecondHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondHomeVC.m; sourceTree = "<group>"; };
+		1E38696D21B44C010066F030 /* AMapiPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMapiPhoneAppDelegate.h; sourceTree = "<group>"; };
+		1E38696E21B44C010066F030 /* AMapiPhoneAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AMapiPhoneAppDelegate.mm; sourceTree = "<group>"; };
+		1E38697421B4514E0066F030 /* WINVAppLifecycleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINVAppLifecycleProtocol.h; sourceTree = "<group>"; };
+		1E38697521B4514E0066F030 /* WINVAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WINVAppManager.m; sourceTree = "<group>"; };
+		1E38697621B4514E0066F030 /* WINVAppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WINVAppService.m; sourceTree = "<group>"; };
+		1E38697721B4514E0066F030 /* WINVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINVAppDelegate.h; sourceTree = "<group>"; };
+		1E38697921B4514E0066F030 /* WINOtherOldTaskVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINOtherOldTaskVAppDelegate.h; sourceTree = "<group>"; };
+		1E38697A21B4514E0066F030 /* WINOldTaskVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WINOldTaskVAppDelegate.m; sourceTree = "<group>"; };
+		1E38697C21B4514E0066F030 /* WINOldTaskDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINOldTaskDefine.h; sourceTree = "<group>"; };
+		1E38697D21B4514E0066F030 /* WINOtherOldTaskVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WINOtherOldTaskVAppDelegate.m; sourceTree = "<group>"; };
+		1E38697E21B4514E0066F030 /* WINOldTaskVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINOldTaskVAppDelegate.h; sourceTree = "<group>"; };
+		1E38698021B4514E0066F030 /* WINVAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINVAppManager.h; sourceTree = "<group>"; };
+		1E38698121B4514E0066F030 /* WINVAppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WINVAppService.h; sourceTree = "<group>"; };
+		1E38698221B4514E0066F030 /* WINVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WINVAppDelegate.m; sourceTree = "<group>"; };
 		1E9482642091D87B00B5F82C /* OldLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldLoginVC.h; sourceTree = "<group>"; };
 		1E9482652091D87B00B5F82C /* OldLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldLoginVC.m; sourceTree = "<group>"; };
 		1E9482672092025600B5F82C /* ViewController+All.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+All.h"; sourceTree = "<group>"; };
@@ -225,6 +251,50 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1E27B80621AE7DF400E44C35 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				1E27B80A21AE7F0200E44C35 /* SecondHomeVC.h */,
+				1E27B80B21AE7F0200E44C35 /* SecondHomeVC.m */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		1E38697221B4514E0066F030 /* VirtualApp */ = {
+			isa = PBXGroup;
+			children = (
+				1E38697421B4514E0066F030 /* WINVAppLifecycleProtocol.h */,
+				1E38697521B4514E0066F030 /* WINVAppManager.m */,
+				1E38697621B4514E0066F030 /* WINVAppService.m */,
+				1E38697721B4514E0066F030 /* WINVAppDelegate.h */,
+				1E38697821B4514E0066F030 /* OldTaskVApp */,
+				1E38698021B4514E0066F030 /* WINVAppManager.h */,
+				1E38698121B4514E0066F030 /* WINVAppService.h */,
+				1E38698221B4514E0066F030 /* WINVAppDelegate.m */,
+			);
+			path = VirtualApp;
+			sourceTree = "<group>";
+		};
+		1E38697821B4514E0066F030 /* OldTaskVApp */ = {
+			isa = PBXGroup;
+			children = (
+				1E38697921B4514E0066F030 /* WINOtherOldTaskVAppDelegate.h */,
+				1E38697A21B4514E0066F030 /* WINOldTaskVAppDelegate.m */,
+				1E38697B21B4514E0066F030 /* common */,
+				1E38697D21B4514E0066F030 /* WINOtherOldTaskVAppDelegate.m */,
+				1E38697E21B4514E0066F030 /* WINOldTaskVAppDelegate.h */,
+			);
+			path = OldTaskVApp;
+			sourceTree = "<group>";
+		};
+		1E38697B21B4514E0066F030 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				1E38697C21B4514E0066F030 /* WINOldTaskDefine.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		2CD8AD4940738AF683D5C013 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +358,7 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E27B80621AE7DF400E44C35 /* Second */,
 				1E15551F202D727900776E90 /* Base */,
 				1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */,
 				1E0D1D7A1FF39C5200CA80FC /* User */,
@@ -296,8 +367,13 @@
 				96F4383B1FD8084000F10335 /* SPNetWork */,
 				96ACE6FE1FAB14EC005B7CB0 /* AppDelegate.h */,
 				96ACE6FF1FAB14EC005B7CB0 /* AppDelegate.m */,
+				1E38696D21B44C010066F030 /* AMapiPhoneAppDelegate.h */,
+				1E38696E21B44C010066F030 /* AMapiPhoneAppDelegate.mm */,
+				1E38697221B4514E0066F030 /* VirtualApp */,
 				96ACE7011FAB14EC005B7CB0 /* ViewController.h */,
 				96ACE7021FAB14EC005B7CB0 /* ViewController.m */,
+				1E27B80321A64F0400E44C35 /* NSArray+MaxValue.h */,
+				1E27B80421A64F0400E44C35 /* NSArray+MaxValue.m */,
 				96ACE7041FAB14EC005B7CB0 /* Main.storyboard */,
 				96ACE7071FAB14EC005B7CB0 /* Assets.xcassets */,
 				96ACE7091FAB14EC005B7CB0 /* LaunchScreen.storyboard */,
@@ -579,16 +655,24 @@
 			files = (
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */,
+				1E38698621B4514E0066F030 /* WINOtherOldTaskVAppDelegate.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
 				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
+				1E38698821B4514E0066F030 /* WINVAppDelegate.m in Sources */,
+				1E38698421B4514E0066F030 /* WINVAppService.m in Sources */,
 				1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */,
+				1E27B80521A64F0400E44C35 /* NSArray+MaxValue.m in Sources */,
 				1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */,
 				1E9482692092025600B5F82C /* ViewController+All.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */,
+				1E38698321B4514E0066F030 /* WINVAppManager.m in Sources */,
+				1E38698521B4514E0066F030 /* WINOldTaskVAppDelegate.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
 				1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */,
+				1E38696F21B44C010066F030 /* AMapiPhoneAppDelegate.mm in Sources */,
+				1E27B80C21AE7F0200E44C35 /* SecondHomeVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
