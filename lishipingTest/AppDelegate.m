@@ -195,6 +195,7 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
   tabBarItem_selectedImage:SP_IMAGE(selectedImages[3])
      tabBarItem_badgeValue:nil];
     
+    tab.selectedIndex = 1;
     return tab;
 }
 

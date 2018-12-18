@@ -26,7 +26,7 @@
     self.tableView.delegate = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:UITableViewCell.reuseIdentifier];
     
-    self.tableViewDataArr = [[NSArray alloc] initWithObjects:@"GCD测试", nil];
+    self.tableViewDataArr = [[NSArray alloc] initWithObjects:@"GCD测试",@"时间转换", nil];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -64,7 +64,9 @@
         case 0:
             [self testGCD];
             break;
-            
+        case 1:
+            [self testTimeTransfer];
+            break;
         default:
             break;
     }
@@ -226,4 +228,55 @@
         });
     }
 }
+
+-(void)testTimeTransfer
+{
+    [self nsstringConversionNSDate:@"06:00"];
+}
+
+-(NSDate *)nsstringConversionNSDate:(NSString *)dateStr
+{
+    
+//    [NSDate date]获取的是GMT时间，要想获得某个时区的时间，以下代码可以解决这个问题
+    
+    NSDate *date = [NSDate date];
+
+//    NSTimeZone *zone = [NSTimeZone timeZoneForSecondsFromGMT:28800];
+    NSTimeZone *zone = [NSTimeZone defaultTimeZone];
+
+    NSInteger interval = [zone secondsFromGMTForDate: date];
+
+    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+
+    NSLog(@"%@", localeDate);
+    
+    NSDate* currentDate = [[NSDate date] dateByAddingTimeInterval:[[NSTimeZone defaultTimeZone] secondsFromGMTForDate:[NSDate date]]];
+
+    
+    static const unsigned componentFlags = (NSCalendarUnitEra|
+                                            NSCalendarUnitYear|
+                                            NSCalendarUnitMonth |
+                                            NSCalendarUnitDay |
+                                            NSCalendarUnitWeekOfMonth |
+                                            NSCalendarUnitWeekOfYear |
+                                            NSCalendarUnitHour |
+                                            NSCalendarUnitMinute |
+                                            NSCalendarUnitSecond |
+                                            NSCalendarUnitWeekday |
+                                            NSCalendarUnitTimeZone|
+                                            NSCalendarUnitWeekdayOrdinal);
+    
+    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:componentFlags fromDate:currentDate];
+    components.hour = 2;
+    components.minute = 10;
+    components.second = 40;
+    components.timeZone = [NSTimeZone systemTimeZone];
+    
+    NSDate *now=  [[NSCalendar autoupdatingCurrentCalendar] dateFromComponents:components];
+    
+    NSDate *nowtt=  [[NSCalendar autoupdatingCurrentCalendar] dateBySettingHour:14 minute:10 second:40 ofDate:currentDate options:NSCalendarWrapComponents];
+
+    return now;
+}
+
 @end

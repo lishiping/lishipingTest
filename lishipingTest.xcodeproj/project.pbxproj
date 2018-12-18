@@ -879,7 +879,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/lishipingTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -896,7 +896,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/lishipingTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
