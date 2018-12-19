@@ -1,14 +1,14 @@
 //
-//  WINVAppService.m
+//  SPAppDelegate.m
 //  Wing
 //
-//  Created by jixuhui on 2017/12/28.
+//  Created by lishiping on 2017/12/28.
 //  Copyright © 2017年 AMAP. All rights reserved.
 //
 
-#import "WINVAppService.h"
+#import "SPAppDelegate.h"
 
-@implementation WINVAppService
+@implementation SPAppDelegate
 
 + (instancetype)sharedInstance
 {
