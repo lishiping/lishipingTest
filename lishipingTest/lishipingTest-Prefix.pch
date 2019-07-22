@@ -17,6 +17,7 @@
 #import <SPFastPush/SPFastPush.h>
 #import <SafeData/SPSafeData.h>
 #import <SPBaseClass/SPBaseClass.h>
+#import <SPCategory.h>
 
 #import "SPURLRouter.h"
 

@@ -1,9 +1,10 @@
-CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/SPMacro
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/SPMacro
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SPMacro" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/ALISJSBridgeKit" "${PODS_ROOT}/Headers/Public/FLAnimatedImage" "${PODS_ROOT}/Headers/Public/FLEX" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/IGDigest" "${PODS_ROOT}/Headers/Public/JSBridge" "${PODS_ROOT}/Headers/Public/JSONModel" "${PODS_ROOT}/Headers/Public/JavaScriptCoreOpalAdditions" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJExtension" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/MMProgressHUD" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/NJKWebViewProgress" "${PODS_ROOT}/Headers/Public/ObjectiveSugar" "${PODS_ROOT}/Headers/Public/RDVTabBarController" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/SCNavigationController" "${PODS_ROOT}/Headers/Public/SCScrollView" "${PODS_ROOT}/Headers/Public/SCStackViewController" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/SPBaseClass" "${PODS_ROOT}/Headers/Public/SPCategory" "${PODS_ROOT}/Headers/Public/SPDebugBar" "${PODS_ROOT}/Headers/Public/SPFastPush" "${PODS_ROOT}/Headers/Public/SPMacro" "${PODS_ROOT}/Headers/Public/SPWebView" "${PODS_ROOT}/Headers/Public/SafeData" "${PODS_ROOT}/Headers/Public/WebViewJavascriptBridge" $(SDKROOT)/usr/include
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SPMacro" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SPMacro" $(SDKROOT)/usr/include
 OTHER_LDFLAGS = -framework "Foundation" -framework "UIKit"
-PODS_BUILD_DIR = $BUILD_DIR
-PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/SPMacro
 PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
 SKIP_INSTALL = YES

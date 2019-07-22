@@ -114,10 +114,6 @@
                 }
             }
         }
-//        else if(url.scheme.length>0)
-//        {
-//            SP_APP_OPEN_URL(url)
-//        }
         else if([url.absoluteString hasPrefix:@"http"] || [url.absoluteString hasPrefix:@"https"])
         {
             SPWebViewController *web = [[SPWebViewController alloc] initWithURL:url];

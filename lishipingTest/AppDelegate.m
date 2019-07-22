@@ -154,24 +154,6 @@
     return [[SPAppManager sharedInstance] application:app openURL:url options:options];
 }
 
-///*当前APP被其他APP或者web,或者内部以URL形式打开的处理等打开唤醒的时候，通过该类处理消息*/
-////说明：当通过url执行
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url NS_DEPRECATED_IOS(2_0, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED;
-//{
-//    return [SPURLRouter application:application handleOpenURL:url];
-//}
-////当用户通过其它应用启动本应用时，会回调这个方法，url参数是其它应用调用openURL:方法时传过来的。
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation NS_DEPRECATED_IOS(4_2, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED;
-//{
-//    return [SPURLRouter application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-//}
-//
-//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options NS_AVAILABLE_IOS(9_0)
-//{
-//    return  [SPURLRouter application:app openURL:url options:options];
-//}
-
-
 #pragma mark - 3D touch
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {

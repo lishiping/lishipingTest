@@ -21,6 +21,9 @@
 		1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50A20204D6600007899 /* RegisterVC.m */; };
 		7A1B48A921CA373E002B88EE /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B48A821CA373E002B88EE /* DemoAppDelegate.m */; };
 		7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B48AB21CA3EF2002B88EE /* PreloadAppDelegate.m */; };
+		7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC64A21D4C5D200473A8E /* ThirdVC.m */; };
+		7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC64D21D4C95200473A8E /* YBCustomCameraVC.m */; };
+		7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC65021D4F01200473A8E /* SPSocketManager.m */; };
 		96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96165CC41FCD6333001D98F3 /* NotificationCenter.framework */; };
 		96165CC91FCD6333001D98F3 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96165CC81FCD6333001D98F3 /* TodayViewController.m */; };
 		96165CCC1FCD6333001D98F3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96165CCA1FCD6333001D98F3 /* MainInterface.storyboard */; };
@@ -123,6 +126,12 @@
 		7A1B48A821CA373E002B88EE /* DemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppDelegate.m; sourceTree = "<group>"; };
 		7A1B48AA21CA3EF2002B88EE /* PreloadAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreloadAppDelegate.h; sourceTree = "<group>"; };
 		7A1B48AB21CA3EF2002B88EE /* PreloadAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreloadAppDelegate.m; sourceTree = "<group>"; };
+		7A9EC64921D4C5D200473A8E /* ThirdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		7A9EC64A21D4C5D200473A8E /* ThirdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		7A9EC64C21D4C95200473A8E /* YBCustomCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCustomCameraVC.h; sourceTree = "<group>"; };
+		7A9EC64D21D4C95200473A8E /* YBCustomCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCustomCameraVC.m; sourceTree = "<group>"; };
+		7A9EC64F21D4F01200473A8E /* SPSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSocketManager.h; sourceTree = "<group>"; };
+		7A9EC65021D4F01200473A8E /* SPSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSocketManager.m; sourceTree = "<group>"; };
 		96165CC31FCD6333001D98F3 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		96165CC41FCD6333001D98F3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		96165CC71FCD6333001D98F3 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -279,6 +288,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A9EC64821D4C5A400473A8E /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				7A9EC64C21D4C95200473A8E /* YBCustomCameraVC.h */,
+				7A9EC64D21D4C95200473A8E /* YBCustomCameraVC.m */,
+				7A9EC64921D4C5D200473A8E /* ThirdVC.h */,
+				7A9EC64A21D4C5D200473A8E /* ThirdVC.m */,
+				7A9EC64F21D4F01200473A8E /* SPSocketManager.h */,
+				7A9EC65021D4F01200473A8E /* SPSocketManager.m */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
 		96165CC61FCD6333001D98F3 /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +345,7 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				7A9EC64821D4C5A400473A8E /* Third */,
 				1E27B80621AE7DF400E44C35 /* Second */,
 				1E15551F202D727900776E90 /* Base */,
 				1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */,
@@ -405,7 +428,6 @@
 				96ACE6F71FAB14EC005B7CB0 /* Sources */,
 				96ACE6F81FAB14EC005B7CB0 /* Frameworks */,
 				96ACE6F91FAB14EC005B7CB0 /* Resources */,
-				3AFF55C2F1F5B2C0100303C7 /* [CP] Embed Pods Frameworks */,
 				D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */,
 				96165CD41FCD6333001D98F3 /* Embed App Extensions */,
 				96CFE4ED1FD6A98100645143 /* Embed Frameworks */,
@@ -543,21 +565,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3AFF55C2F1F5B2C0100303C7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		770A9C0E59E9A262E0830316 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,7 +580,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */ = {
@@ -583,6 +590,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh",
+				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
 				"${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle",
@@ -590,6 +598,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GCDWebUploader.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Opal.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPCategory.bundle",
@@ -619,14 +628,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
+				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
 				1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
 				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
 				1E38698821B4514E0066F030 /* SPAppDelegate.m in Sources */,
 				1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */,
+				7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */,
 				1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */,
 				1E9482692092025600B5F82C /* ViewController+All.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
+				7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */,
 				7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */,
@@ -708,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LJ7AJCNLT;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinlang.lishipingTest.TodayExtension;
@@ -721,6 +734,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LJ7AJCNLT;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinlang.lishipingTest.TodayExtension;
@@ -840,6 +854,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LJ7AJCNLT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;
@@ -857,6 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LJ7AJCNLT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lishipingTest/lishipingTest-Prefix.pch";
 				INFOPLIST_FILE = lishipingTest/Info.plist;

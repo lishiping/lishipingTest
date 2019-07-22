@@ -25,7 +25,10 @@ target 'lishipingTest' do
     pod 'Reachability'
     pod 'JSONModel'
     pod 'FMDB'
-    
+    pod 'GCDWebServer'
+    pod 'GCDWebServer/WebUploader', '~> 3.0'
+    pod 'CocoaAsyncSocket'
+
     #第三方未使用过的，需要了解
     pod 'FLAnimatedImage'
     pod 'Mantle'

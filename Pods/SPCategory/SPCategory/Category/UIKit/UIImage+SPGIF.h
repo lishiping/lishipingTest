@@ -30,13 +30,21 @@
 + (UIImage *)sp_animatedGIFNamed:(NSString *)name;
 
 /**
- 从gif文件数据初始化UIImage
+ 初始化图片数据如果是gif转为动画图片，如果是静图转为静态图片,默认不缩放
 
- @param data gif图数据
+ @param data 图片数据
  @return 返回gif生成的iamge对象
  */
 + (UIImage *)sp_animatedGIFWithData:(NSData *)data;
 
+/**
+ 初始化图片数据如果是gif转为动画图片，如果是静图转为静态图片,可以设置缩放比例
+
+ @param data 图片数据
+ @param scale 缩放比例
+ @return 动画图片对象
+ */
++ (UIImage *)sp_animatedGIFWithData:(NSData *)data scale:(CGFloat)scale;
 
 /**
  gif图按照尺寸截取

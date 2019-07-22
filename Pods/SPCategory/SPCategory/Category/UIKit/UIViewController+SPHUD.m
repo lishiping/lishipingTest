@@ -262,15 +262,15 @@ void showProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,fl
     }
     hud.detailsLabel.text = text;
     
-//    if (font) {
-//        hud.detailsLabel.font = font;
-//    }
-//    if (textColor) {
-//        hud.detailsLabel.textColor = textColor;
-//    }
-//    if (bezelViewColor) {
-//        hud.bezelView.color = bezelViewColor;
-//    }
+    if (font) {
+        hud.detailsLabel.font = font;
+    }
+    if (textColor) {
+        hud.detailsLabel.textColor = textColor;
+    }
+    if (bezelViewColor) {
+        hud.bezelView.color = bezelViewColor;
+    }
     if (backgroundColor) {
         hud.backgroundColor = backgroundColor;
     }

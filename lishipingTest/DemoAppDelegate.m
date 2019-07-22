@@ -15,6 +15,7 @@
 #import <SPMacro/SPMacro.h>
 #import "SecondHomeVC.h"
 #import "SPAppManager.h"
+#import "Third/ThirdVC.h"
 
 @implementation DemoAppDelegate
 
@@ -38,12 +39,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
         
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [application delegate].window = window;
-    
-    window.rootViewController =[self addTabBarController];
-        
-    [window makeKeyAndVisible];
+//    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [application delegate].window = window;
+//    
+//    window.rootViewController =[self addTabBarController];
+//    
+//    
+//    [window makeKeyAndVisible];
     
     return YES;
 }
