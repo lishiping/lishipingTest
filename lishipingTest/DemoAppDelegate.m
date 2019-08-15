@@ -21,9 +21,13 @@
 
 + (void)load
 {
+    SP_LOG(@"DemoAppDeletage")
     [[SPAppManager sharedInstance] registerAppLifecycleWithVApp:[self class] launchPriority:SPLaunchPriorityLow];
 }
-
++ (void)initialize
+{
+    SP_LOG(@"initialize+DemoAppDeletage")
+}
 + (instancetype)sharedInstance
 {
     static id instance;
@@ -39,13 +43,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
         
-//    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [application delegate].window = window;
-//    
-//    window.rootViewController =[self addTabBarController];
-//    
-//    
-//    [window makeKeyAndVisible];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [application delegate].window = window;
+    
+    window.rootViewController =[self addTabBarController];
+    
+    [window makeKeyAndVisible];
     
     return YES;
 }

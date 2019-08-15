@@ -8,7 +8,11 @@
 
 #import "SecondHomeVC.h"
 #import <UITableViewCell+SPReuseIdentifier.h>
-
+#import "People.h"
+#import "People+eatB.h"
+#import "Animal.h"
+#import "Animal+eatA.h"
+static int C = 8;
 @interface SecondHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray *tableViewDataArr;
@@ -26,7 +30,7 @@
     self.tableView.delegate = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:UITableViewCell.reuseIdentifier];
     
-    self.tableViewDataArr = [[NSArray alloc] initWithObjects:@"GCD测试",@"时间转换", nil];
+    self.tableViewDataArr = [[NSArray alloc] initWithObjects:@"GCD测试",@"时间转换",@"类别多方法测试",@"多线程",@"block测试", nil];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -66,6 +70,12 @@
             break;
         case 1:
             [self testTimeTransfer];
+            break;
+        case 2:
+            [self testCategory];
+            break;
+        case 4:
+            [self blockFunc3];
             break;
         default:
             break;
@@ -216,17 +226,50 @@
 //    });
 //    SP_LOG(@"5")
 //
-//    //输出15243
-    
+//    //输出12死锁
 
+//        dispatch_async(serialQueue, ^{
+//            SP_LOG(@"2")
+//            dispatch_sync(serialQueue, ^{
+//                SP_LOG(@"3")
+//            });
+//            SP_LOG(@"4")
+//        });
+//        SP_LOG(@"5")
+    //
+    //    //输出12死锁
     
-    for (int i = 0; i<50; i++) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-           
+    
+//    for (int i = 0; i<100; i++) {
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            SP_LOG(@"%d",i)
+//
 //            SP_LOG(@"%@",[NSThread currentThread])
-            sleep(10000);
-        });
-    }
+//            sleep(10000);
+//        });
+//    }
+    
+    
+//        dispatch_async(serialQueue, ^{
+//            SP_LOG(@"1")
+//            sleep(1);
+//            SP_LOG(@"1thread=%@",[NSThread currentThread])
+//
+//        });
+//
+//    dispatch_async(serialQueue, ^{
+//        SP_LOG(@"2")
+//        sleep(1);
+//        SP_LOG(@"2thread=%@",[NSThread currentThread])
+//
+//
+//    });
+//    dispatch_sync(serialQueue, ^{
+//        SP_LOG(@"3")
+//        sleep(1);
+//        SP_LOG(@"3thread=%@",[NSThread currentThread])
+//
+//    });
 }
 
 -(void)testTimeTransfer
@@ -279,4 +322,76 @@
     return now;
 }
 
+-(void)testCategory{
+//    People *p = [[People alloc] init];
+//    [p eat];
+    
+//    [Animal test1];
+    
+    [[[Animal alloc] init] test];
+}
+
+-(void)testBLock{
+    int i =10;
+    SP_LOG(@"前%p",&i)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        SP_LOG(@"%d",i)
+        SP_LOG(@"中%p",&i)
+        SP_LOG(@"%@",[NSThread currentThread])
+//        i = 30;
+//        SP_LOG(@"%d",i)
+    });
+    i = 20;
+    SP_LOG(@"后%p",&i)
+
+//    int i = 10;
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        SP_LOG(@"%d",i)
+//        SP_LOG(@"%@",[NSThread currentThread])
+////        i = 30;
+//    });
+//    i = 20;
+}
+
+-(BOOL)isExsitString1:(NSString*)string1  string2:(NSString*)string2
+{
+    BOOL ret = NO;
+    
+    NSArray *string2A = [string2 componentsSeparatedByString:@""];
+    for (NSString *a in string2A) {
+        if ([string1 isContainsString:a]) {
+            ret = YES;
+        }
+    }
+    
+    return ret;
+}
+
+-(NSMutableArray*)test:(NSArray*)array{
+    NSMutableArray *ma = [[NSMutableArray alloc] initWithCapacity:array.count];
+    NSInteger x = [array[0] integerValue];
+    for (int i=0; i<array.count; i++) {
+        NSInteger y = [array[i] integerValue];
+        NSInteger z = y/x;
+        [ma addObject:[NSNumber numberWithInteger:z]];
+    }
+    return ma;
+}
+
+-(void)blockFunc3{
+    SP_LOG(@"前%p",&C)
+
+    void (^block)()=^{
+        NSLog(@"%d",C);
+        C = 20;
+        SP_LOG(@"中%p",&C)
+
+    };
+    C = 20;
+    SP_LOG(@"后%p",&C)
+
+    block();
+}
+
 @end
+

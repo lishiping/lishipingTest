@@ -7,12 +7,12 @@
 		<key>TodayExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>1</integer>
 		</dict>
 		<key>lishipingTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

@@ -79,8 +79,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-loadDebugTool"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,6 +145,38 @@
             endingLineNumber = "127"
             landmarkName = "+application:openURL:options:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43+[SPURLRouter application:openURL:options:]_block_invoke"
+                  moduleName = "lishipingTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/HandleOpenURL/SPURLRouter.m"
+                  timestampString = "587351552.6245151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "2207">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.83"
+                  moduleName = "lishipingTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shipingli/Desktop/workspace/lishipingTest/lishipingTest/HandleOpenURL/SPURLRouter.m"
+                  timestampString = "587351552.63541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

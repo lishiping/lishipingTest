@@ -10,6 +10,14 @@
 
 @implementation SPAppDelegate
 
++ (void)load
+{
+    SP_LOG(@"SPAppDeletage")
+}
++ (void)initialize
+{
+    SP_LOG(@"initialize+SPAppDeletage")
+}
 + (instancetype)sharedInstance
 {
     return nil;

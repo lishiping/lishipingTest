@@ -18,7 +18,16 @@
 		1E38698821B4514E0066F030 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E38698221B4514E0066F030 /* SPAppDelegate.m */; };
 		1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9482652091D87B00B5F82C /* OldLoginVC.m */; };
 		1E9482692092025600B5F82C /* ViewController+All.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9482682092025600B5F82C /* ViewController+All.m */; };
+		1E96092A22EF6DE40096C9E2 /* Animal+eatA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96092922EF6DE40096C9E2 /* Animal+eatA.m */; };
+		1E96093122EF6E7F0096C9E2 /* People+eatB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96092D22EF6E7F0096C9E2 /* People+eatB.m */; };
+		1E96093222EF6E7F0096C9E2 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96092F22EF6E7F0096C9E2 /* People.m */; };
+		1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96093022EF6E7F0096C9E2 /* People+eatA.m */; };
 		1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50A20204D6600007899 /* RegisterVC.m */; };
+		1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E2B22EF6836000F7751 /* DemoAppDelegate+LoadA.m */; };
+		1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E2E22EF6888000F7751 /* DemoAppDelegate+LoadB.m */; };
+		1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E3122EF68E0000F7751 /* SPAppDelegate+LoadA.m */; };
+		1EC25E3522EF6937000F7751 /* SPAppDelegate+LoadB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E3422EF6937000F7751 /* SPAppDelegate+LoadB.m */; };
+		1EC25E3922EF6B71000F7751 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E3822EF6B71000F7751 /* Animal.m */; };
 		7A1B48A921CA373E002B88EE /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B48A821CA373E002B88EE /* DemoAppDelegate.m */; };
 		7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B48AB21CA3EF2002B88EE /* PreloadAppDelegate.m */; };
 		7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC64A21D4C5D200473A8E /* ThirdVC.m */; };
@@ -116,8 +125,26 @@
 		1E9482652091D87B00B5F82C /* OldLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldLoginVC.m; sourceTree = "<group>"; };
 		1E9482672092025600B5F82C /* ViewController+All.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+All.h"; sourceTree = "<group>"; };
 		1E9482682092025600B5F82C /* ViewController+All.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+All.m"; sourceTree = "<group>"; };
+		1E96092822EF6DE40096C9E2 /* Animal+eatA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animal+eatA.h"; sourceTree = "<group>"; };
+		1E96092922EF6DE40096C9E2 /* Animal+eatA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Animal+eatA.m"; sourceTree = "<group>"; };
+		1E96092B22EF6E7F0096C9E2 /* People+eatB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "People+eatB.h"; sourceTree = "<group>"; };
+		1E96092C22EF6E7F0096C9E2 /* People+eatA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "People+eatA.h"; sourceTree = "<group>"; };
+		1E96092D22EF6E7F0096C9E2 /* People+eatB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "People+eatB.m"; sourceTree = "<group>"; };
+		1E96092E22EF6E7F0096C9E2 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		1E96092F22EF6E7F0096C9E2 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		1E96093022EF6E7F0096C9E2 /* People+eatA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "People+eatA.m"; sourceTree = "<group>"; };
 		1EB5F50920204D6600007899 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		1EB5F50A20204D6600007899 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		1EC25E2A22EF6836000F7751 /* DemoAppDelegate+LoadA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoAppDelegate+LoadA.h"; sourceTree = "<group>"; };
+		1EC25E2B22EF6836000F7751 /* DemoAppDelegate+LoadA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoAppDelegate+LoadA.m"; sourceTree = "<group>"; };
+		1EC25E2D22EF6888000F7751 /* DemoAppDelegate+LoadB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoAppDelegate+LoadB.h"; sourceTree = "<group>"; };
+		1EC25E2E22EF6888000F7751 /* DemoAppDelegate+LoadB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoAppDelegate+LoadB.m"; sourceTree = "<group>"; };
+		1EC25E3022EF68E0000F7751 /* SPAppDelegate+LoadA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SPAppDelegate+LoadA.h"; sourceTree = "<group>"; };
+		1EC25E3122EF68E0000F7751 /* SPAppDelegate+LoadA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SPAppDelegate+LoadA.m"; sourceTree = "<group>"; };
+		1EC25E3322EF6937000F7751 /* SPAppDelegate+LoadB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SPAppDelegate+LoadB.h"; sourceTree = "<group>"; };
+		1EC25E3422EF6937000F7751 /* SPAppDelegate+LoadB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SPAppDelegate+LoadB.m"; sourceTree = "<group>"; };
+		1EC25E3722EF6B71000F7751 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		1EC25E3822EF6B71000F7751 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		215C14150A2520B979314DA6 /* Pods-lishipingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2F9294A0CE39565024DF82B0 /* libPods-lishipingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lishipingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318F81A5D873B69C3651676B /* Pods-lishipingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +296,38 @@
 			path = VirtualApp;
 			sourceTree = "<group>";
 		};
+		1EC25E2922EF680B000F7751 /* LoadTest */ = {
+			isa = PBXGroup;
+			children = (
+				1EC25E2A22EF6836000F7751 /* DemoAppDelegate+LoadA.h */,
+				1EC25E2B22EF6836000F7751 /* DemoAppDelegate+LoadA.m */,
+				1EC25E2D22EF6888000F7751 /* DemoAppDelegate+LoadB.h */,
+				1EC25E2E22EF6888000F7751 /* DemoAppDelegate+LoadB.m */,
+				1EC25E3022EF68E0000F7751 /* SPAppDelegate+LoadA.h */,
+				1EC25E3122EF68E0000F7751 /* SPAppDelegate+LoadA.m */,
+				1EC25E3322EF6937000F7751 /* SPAppDelegate+LoadB.h */,
+				1EC25E3422EF6937000F7751 /* SPAppDelegate+LoadB.m */,
+			);
+			path = LoadTest;
+			sourceTree = "<group>";
+		};
+		1EC25E3622EF6B4E000F7751 /* CategoryTest */ = {
+			isa = PBXGroup;
+			children = (
+				1EC25E3722EF6B71000F7751 /* Animal.h */,
+				1EC25E3822EF6B71000F7751 /* Animal.m */,
+				1E96092822EF6DE40096C9E2 /* Animal+eatA.h */,
+				1E96092922EF6DE40096C9E2 /* Animal+eatA.m */,
+				1E96092E22EF6E7F0096C9E2 /* People.h */,
+				1E96092F22EF6E7F0096C9E2 /* People.m */,
+				1E96092C22EF6E7F0096C9E2 /* People+eatA.h */,
+				1E96093022EF6E7F0096C9E2 /* People+eatA.m */,
+				1E96092B22EF6E7F0096C9E2 /* People+eatB.h */,
+				1E96092D22EF6E7F0096C9E2 /* People+eatB.m */,
+			);
+			path = CategoryTest;
+			sourceTree = "<group>";
+		};
 		2CD8AD4940738AF683D5C013 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +404,8 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1EC25E3622EF6B4E000F7751 /* CategoryTest */,
+				1EC25E2922EF680B000F7751 /* LoadTest */,
 				7A9EC64821D4C5A400473A8E /* Third */,
 				1E27B80621AE7DF400E44C35 /* Second */,
 				1E15551F202D727900776E90 /* Base */,
@@ -629,23 +690,32 @@
 			files = (
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
+				1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */,
 				1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
 				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
 				1E38698821B4514E0066F030 /* SPAppDelegate.m in Sources */,
+				1EC25E3922EF6B71000F7751 /* Animal.m in Sources */,
 				1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */,
+				1E96092A22EF6DE40096C9E2 /* Animal+eatA.m in Sources */,
 				7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */,
 				1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */,
 				1E9482692092025600B5F82C /* ViewController+All.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */,
+				1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */,
 				7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */,
 				1E38698321B4514E0066F030 /* SPAppManager.m in Sources */,
+				1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */,
 				7A1B48A921CA373E002B88EE /* DemoAppDelegate.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
+				1EC25E3522EF6937000F7751 /* SPAppDelegate+LoadB.m in Sources */,
 				1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */,
+				1E96093222EF6E7F0096C9E2 /* People.m in Sources */,
+				1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */,
+				1E96093122EF6E7F0096C9E2 /* People+eatB.m in Sources */,
 				1E27B80C21AE7F0200E44C35 /* SecondHomeVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
