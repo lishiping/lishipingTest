@@ -73,7 +73,6 @@
             NSAssert((cls && [cls isSubclassOfClass:[UIViewController class]]), @"类列表取出的类不是viewController类");
             
             if (cls && [cls isSubclassOfClass:[UIViewController class]]) {
-                
                 //当字典参数中animated=0的时候无动画，animated=1或者其他任何值或者不设置这个参数默认有动画
                 //当字典参数中appear_type=0或者不设置或者设置其他别的值该参数的时候，push推进去，当appear_type=1的时候，prsent弹出，
                 
@@ -124,7 +123,6 @@
         {
             SP_APP_OPEN_URL(url)
         }
-        
     });
     
     return YES;

@@ -33,6 +33,14 @@
 		7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC64A21D4C5D200473A8E /* ThirdVC.m */; };
 		7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC64D21D4C95200473A8E /* YBCustomCameraVC.m */; };
 		7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9EC65021D4F01200473A8E /* SPSocketManager.m */; };
+		924EC017234F0F9300E1D4BD /* AlertDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 924EC016234F0F9300E1D4BD /* AlertDemoVC.m */; };
+		925BD0F4234F13A8000066E5 /* UILabel+SPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0ED234F13A7000066E5 /* UILabel+SPAction.m */; };
+		925BD0F5234F13A8000066E5 /* UIButton+SPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0EF234F13A7000066E5 /* UIButton+SPAction.m */; };
+		925BD0F6234F13A8000066E5 /* UIImageView+SPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F0234F13A7000066E5 /* UIImageView+SPAction.m */; };
+		925BD0F7234F13A8000066E5 /* UIView+SPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F2234F13A8000066E5 /* UIView+SPAction.m */; };
+		925BD0FC234F15EE000066E5 /* SPAutoPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F8234F15EE000066E5 /* SPAutoPopView.m */; };
+		925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F9234F15EE000066E5 /* SPSuperActionSheet.m */; };
+		925BD100234F163B000066E5 /* UIButton+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0FF234F163A000066E5 /* UIButton+Util.m */; };
 		96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96165CC41FCD6333001D98F3 /* NotificationCenter.framework */; };
 		96165CC91FCD6333001D98F3 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96165CC81FCD6333001D98F3 /* TodayViewController.m */; };
 		96165CCC1FCD6333001D98F3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96165CCA1FCD6333001D98F3 /* MainInterface.storyboard */; };
@@ -159,6 +167,22 @@
 		7A9EC64D21D4C95200473A8E /* YBCustomCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCustomCameraVC.m; sourceTree = "<group>"; };
 		7A9EC64F21D4F01200473A8E /* SPSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSocketManager.h; sourceTree = "<group>"; };
 		7A9EC65021D4F01200473A8E /* SPSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSocketManager.m; sourceTree = "<group>"; };
+		924EC015234F0F9300E1D4BD /* AlertDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertDemoVC.h; sourceTree = "<group>"; };
+		924EC016234F0F9300E1D4BD /* AlertDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertDemoVC.m; sourceTree = "<group>"; };
+		925BD0EC234F13A7000066E5 /* UIButton+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SPAction.h"; sourceTree = "<group>"; };
+		925BD0ED234F13A7000066E5 /* UILabel+SPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SPAction.m"; sourceTree = "<group>"; };
+		925BD0EE234F13A7000066E5 /* UIImageView+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SPAction.h"; sourceTree = "<group>"; };
+		925BD0EF234F13A7000066E5 /* UIButton+SPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SPAction.m"; sourceTree = "<group>"; };
+		925BD0F0234F13A7000066E5 /* UIImageView+SPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SPAction.m"; sourceTree = "<group>"; };
+		925BD0F1234F13A8000066E5 /* UILabel+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SPAction.h"; sourceTree = "<group>"; };
+		925BD0F2234F13A8000066E5 /* UIView+SPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPAction.m"; sourceTree = "<group>"; };
+		925BD0F3234F13A8000066E5 /* UIView+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPAction.h"; sourceTree = "<group>"; };
+		925BD0F8234F15EE000066E5 /* SPAutoPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAutoPopView.m; sourceTree = "<group>"; };
+		925BD0F9234F15EE000066E5 /* SPSuperActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSuperActionSheet.m; sourceTree = "<group>"; };
+		925BD0FA234F15EE000066E5 /* SPSuperActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSuperActionSheet.h; sourceTree = "<group>"; };
+		925BD0FB234F15EE000066E5 /* SPAutoPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAutoPopView.h; sourceTree = "<group>"; };
+		925BD0FE234F163A000066E5 /* UIButton+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Util.h"; sourceTree = "<group>"; };
+		925BD0FF234F163A000066E5 /* UIButton+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Util.m"; sourceTree = "<group>"; };
 		96165CC31FCD6333001D98F3 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		96165CC41FCD6333001D98F3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		96165CC71FCD6333001D98F3 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -270,6 +294,12 @@
 		1E15551F202D727900776E90 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				925BD0FE234F163A000066E5 /* UIButton+Util.h */,
+				925BD0FF234F163A000066E5 /* UIButton+Util.m */,
+				925BD0FB234F15EE000066E5 /* SPAutoPopView.h */,
+				925BD0F8234F15EE000066E5 /* SPAutoPopView.m */,
+				925BD0FA234F15EE000066E5 /* SPSuperActionSheet.h */,
+				925BD0F9234F15EE000066E5 /* SPSuperActionSheet.m */,
 				1E9482672092025600B5F82C /* ViewController+All.h */,
 				1E9482682092025600B5F82C /* ViewController+All.m */,
 			);
@@ -356,6 +386,8 @@
 				7A9EC64A21D4C5D200473A8E /* ThirdVC.m */,
 				7A9EC64F21D4F01200473A8E /* SPSocketManager.h */,
 				7A9EC65021D4F01200473A8E /* SPSocketManager.m */,
+				924EC015234F0F9300E1D4BD /* AlertDemoVC.h */,
+				924EC016234F0F9300E1D4BD /* AlertDemoVC.m */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -409,6 +441,14 @@
 				7A9EC64821D4C5A400473A8E /* Third */,
 				1E27B80621AE7DF400E44C35 /* Second */,
 				1E15551F202D727900776E90 /* Base */,
+				925BD0EC234F13A7000066E5 /* UIButton+SPAction.h */,
+				925BD0EF234F13A7000066E5 /* UIButton+SPAction.m */,
+				925BD0EE234F13A7000066E5 /* UIImageView+SPAction.h */,
+				925BD0F0234F13A7000066E5 /* UIImageView+SPAction.m */,
+				925BD0F1234F13A8000066E5 /* UILabel+SPAction.h */,
+				925BD0ED234F13A7000066E5 /* UILabel+SPAction.m */,
+				925BD0F3234F13A8000066E5 /* UIView+SPAction.h */,
+				925BD0F2234F13A8000066E5 /* UIView+SPAction.m */,
 				1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */,
 				1E0D1D7A1FF39C5200CA80FC /* User */,
 				1E0D1D711FF3898100CA80FC /* Location */,
@@ -489,9 +529,9 @@
 				96ACE6F71FAB14EC005B7CB0 /* Sources */,
 				96ACE6F81FAB14EC005B7CB0 /* Frameworks */,
 				96ACE6F91FAB14EC005B7CB0 /* Resources */,
-				D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */,
 				96165CD41FCD6333001D98F3 /* Embed App Extensions */,
 				96CFE4ED1FD6A98100645143 /* Embed Frameworks */,
+				0A5ADF22B05A008392F1F79E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -626,31 +666,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		770A9C0E59E9A262E0830316 /* [CP] Check Pods Manifest.lock */ = {
+		0A5ADF22B05A008392F1F79E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-lishipingTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D39A63A2925EF85FD6D64393 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh",
 				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
 				"${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
@@ -667,7 +689,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		770A9C0E59E9A262E0830316 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lishipingTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -688,17 +728,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */,
+				924EC017234F0F9300E1D4BD /* AlertDemoVC.m in Sources */,
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
+				925BD0F4234F13A8000066E5 /* UILabel+SPAction.m in Sources */,
 				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
 				1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */,
 				1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */,
+				925BD0F6234F13A8000066E5 /* UIImageView+SPAction.m in Sources */,
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
 				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
 				1E38698821B4514E0066F030 /* SPAppDelegate.m in Sources */,
 				1EC25E3922EF6B71000F7751 /* Animal.m in Sources */,
+				925BD0F7234F13A8000066E5 /* UIView+SPAction.m in Sources */,
 				1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */,
 				1E96092A22EF6DE40096C9E2 /* Animal+eatA.m in Sources */,
 				7A9EC64B21D4C5D200473A8E /* ThirdVC.m in Sources */,
+				925BD100234F163B000066E5 /* UIButton+Util.m in Sources */,
 				1E0D1D7D1FF39C6B00CA80FC /* SPUser.m in Sources */,
 				1E9482692092025600B5F82C /* ViewController+All.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
@@ -706,6 +752,7 @@
 				1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */,
+				925BD0F5234F13A8000066E5 /* UIButton+SPAction.m in Sources */,
 				7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */,
 				1E38698321B4514E0066F030 /* SPAppManager.m in Sources */,
 				1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */,
@@ -717,6 +764,7 @@
 				1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */,
 				1E96093122EF6E7F0096C9E2 /* People+eatB.m in Sources */,
 				1E27B80C21AE7F0200E44C35 /* SecondHomeVC.m in Sources */,
+				925BD0FC234F15EE000066E5 /* SPAutoPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@
 #import "SecondHomeVC.h"
 #import "SPAppManager.h"
 #import "Third/ThirdVC.h"
+#import "AlertDemoVC.h"
 
 @implementation DemoAppDelegate
 
@@ -86,7 +87,7 @@
     }];
     
     [tab addItemController:[ViewController new]
-          tabBarItem_title:@"微信"
+          tabBarItem_title:@"路由"
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
@@ -103,8 +104,8 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
   tabBarItem_selectedImage:SP_IMAGE(selectedImages[1])
      tabBarItem_badgeValue:nil];
     
-    [tab addItemController:[SPBaseVC new]
-          tabBarItem_title:@"发现"
+    [tab addItemController:[AlertDemoVC new]
+          tabBarItem_title:@"警告框"
       tabBarItem_titleFont:[UIFont systemFontOfSize:14]
 tabBarItem_normalTitleColor:[UIColor colorWithRed:164/255.0 green:164/255.0 blue:164/255.0 alpha:1]
 tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:37/255.0 alpha:1]
@@ -121,7 +122,7 @@ tabBarItem_selectTitleColor:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:
   tabBarItem_selectedImage:SP_IMAGE(selectedImages[3])
      tabBarItem_badgeValue:nil];
     
-    tab.selectedIndex = 1;
+    tab.selectedIndex = 0;
     return tab;
 }
 

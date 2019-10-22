@@ -1,8 +1,6 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/JavaScriptCoreOpalAdditions
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/JavaScriptCoreOpalAdditions" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/IGDigest" "${PODS_ROOT}/Headers/Public/JavaScriptCoreOpalAdditions" "${PODS_ROOT}/Headers/Public/ObjectiveSugar"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IGDigest" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectiveSugar"
-OTHER_LDFLAGS = -framework "JavaScriptCore"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}

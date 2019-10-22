@@ -17,14 +17,14 @@ PODS:
   - ALISJSBridgeKit (0.1.0)
   - CocoaAsyncSocket (7.6.3)
   - FLAnimatedImage (1.0.12)
-  - FLEX (2.4.0)
+  - FLEX (3.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GCDWebServer (3.4.2):
-    - GCDWebServer/Core (= 3.4.2)
-  - GCDWebServer/Core (3.4.2)
-  - GCDWebServer/WebUploader (3.4.2):
+  - GCDWebServer (3.5.3):
+    - GCDWebServer/Core (= 3.5.3)
+  - GCDWebServer/Core (3.5.3)
+  - GCDWebServer/WebUploader (3.5.3):
     - GCDWebServer/Core
   - IGDigest (1.1.3)
   - JavaScriptCoreOpalAdditions (0.5.1):
@@ -37,8 +37,8 @@ PODS:
   - Mantle/extobjc (2.1.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
-  - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.7)
+  - MJExtension (3.2.1)
+  - MJRefresh (3.2.0)
   - MMProgressHUD (0.3.2)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
@@ -46,17 +46,17 @@ PODS:
   - NJKWebViewProgress/Core (0.2.3)
   - NJKWebViewProgress/ProgressView (0.2.3)
   - ObjectiveSugar (1.1.0)
-  - RDVTabBarController (1.2.0)
+  - RDVTabBarController (1.3.0)
   - Reachability (3.2)
-  - SafeData (1.0.0)
+  - SafeData (1.0.1)
   - SCNavigationController (1.1.3):
     - SCStackViewController (~> 3.3.3)
   - SCScrollView (1.1.8)
   - SCStackViewController (3.3.6):
     - SCScrollView (~> 1.1)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - SDWebImage (5.2.3):
+    - SDWebImage/Core (= 5.2.3)
+  - SDWebImage/Core (5.2.3)
   - SPBaseClass (0.1.4):
     - SafeData
     - SPCategory
@@ -66,8 +66,8 @@ PODS:
     - SafeData
     - SPMacro
   - SPDebugBar (1.0.2)
-  - SPFastPush (0.8.0)
-  - SPMacro (0.3.2)
+  - SPFastPush (0.9.2)
+  - SPMacro (0.3.5)
   - SPWebView (0.0.14):
     - SPWebView/Core (= 0.0.14)
   - SPWebView/Core (0.0.14):
@@ -145,9 +145,9 @@ SPEC CHECKSUMS:
   ALISJSBridgeKit: 8e3dd8d7b9198318ef961b3b28a1b991d92f9ff6
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FLEX: d66c759bce0f6ebbbf472c742380874d846f2883
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
+  GCDWebServer: c0ab22c73e1b84f358d1e2f74bf6afd1c60829f2
   IGDigest: b8e27edd36468bc87951645b841531229256019a
   JavaScriptCoreOpalAdditions: c353b40e993f0e8f816e5dbb2e693ac7c4e75570
   JSBridge: 3d60067490d82a2954547e13b7bc483108686611
@@ -155,26 +155,26 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MMProgressHUD: a913b116ba6791d67d37f9fb4211079200fb7595
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
-  RDVTabBarController: b6d63a7fc49b00568ba07255c6171edc737ad833
+  RDVTabBarController: 28a5c6546b9991cf2712d59947324c6b06603e14
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SafeData: 10b127503021438cc10ae8b7ef3b24438c3a0a83
+  SafeData: 06112bd1cb0fa55ff4e2334d5e0499ca48db7cc3
   SCNavigationController: c107959a6967bd4b80b087d660a7e013dc2d44ea
   SCScrollView: 247186f377f0b3b8eb4c0a96a2c742b322414f9f
   SCStackViewController: 4c39a60338cd18f8d2d6c95683a48ece35e2ef9b
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   SPBaseClass: 8db64d664be3bab77bd71f1694a6d9497d110ed2
   SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
   SPDebugBar: 7a8af5988f7560d7c4b4140f11143dbf568aecbd
-  SPFastPush: 732746c2a1b333acfda6500c2d1293f0abd14207
-  SPMacro: f2f537d167a0e19049a206e80e14a13bc20a4f6a
+  SPFastPush: 46ee2b811c5619e7b9e8eebea28d3480cf675d50
+  SPMacro: 9f5eceee1d18527e6b460cdca5576cdee228a0b6
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
 PODFILE CHECKSUM: 37d281bff25c9ce4c54bb8ef4275cf0819516ec5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5
