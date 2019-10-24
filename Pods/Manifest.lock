@@ -57,10 +57,6 @@ PODS:
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
-  - SPBaseClass (0.1.4):
-    - SafeData
-    - SPCategory
-    - SPFastPush
   - SPCategory (0.4.4):
     - MBProgressHUD (= 1.0.0)
     - SafeData
@@ -96,7 +92,6 @@ DEPENDENCIES:
   - SafeData
   - SCNavigationController
   - SDWebImage
-  - SPBaseClass
   - SPCategory
   - SPDebugBar
   - SPFastPush
@@ -132,7 +127,6 @@ SPEC REPOS:
     - SCScrollView
     - SCStackViewController
     - SDWebImage
-    - SPBaseClass
     - SPCategory
     - SPDebugBar
     - SPFastPush
@@ -167,7 +161,6 @@ SPEC CHECKSUMS:
   SCScrollView: 247186f377f0b3b8eb4c0a96a2c742b322414f9f
   SCStackViewController: 4c39a60338cd18f8d2d6c95683a48ece35e2ef9b
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
-  SPBaseClass: 8db64d664be3bab77bd71f1694a6d9497d110ed2
   SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
   SPDebugBar: 7a8af5988f7560d7c4b4140f11143dbf568aecbd
   SPFastPush: 46ee2b811c5619e7b9e8eebea28d3480cf675d50
@@ -175,6 +168,6 @@ SPEC CHECKSUMS:
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 37d281bff25c9ce4c54bb8ef4275cf0819516ec5
+PODFILE CHECKSUM: f1b99a4339f9c11fb4a9818b322312548d0c17d7
 
 COCOAPODS: 1.7.5

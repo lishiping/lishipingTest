@@ -41,6 +41,13 @@
 		925BD0FC234F15EE000066E5 /* SPAutoPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F8234F15EE000066E5 /* SPAutoPopView.m */; };
 		925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0F9234F15EE000066E5 /* SPSuperActionSheet.m */; };
 		925BD100234F163B000066E5 /* UIButton+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD0FF234F163A000066E5 /* UIButton+Util.m */; };
+		92A61CCC23615C28004D1559 /* SPLocalNotificationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CBC23615C28004D1559 /* SPLocalNotificationUtil.m */; };
+		92A61CCD23615C28004D1559 /* SPBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CBD23615C28004D1559 /* SPBaseTabBarController.m */; };
+		92A61CCE23615C28004D1559 /* SPDashLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CBF23615C28004D1559 /* SPDashLineView.m */; };
+		92A61CCF23615C28004D1559 /* SPBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CC023615C28004D1559 /* SPBaseVC.m */; };
+		92A61CD023615C28004D1559 /* SPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CC123615C28004D1559 /* SPBaseNavigationController.m */; };
+		92A61CD623615D01004D1559 /* SPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CD223615D00004D1559 /* SPHUD.m */; };
+		92A61CD723615D01004D1559 /* SPAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A61CD423615D01004D1559 /* SPAlert.m */; };
 		96165CC51FCD6333001D98F3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96165CC41FCD6333001D98F3 /* NotificationCenter.framework */; };
 		96165CC91FCD6333001D98F3 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96165CC81FCD6333001D98F3 /* TodayViewController.m */; };
 		96165CCC1FCD6333001D98F3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96165CCA1FCD6333001D98F3 /* MainInterface.storyboard */; };
@@ -183,6 +190,22 @@
 		925BD0FB234F15EE000066E5 /* SPAutoPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAutoPopView.h; sourceTree = "<group>"; };
 		925BD0FE234F163A000066E5 /* UIButton+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Util.h"; sourceTree = "<group>"; };
 		925BD0FF234F163A000066E5 /* UIButton+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Util.m"; sourceTree = "<group>"; };
+		92A61CBC23615C28004D1559 /* SPLocalNotificationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLocalNotificationUtil.m; sourceTree = "<group>"; };
+		92A61CBD23615C28004D1559 /* SPBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseTabBarController.m; sourceTree = "<group>"; };
+		92A61CBE23615C28004D1559 /* SPBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseClass.h; sourceTree = "<group>"; };
+		92A61CBF23615C28004D1559 /* SPDashLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDashLineView.m; sourceTree = "<group>"; };
+		92A61CC023615C28004D1559 /* SPBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseVC.m; sourceTree = "<group>"; };
+		92A61CC123615C28004D1559 /* SPBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseNavigationController.m; sourceTree = "<group>"; };
+		92A61CC323615C28004D1559 /* SPDashLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDashLineView.h; sourceTree = "<group>"; };
+		92A61CC423615C28004D1559 /* SPBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseTabBarController.h; sourceTree = "<group>"; };
+		92A61CC523615C28004D1559 /* SPLocalNotificationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLocalNotificationUtil.h; sourceTree = "<group>"; };
+		92A61CC723615C28004D1559 /* SPBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseNavigationController.h; sourceTree = "<group>"; };
+		92A61CC823615C28004D1559 /* SPBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseVC.h; sourceTree = "<group>"; };
+		92A61CC923615C28004D1559 /* SPBlockDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBlockDefine.h; sourceTree = "<group>"; };
+		92A61CD223615D00004D1559 /* SPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHUD.m; sourceTree = "<group>"; };
+		92A61CD323615D00004D1559 /* SPHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHUD.h; sourceTree = "<group>"; };
+		92A61CD423615D01004D1559 /* SPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAlert.m; sourceTree = "<group>"; };
+		92A61CD523615D01004D1559 /* SPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlert.h; sourceTree = "<group>"; };
 		96165CC31FCD6333001D98F3 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		96165CC41FCD6333001D98F3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		96165CC71FCD6333001D98F3 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -294,6 +317,7 @@
 		1E15551F202D727900776E90 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				92A61CBA23615C28004D1559 /* SPBaseClass */,
 				925BD0FE234F163A000066E5 /* UIButton+Util.h */,
 				925BD0FF234F163A000066E5 /* UIButton+Util.m */,
 				925BD0FB234F15EE000066E5 /* SPAutoPopView.h */,
@@ -390,6 +414,29 @@
 				924EC016234F0F9300E1D4BD /* AlertDemoVC.m */,
 			);
 			path = Third;
+			sourceTree = "<group>";
+		};
+		92A61CBA23615C28004D1559 /* SPBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				92A61CD523615D01004D1559 /* SPAlert.h */,
+				92A61CD423615D01004D1559 /* SPAlert.m */,
+				92A61CD323615D00004D1559 /* SPHUD.h */,
+				92A61CD223615D00004D1559 /* SPHUD.m */,
+				92A61CBC23615C28004D1559 /* SPLocalNotificationUtil.m */,
+				92A61CBD23615C28004D1559 /* SPBaseTabBarController.m */,
+				92A61CBE23615C28004D1559 /* SPBaseClass.h */,
+				92A61CBF23615C28004D1559 /* SPDashLineView.m */,
+				92A61CC023615C28004D1559 /* SPBaseVC.m */,
+				92A61CC123615C28004D1559 /* SPBaseNavigationController.m */,
+				92A61CC323615C28004D1559 /* SPDashLineView.h */,
+				92A61CC423615C28004D1559 /* SPBaseTabBarController.h */,
+				92A61CC523615C28004D1559 /* SPLocalNotificationUtil.h */,
+				92A61CC723615C28004D1559 /* SPBaseNavigationController.h */,
+				92A61CC823615C28004D1559 /* SPBaseVC.h */,
+				92A61CC923615C28004D1559 /* SPBlockDefine.h */,
+			);
+			path = SPBaseClass;
 			sourceTree = "<group>";
 		};
 		96165CC61FCD6333001D98F3 /* TodayExtension */ = {
@@ -728,10 +775,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A61CD623615D01004D1559 /* SPHUD.m in Sources */,
 				925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */,
+				92A61CCD23615C28004D1559 /* SPBaseTabBarController.m in Sources */,
 				924EC017234F0F9300E1D4BD /* AlertDemoVC.m in Sources */,
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
+				92A61CCC23615C28004D1559 /* SPLocalNotificationUtil.m in Sources */,
 				925BD0F4234F13A8000066E5 /* UILabel+SPAction.m in Sources */,
+				92A61CD723615D01004D1559 /* SPAlert.m in Sources */,
 				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
 				1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */,
 				1E9482662091D87B00B5F82C /* OldLoginVC.m in Sources */,
@@ -750,15 +801,18 @@
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */,
 				1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */,
+				92A61CCF23615C28004D1559 /* SPBaseVC.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
 				1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */,
 				925BD0F5234F13A8000066E5 /* UIButton+SPAction.m in Sources */,
 				7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */,
 				1E38698321B4514E0066F030 /* SPAppManager.m in Sources */,
+				92A61CD023615C28004D1559 /* SPBaseNavigationController.m in Sources */,
 				1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */,
 				7A1B48A921CA373E002B88EE /* DemoAppDelegate.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
 				1EC25E3522EF6937000F7751 /* SPAppDelegate+LoadB.m in Sources */,
+				92A61CCE23615C28004D1559 /* SPDashLineView.m in Sources */,
 				1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */,
 				1E96093222EF6E7F0096C9E2 /* People.m in Sources */,
 				1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */,

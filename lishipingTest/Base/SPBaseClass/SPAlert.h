@@ -102,6 +102,9 @@ typedef void (^SPUIAlertActionBlock)(UIAlertAction * _Nullable action);
                  cancel_block:(SPUIAlertActionBlock _Nullable)cancel_block
                    completion:(void (^ __nullable)(void))completion;
 
++(void)sp_showAlertView_view:(UIView*_Nonnull)view;
++(void)sp_showAlertView_inRootVC_view:(UIView*)view;
+
 #pragma mark - ActionSheet
 
 /**

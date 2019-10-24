@@ -14,8 +14,8 @@ target 'lishipingTest' do
     pod 'SPFastPush'
     pod 'SPDebugBar'
     pod 'SPCategory'
-    pod 'SPBaseClass'
-    
+#    pod 'SPBaseClass'
+
     #第三方使用过的
     pod 'Masonry'
     pod 'SDWebImage'

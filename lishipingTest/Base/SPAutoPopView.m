@@ -25,7 +25,7 @@
         [self.maskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGuesture:)]];
         [self addSubview:self.maskView];
         
-        self.boxView = [[UIView alloc] initWithFrame:CGRectMake(0, marginTop,SP_SCREEN_WIDTH, SP_SCREEN_HEIGHT-marginTop)];
+        self.boxView = [[UIView alloc] initWithFrame:CGRectMake(0, SP_SCREEN_HEIGHT,SP_SCREEN_WIDTH, SP_SCREEN_HEIGHT-marginTop)];
         self.boxView.backgroundColor = [UIColor clearColor];
         [self addSubview:self.boxView];
     }

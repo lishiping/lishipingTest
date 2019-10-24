@@ -8,8 +8,8 @@
 
 #import "SPHUD.h"
 #import <SPFastPush/SPFastPush.h>
-#import <SPCategory/UIViewController+SPHUD.h>
-#import <SPCategory/UIImage+SPGIF.h>
+#import "UIViewController+SPHUD.h"
+#import "UIImage+SPGIF.h"
 
 @implementation SPHUD
 
@@ -48,7 +48,7 @@ alpha   :1.0]
 {
     [self sp_hideHUD];
     
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     sp_run_in_main_thread(showPrompt(v, message, seconds, YES));
 }
 
@@ -73,7 +73,7 @@ alpha   :1.0]
 
 + (void)sp_showHUD:(NSString *)message animation:(BOOL)animated
 {
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     [self sp_showHUDInView:v message:message animation:animated];
 }
 
@@ -136,13 +136,13 @@ alpha   :1.0]
 
 + (void)sp_showHUDCustomView:(UIView *)customV text:(NSString *)text detailText:(NSString *)detailText delayHide:(float)seconds
 {
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     sp_run_in_main_thread(showCustomHUD(v, customV, text,detailText, seconds, YES));
 }
 
 + (void)sp_updateHUDMessage:(NSString *)message
 {
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     MBProgressHUD *hud = [MBProgressHUD HUDForView:v];
     if (hud)
     {
@@ -167,7 +167,7 @@ alpha   :1.0]
         [self sp_hideHUD];
         return;
     }
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     sp_run_in_main_thread(showProgressHUD(v, message, mode,progress, 0, animated,font,textColor,bezelViewColor,backgroundColor));
 }
 
@@ -186,7 +186,7 @@ alpha   :1.0]
 
 + (void)sp_hideHUD:(BOOL)animated delay:(float)seconds;
 {
-    UIView *v = SP_GET_TOP_VC.view;
+    UIView *v = SP_GET_ROOT_VC.view;
     [self sp_hideHUDInView:v delay:seconds animated:animated];
 }
 

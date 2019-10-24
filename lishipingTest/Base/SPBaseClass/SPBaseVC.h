@@ -21,8 +21,6 @@
 
 @interface SPBaseVC : UIViewController
 
-@property(nonatomic,copy)NSString *uiCode;//这个是可选参数为了标记UI页面和埋点使用，如果设置值可以传给下一页面使用（可选参数可不用理会）
-
 //1.默认返回为YES,表示支持右滑返回
 //2.继承该父类的子类VC里面如果重写了该方法，设置为NO，则表示不支持右滑返回
 //3.该方法配合SPBaseNavigationController使用，原理请看两个类的结合

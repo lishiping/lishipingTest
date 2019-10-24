@@ -6,7 +6,7 @@
 //  Copyright © 2018年 shiping1. All rights reserved.
 //
 
-#import <SPBaseClass/SPBaseVC.h>
+#import "SPBaseVC.h"
 
 @interface RegisterVC : SPBaseVC
 

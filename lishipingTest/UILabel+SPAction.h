@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SPBaseClass/SPBlockDefine.h>
+#import "SPBlockDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

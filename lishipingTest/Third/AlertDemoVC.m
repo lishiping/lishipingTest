@@ -105,16 +105,22 @@
 
 -(void)showDIYView
 {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
-    label.text = @"自定义的视图";
+    UIView *view = [[UIView alloc] initWithFrame:SP_SCREEN_BOUND];
+    view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SP_SCREEN_WIDTH-200, 200)];
+    label.text = @"自定义的视图,点中关闭";
+    label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor greenColor];
-    label.layer.cornerRadius=4;
+    label.layer.cornerRadius=8;
+    label.layer.masksToBounds = YES;
+    
     label.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-    SP_WEAK(label)
+    SP_WEAK(view)
     [label sp_label_onClickBlock:^(id object) {
-        [weak_label removeFromSuperview];
+        [weak_view removeFromSuperview];
     }];
-//    [SPAlert sp_showAlertView_view:label];
+    [view addSubview:label];
+    [SPAlert sp_showAlertView_inRootVC_view:view];
 }
 
 -(void)showSheetDIYView

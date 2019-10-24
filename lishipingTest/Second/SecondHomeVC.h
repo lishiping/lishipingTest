@@ -6,7 +6,7 @@
 //  Copyright © 2018年 shiping1. All rights reserved.
 //
 
-#import <SPBaseClass/SPBaseClass.h>
+#import "SPBaseClass.h"
 
 @interface SecondHomeVC : SPBaseVC
 

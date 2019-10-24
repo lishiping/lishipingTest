@@ -65,7 +65,7 @@
     {
         //UIAlertController是ios8提出的代替alertView的类，和block结合比代理的方式更好
         UIAlertController *spAlertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-                
+        
         if (ok_title.length>0) {
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:ok_title style:UIAlertActionStyleDefault handler:ok_block];
             [spAlertVC addAction:okAction];
@@ -82,6 +82,22 @@
     }
     
     return nil;
+}
+
++(void)sp_showAlertView_view:(UIView*)view
+{
+    if (view)
+    {
+        [SP_GET_TOP_VC.view addSubview:view];
+    }
+}
+
++(void)sp_showAlertView_inRootVC_view:(UIView*)view
+{
+    if (view)
+    {
+        [SP_GET_ROOT_VC.view addSubview:view];
+    }
 }
 
 #pragma mark - ActionSheet

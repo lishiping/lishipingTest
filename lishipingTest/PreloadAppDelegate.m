@@ -13,7 +13,7 @@
 #import "SPURLRouter.h"
 #import <GCDWebUploader.h>
 #import "Third/ThirdVC.h"
-#import <SPBaseClass/SPBaseNavigationController.h>
+#import "SPBaseNavigationController.h"
 #import "SPSocketManager.h"
 
 @implementation PreloadAppDelegate
