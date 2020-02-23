@@ -272,13 +272,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */ = {
+		1E03C38D2010D4D5002EEDA4 /* SPURLRouter */ = {
 			isa = PBXGroup;
 			children = (
+				1E0E430F201984FE00493C05 /* open_url.plist */,
 				1E03C38E2010D531002EEDA4 /* SPURLRouter.h */,
 				1E03C38F2010D531002EEDA4 /* SPURLRouter.m */,
 			);
-			path = HandleOpenURL;
+			path = SPURLRouter;
 			sourceTree = "<group>";
 		};
 		1E0D1D701FF3897700CA80FC /* Push */ = {
@@ -496,7 +497,7 @@
 				925BD0ED234F13A7000066E5 /* UILabel+SPAction.m */,
 				925BD0F3234F13A8000066E5 /* UIView+SPAction.h */,
 				925BD0F2234F13A8000066E5 /* UIView+SPAction.m */,
-				1E03C38D2010D4D5002EEDA4 /* HandleOpenURL */,
+				1E03C38D2010D4D5002EEDA4 /* SPURLRouter */,
 				1E0D1D7A1FF39C5200CA80FC /* User */,
 				1E0D1D711FF3898100CA80FC /* Location */,
 				1E0D1D701FF3897700CA80FC /* Push */,
@@ -514,7 +515,6 @@
 				96ACE7071FAB14EC005B7CB0 /* Assets.xcassets */,
 				96ACE7091FAB14EC005B7CB0 /* LaunchScreen.storyboard */,
 				96ACE70C1FAB14EC005B7CB0 /* Info.plist */,
-				1E0E430F201984FE00493C05 /* open_url.plist */,
 				1E03C38C2010AAD7002EEDA4 /* lishipingTest-Prefix.pch */,
 				96ACE70D1FAB14EC005B7CB0 /* main.m */,
 			);
