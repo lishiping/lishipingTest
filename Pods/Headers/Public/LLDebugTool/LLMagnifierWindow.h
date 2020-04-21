@@ -1,0 +1,1 @@
+../../../LLDebugTool/LLDebugTool/Core/Component/Magnifier/UserInterface/LLMagnifierWindow.h

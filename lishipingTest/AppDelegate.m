@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "SPAppManager.h"
+#import "FLEXManager.h"
+#import "LLDebug.h"
 
 @interface AppDelegate ()
 
@@ -72,6 +74,13 @@
      
      */
 
+    
+    [[LLDebugTool sharedTool] startWorking];
+
+    
+//    NSArray *array = @[@5,@7,@9,@3,@10,@15,@25,@2,@6];
+//    NSUInteger max =  [self max:array];
+//    NSLog(@"max=%lu",(unsigned long)max);
     return [[SPAppManager sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -218,4 +227,28 @@
     
 }
 
+
+//-(NSInteger)max:(NSArray*)array
+//{
+//    int max = 0;
+//    for (int i=0; i<array.count; i++) {
+//        int x = array[i];
+//        int y = array[i+1];
+//        max = (y-x)>max?(y-x):max;
+//    }
+//    return max;
+//}
+-(NSInteger)max:(NSArray*)array
+{
+    NSUInteger max = 0;
+    for (int i=0; i<array.count; i++) {
+        int x = array[i];
+        
+        for (int m=0; m<=i+1; m++) {
+            int y = array[m];
+            max = (y-x)>max?(y-x):max;
+        }
+    }
+    return max;
+}
 @end

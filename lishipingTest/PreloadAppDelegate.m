@@ -15,6 +15,7 @@
 #import "Third/ThirdVC.h"
 #import "SPBaseNavigationController.h"
 #import "SPSocketManager.h"
+#import "FLEXManager.h"
 
 @implementation PreloadAppDelegate
 
@@ -108,10 +109,9 @@
         NSArray *serverArray = [NSArray arrayWithObjects:socketServerDic,serverDic,panServerDic,imServerDic, nil];
         
         NSDictionary* secondDic = @{
-                                    SP_TITLE_KEY:@"灰度功能",
+                                    SP_TITLE_KEY:@"分析工具",
                                     SP_ARRAY_KEY: @[
-                                            @"ABTestSDK",
-                                            @"AB放量"
+                                            @"FLEX工具"
                                             ]
                                     };
         
@@ -146,7 +146,9 @@
             
         } otherSectionArray:otherArray otherSectionArrayBlock:^(UINavigationController *navigationController,NSString *string, NSError *error) {
             SP_LOG(@"你点击了:%@",string);
-            
+            if ([string isEqualToString:@"FLEX工具"]) {
+                    [[FLEXManager sharedManager] showExplorer];
+            }
             //            ABTestVC *abTestVC = [[ABTestVC alloc] init];
             //            abTestVC.title = string;
             //            [navigationController pushViewController:abTestVC animated:YES];

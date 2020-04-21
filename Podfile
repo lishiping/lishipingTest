@@ -41,6 +41,8 @@ target 'lishipingTest' do
     pod 'RDVTabBarController'
     pod 'SCNavigationController'
     pod 'MMProgressHUD'
+    pod 'LLDebugTool'
+
 #    pod 'GData'
 #    pod 'UIImageGIF'
 
