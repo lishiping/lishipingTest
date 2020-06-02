@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10B793132614DE352959606107CA02A1"
+               BlueprintIdentifier = "A280D47A61793D78B087D18E56E06B6C"
+               BuildableName = "libJSBridge.a"
                BlueprintName = "JSBridge"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libJSBridge.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

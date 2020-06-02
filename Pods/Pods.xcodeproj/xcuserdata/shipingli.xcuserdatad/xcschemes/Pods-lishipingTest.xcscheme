@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A46C30729820BDC664FDAA6084E2238"
+               BlueprintIdentifier = "DFA04E45A85753B27C57364F5171752D"
+               BuildableName = "libPods-lishipingTest.a"
                BlueprintName = "Pods-lishipingTest"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-lishipingTest.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

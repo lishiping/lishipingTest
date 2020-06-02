@@ -16,6 +16,9 @@ PODS:
     - AFNetworking/NSURLSession
   - ALISJSBridgeKit (0.1.0)
   - CocoaAsyncSocket (7.6.4)
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
   - FLAnimatedImage (1.0.12)
   - FLEX (3.0.0)
   - FMDB (2.7.5):
@@ -84,7 +87,7 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.2.1)
-  - MJRefresh (3.3.1)
+  - MJRefresh (3.4.3)
   - MMProgressHUD (0.3.2)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
@@ -94,22 +97,22 @@ PODS:
   - ObjectiveSugar (1.1.0)
   - RDVTabBarController (1.3.0)
   - Reachability (3.2)
-  - SafeData (1.0.2)
+  - SafeData (1.0.3)
   - SCNavigationController (1.1.3):
     - SCStackViewController (~> 3.3.3)
   - SCScrollView (1.1.8)
   - SCStackViewController (3.3.6):
     - SCScrollView (~> 1.1)
-  - SDWebImage (5.6.1):
-    - SDWebImage/Core (= 5.6.1)
-  - SDWebImage/Core (5.6.1)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - SPCategory (0.4.4):
     - MBProgressHUD (= 1.0.0)
     - SafeData
     - SPMacro
   - SPDebugBar (1.0.2)
   - SPFastPush (1.0.0)
-  - SPMacro (0.3.5)
+  - SPMacro (0.3.7)
   - SPWebView (0.0.14):
     - SPWebView/Core (= 0.0.14)
   - SPWebView/Core (0.0.14):
@@ -120,6 +123,7 @@ DEPENDENCIES:
   - AFNetworking
   - ALISJSBridgeKit
   - CocoaAsyncSocket
+  - CocoaLumberjack
   - FLAnimatedImage
   - FLEX
   - FMDB
@@ -136,7 +140,6 @@ DEPENDENCIES:
   - MMProgressHUD
   - RDVTabBarController
   - Reachability
-  - SafeData
   - SCNavigationController
   - SDWebImage
   - SPCategory
@@ -147,10 +150,11 @@ DEPENDENCIES:
   - WebViewJavascriptBridge
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - ALISJSBridgeKit
     - CocoaAsyncSocket
+    - CocoaLumberjack
     - FLAnimatedImage
     - FLEX
     - FMDB
@@ -186,6 +190,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   ALISJSBridgeKit: 8e3dd8d7b9198318ef961b3b28a1b991d92f9ff6
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FLEX: d66c759bce0f6ebbbf472c742380874d846f2883
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -199,24 +204,24 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   MMProgressHUD: a913b116ba6791d67d37f9fb4211079200fb7595
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   RDVTabBarController: 28a5c6546b9991cf2712d59947324c6b06603e14
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SafeData: 161fd9df5fb6d70584ebf31582f670dc60b496d5
+  SafeData: 1b1f190e2d756e2face4a13046ccd698d70407bd
   SCNavigationController: c107959a6967bd4b80b087d660a7e013dc2d44ea
   SCScrollView: 247186f377f0b3b8eb4c0a96a2c742b322414f9f
   SCStackViewController: 4c39a60338cd18f8d2d6c95683a48ece35e2ef9b
-  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
   SPDebugBar: 7a8af5988f7560d7c4b4140f11143dbf568aecbd
   SPFastPush: da1d277f10bb9636adce4e74a425400eb23438d2
-  SPMacro: 9f5eceee1d18527e6b460cdca5576cdee228a0b6
+  SPMacro: e6148a12ff383dc3b73b4edb45ba116371b562e8
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: af58d894cc42fd35b8dbea651e7721493f7e0fa5
+PODFILE CHECKSUM: 2f3ab8f1dd4f4319c54531ed685cafa1fe98915d
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.1

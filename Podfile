@@ -3,12 +3,14 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '8.0'
 
 target 'lishipingTest' do
     
     #自己封装的
-    pod 'SafeData'
+#    pod 'SafeData'
     pod 'SPMacro'
     pod 'SPWebView'
     pod 'SPFastPush'
@@ -48,9 +50,9 @@ target 'lishipingTest' do
 
     #    pod 'JavaScriptBridge'
     #    pod 'MWPhotoBrowser'
-    #    pod 'CocoaLumberjack'
+    pod 'CocoaLumberjack'
     #    pod 'BlocksKit'
-    #    pod 'XCGLogger'
+#    pod 'XCGLogger'
     
     
 end

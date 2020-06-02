@@ -11,6 +11,10 @@
 #import "FLEXManager.h"
 #import "LLDebug.h"
 
+
+
+
+
 @interface AppDelegate ()
 
 @end
@@ -74,9 +78,17 @@
      
      */
 
-    
     [[LLDebugTool sharedTool] startWorking];
 
+    LSP_SUPER_LOG(@"太阳神超级阿波罗日志系统==%@",@"李世平");
+
+       //产生Log
+//    DDLogDebug(string);
+//       DDLogVerbose(@"Verbose李世平");
+//       DDLogDebug(@"Debug李世平");
+//       DDLogInfo(@"Info李世平");
+//       DDLogWarn(@"Warn李世平ad发送到发送到发送到发送到发送到发送到发送到发送到发送到发送到发送到发士大夫士大夫第三方撒的发生的");
+//       DDLogError(@"Error李世平");
     
 //    NSArray *array = @[@5,@7,@9,@3,@10,@15,@25,@2,@6];
 //    NSUInteger max =  [self max:array];

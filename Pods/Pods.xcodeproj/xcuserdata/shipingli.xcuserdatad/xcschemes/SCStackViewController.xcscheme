@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4287648F1F0FE35E901F8061908C6A5B"
+               BlueprintIdentifier = "52D2D1876A3980C6433D94A87DDD28C5"
+               BuildableName = "libSCStackViewController.a"
                BlueprintName = "SCStackViewController"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSCStackViewController.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -393,5 +393,65 @@ static int C = 8;
     block();
 }
 
+//-(void)testBlock
+//{
+//    int a = 23;
+//
+//    __block int b =23;
+//
+//    BoringBlock block1 = ^{
+//        NSLog(@"a1==%d",a);
+//    };
+//    BoringBlock block2 = ^{
+//        NSLog(@"b1==%d",b);
+//    };
+//
+//    a=32;
+//    b= 32;
+//
+//    BoringBlock block3 = ^{
+//        NSLog(@"a1==%d",a);
+//    };
+//    BoringBlock block4 = ^{
+//        NSLog(@"b1==%d",b);
+//    };
+//
+//    block1();
+//    block2();
+//    block3();
+//    block4();
+//}
+
+
+/// 移动的按钮本来不可以点击，通过增加手势可以点击
+-(void)testButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame =CGRectMake(100, 100, 200, 200);
+    [button setTitle:@"nihao" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    [button addGestureRecognizer:tap];
+}
+
+-(void)buttonClick:(id)sender
+{
+    NSLog(@"点击");
+}
+-(void)tap:(id)sender
+{
+//    NSLog(@"触摸");
+
+    CGPoint touchPoint = [sender locationInView:self.view];
+
+    if ([ ((UIButton*)sender).layer.presentationLayer hitTest:touchPoint])
+    {
+        //点击事件
+        NSLog(@"移动按钮可点击");
+
+    }
+}
 @end
 

@@ -34,11 +34,13 @@
 
 #define SP_NAVIBAR_HEIGHT    44.f
 
-#define SP_NAVIBAR_STATUSBAR_HEIGHT   (SP_STATUSBAR_HEIGHT+44.f)
+#define SP_NAVIBAR_STATUSBAR_HEIGHT   (SP_STATUSBAR_HEIGHT+SP_NAVIBAR_HEIGHT)
 
-#define SP_TABBAR_HEIGHT     (SP_IS_FULLSCREEN ? (49.f+34.f) : 49.f)
+#define SP_TABBAR_HEIGHT_NORMAL    49.f
 
 #define SP_TABBAR_SAFE_BOTTOM_MARGIN   (SP_IS_FULLSCREEN ? 34.f : 0.f)
+
+#define SP_TABBAR_HEIGHT    (SP_TABBAR_HEIGHT_NORMAL+SP_TABBAR_SAFE_BOTTOM_MARGIN)
 
 //----------------Screen adaptation--------------------
 //--------------------屏幕适配---------------------------
@@ -62,6 +64,10 @@
 
 //---------------Judging device screen---------------------
 //--------------------判断设备屏幕---------------------------
+
+//判断是手机还是pad
+#define SP_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define SP_IS_IPAD   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 //iphone4,iphone4S的屏幕
 #define SP_SCREEN_IS_IPHONE4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(320, 480), [UIScreen mainScreen].bounds.size) : NO)
@@ -157,17 +163,17 @@ alpha   :(hexValue & 0xFF)        / (float)0xFF]
 //--------------------AlertView---------------------------
 //--------------------警告框---------------------------
 
-#define SP_SHOW_ALERT(message,cancelTitle)   SP_SHOW_ALERTVIEW(0, nil, (message), nil, cancelTitle?:@"确定", nil)
-
-#define SP_SHOW_ALERTVIEW(_tag_, title, msg, _delegate_, cancelTitle, ...) {\
-UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title\
-message: msg\
-delegate: _delegate_\
-cancelButtonTitle: cancelTitle\
-otherButtonTitles: __VA_ARGS__];\
-alert.tag = _tag_;\
-[alert show];\
-}
+//#define SP_SHOW_ALERT(message,cancelTitle)   SP_SHOW_ALERTVIEW(0, nil, (message), nil, cancelTitle?:@"确定", nil)
+//
+//#define SP_SHOW_ALERTVIEW(_tag_, title, msg, _delegate_, cancelTitle, ...) {\
+//UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title\
+//message: msg\
+//delegate: _delegate_\
+//cancelButtonTitle: cancelTitle\
+//otherButtonTitles: __VA_ARGS__];\
+//alert.tag = _tag_;\
+//[alert show];\
+//}
 
 
 //--------------------iOS Version---------------------

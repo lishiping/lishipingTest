@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C31F1B40271A3281E2D94EEACF4B72C"
+               BlueprintIdentifier = "00B440115AE974C662923FB23446DE4A"
+               BuildableName = "libRDVTabBarController.a"
                BlueprintName = "RDVTabBarController"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libRDVTabBarController.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

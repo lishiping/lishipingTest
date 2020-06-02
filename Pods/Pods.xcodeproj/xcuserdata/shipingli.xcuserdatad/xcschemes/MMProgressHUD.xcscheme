@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "135D23180F759A69D386E8B0F1823FC7"
+               BlueprintIdentifier = "CE2FD22CAC7A9F371BD80F772E6894AE"
+               BuildableName = "libMMProgressHUD.a"
                BlueprintName = "MMProgressHUD"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libMMProgressHUD.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

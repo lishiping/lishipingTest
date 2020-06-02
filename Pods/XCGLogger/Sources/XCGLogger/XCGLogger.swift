@@ -46,7 +46,7 @@ open class XCGLogger: CustomDebugStringConvertible {
         public static let userInfoKeyInternal = "\(baseIdentifier).internal"
 
         /// Library version number
-        public static let versionString = "6.0.1"
+        public static let versionString = "7.0.1"
 
         /// Internal userInfo
         internal static let internalUserInfo: [String: Any] = [XCGLogger.Constants.userInfoKeyInternal: true]
@@ -60,13 +60,16 @@ open class XCGLogger: CustomDebugStringConvertible {
 
     // MARK: - Enums
     /// Enum defining our log levels
-    public enum Level: Int, Comparable, CustomStringConvertible {
+    public enum Level: Int, CaseIterable, Comparable, CustomStringConvertible {
         case verbose
         case debug
         case info
+        case notice
         case warning
         case error
-        case severe
+        case severe // aka critical
+        case alert
+        case emergency
         case none
 
         public var description: String {
@@ -77,29 +80,30 @@ open class XCGLogger: CustomDebugStringConvertible {
                 return "Debug"
             case .info:
                 return "Info"
+            case .notice:
+                return "Notice"
             case .warning:
                 return "Warning"
             case .error:
                 return "Error"
             case .severe:
                 return "Severe"
+            case .alert:
+                return "Alert"
+            case .emergency:
+                return "Emergency"
             case .none:
                 return "None"
             }
         }
 
-        public static let all: [Level] = [.verbose, .debug, .info, .warning, .error, .severe]
+        @available(*, deprecated, renamed: "allCases")
+        public static let all: [Level] = [.verbose, .debug, .info, .notice, .warning, .error, .severe, .alert, .emergency]
     }
 
     // MARK: - Default instance
     /// The default XCGLogger object
-    open static var `default`: XCGLogger = {
-        struct Statics {
-            static let instance: XCGLogger = XCGLogger(identifier: XCGLogger.Constants.defaultInstanceIdentifier)
-        }
-
-        return Statics.instance
-    }()
+    public static let `default`: XCGLogger = XCGLogger(identifier: XCGLogger.Constants.defaultInstanceIdentifier)
 
     // MARK: - Properties
     /// Identifier for this logger object (should be unique)
@@ -127,13 +131,7 @@ open class XCGLogger: CustomDebugStringConvertible {
     open var filters: [FilterProtocol]? = nil
 
     /// The default dispatch queue used for logging
-    open class var logQueue: DispatchQueue {
-        struct Statics {
-            static var logQueue = DispatchQueue(label: XCGLogger.Constants.logQueueIdentifier, attributes: [])
-        }
-
-        return Statics.logQueue
-    }
+    public static let logQueue: DispatchQueue = DispatchQueue(label: XCGLogger.Constants.logQueueIdentifier, attributes: [])
 
     /// A custom date formatter object to use when displaying the dates of log messages (internal storage)
     internal var _customDateFormatter: DateFormatter? = nil
@@ -679,6 +677,95 @@ open class XCGLogger: CustomDebugStringConvertible {
         self.logln(.info, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
     }
 
+    // MARK: * Notice
+    /// Log something at the Notice log level. This format of notice() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func notice(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.default.noMessageClosure)
+    }
+
+    /// Log something at the Notice log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func notice(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Notice log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func notice(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.default.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Notice log level. This format of notice() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func notice(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.noMessageClosure)
+    }
+
+    /// Log something at the Notice log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func notice(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Notice log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func notice(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.logln(.notice, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
     // MARK: * Warning
     /// Log something at the Warning log level. This format of warning() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
     ///
@@ -946,6 +1033,184 @@ open class XCGLogger: CustomDebugStringConvertible {
         self.logln(.severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
     }
 
+    // MARK: * Alert
+    /// Log something at the Alert log level. This format of alert() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func alert(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.default.noMessageClosure)
+    }
+
+    /// Log something at the Alert log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func alert(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Alert log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func alert(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.default.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Alert log level. This format of alert() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func alert(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.noMessageClosure)
+    }
+
+    /// Log something at the Alert log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func alert(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Alert log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func alert(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.logln(.alert, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    // MARK: * Emergency
+    /// Log something at the Emergency log level. This format of emergency() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func emergency(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.default.noMessageClosure)
+    }
+
+    /// Log something at the Emergency log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func emergency(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.default.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Emergency log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func emergency(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.default.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Emergency log level. This format of emergency() isn't provided the object to log, instead the property `noMessageClosure` is executed instead.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func emergency(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: self.noMessageClosure)
+    }
+
+    /// Log something at the Emergency log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      A closure that returns the object to be logged.
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func emergency(_ closure: @autoclosure () -> Any?, functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:]) {
+        self.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
+    /// Log something at the Emergency log level.
+    ///
+    /// - Parameters:
+    ///     - functionName: Normally omitted **Default:** *#function*.
+    ///     - fileName:     Normally omitted **Default:** *#file*.
+    ///     - lineNumber:   Normally omitted **Default:** *#line*.
+    ///     - userInfo:     Dictionary for adding arbitrary data to the log message, can be used by filters/formatters etc
+    ///     - closure:      A closure that returns the object to be logged.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func emergency(_ functionName: StaticString = #function, fileName: StaticString = #file, lineNumber: Int = #line, userInfo: [String: Any] = [:], closure: () -> Any?) {
+        self.logln(.emergency, functionName: functionName, fileName: fileName, lineNumber: lineNumber, userInfo: userInfo, closure: closure)
+    }
+
     // MARK: - Exec Methods
     // MARK: * Verbose
     /// Execute some code only when at the Verbose log level.
@@ -1016,6 +1281,29 @@ open class XCGLogger: CustomDebugStringConvertible {
         self.exec(XCGLogger.Level.info, closure: closure)
     }
 
+    // MARK: * Notice
+    /// Execute some code only when at the Notice or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func noticeExec(_ closure: () -> () = {}) {
+        self.default.exec(XCGLogger.Level.notice, closure: closure)
+    }
+
+    /// Execute some code only when at the Notice or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func noticeExec(_ closure: () -> () = {}) {
+        self.exec(XCGLogger.Level.notice, closure: closure)
+    }
+
     // MARK: * Warning
     /// Execute some code only when at the Warning or lower log level.
     ///
@@ -1083,6 +1371,52 @@ open class XCGLogger: CustomDebugStringConvertible {
     ///
     open func severeExec(_ closure: () -> () = {}) {
         self.exec(XCGLogger.Level.severe, closure: closure)
+    }
+
+    // MARK: * Alert
+    /// Execute some code only when at the Alert or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func alertExec(_ closure: () -> () = {}) {
+        self.default.exec(XCGLogger.Level.alert, closure: closure)
+    }
+
+    /// Execute some code only when at the Alert or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func alertExec(_ closure: () -> () = {}) {
+        self.exec(XCGLogger.Level.alert, closure: closure)
+    }
+
+    // MARK: * Emergency
+    /// Execute some code only when at the Emergency or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open class func emergencyExec(_ closure: () -> () = {}) {
+        self.default.exec(XCGLogger.Level.emergency, closure: closure)
+    }
+
+    /// Execute some code only when at the Emergency or lower log level.
+    ///
+    /// - Parameters:
+    ///     - closure:      The code closure to be executed.
+    ///
+    /// - Returns:  Nothing.
+    ///
+    open func emergencyExec(_ closure: () -> () = {}) {
+        self.exec(XCGLogger.Level.emergency, closure: closure)
     }
 
     // MARK: - Log destination methods

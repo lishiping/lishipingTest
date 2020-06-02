@@ -22,7 +22,10 @@
 		1E96093122EF6E7F0096C9E2 /* People+eatB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96092D22EF6E7F0096C9E2 /* People+eatB.m */; };
 		1E96093222EF6E7F0096C9E2 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96092F22EF6E7F0096C9E2 /* People.m */; };
 		1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96093022EF6E7F0096C9E2 /* People+eatA.m */; };
+		1EA0A5E12479276800DDEF70 /* SPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0A5E02479276800DDEF70 /* SPLog.m */; };
+		1EA0A5E52479430400DDEF70 /* BaseLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0A5E42479430400DDEF70 /* BaseLogFileManager.m */; };
 		1EB5F50B20204D6600007899 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50A20204D6600007899 /* RegisterVC.m */; };
+		1EB7E8F9247D1A140055E8E0 /* LRUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7E8F7247D1A140055E8E0 /* LRUCache.m */; };
 		1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E2B22EF6836000F7751 /* DemoAppDelegate+LoadA.m */; };
 		1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E2E22EF6888000F7751 /* DemoAppDelegate+LoadB.m */; };
 		1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC25E3122EF68E0000F7751 /* SPAppDelegate+LoadA.m */; };
@@ -70,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1EDE9D1924642AC3002EB46C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EDE9D1524642AC3002EB46C /* SafeData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E15C66651E1516B4002A1516;
+			remoteInfo = SafeData;
+		};
 		96165CCE1FCD6333001D98F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96ACE6F31FAB14EC005B7CB0 /* Project object */;
@@ -148,8 +158,14 @@
 		1E96092E22EF6E7F0096C9E2 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		1E96092F22EF6E7F0096C9E2 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		1E96093022EF6E7F0096C9E2 /* People+eatA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "People+eatA.m"; sourceTree = "<group>"; };
+		1EA0A5DF2479276800DDEF70 /* SPLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLog.h; sourceTree = "<group>"; };
+		1EA0A5E02479276800DDEF70 /* SPLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLog.m; sourceTree = "<group>"; };
+		1EA0A5E32479430400DDEF70 /* BaseLogFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLogFileManager.h; sourceTree = "<group>"; };
+		1EA0A5E42479430400DDEF70 /* BaseLogFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLogFileManager.m; sourceTree = "<group>"; };
 		1EB5F50920204D6600007899 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		1EB5F50A20204D6600007899 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		1EB7E8F7247D1A140055E8E0 /* LRUCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRUCache.m; sourceTree = "<group>"; };
+		1EB7E8F8247D1A140055E8E0 /* LRUCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRUCache.h; sourceTree = "<group>"; };
 		1EC25E2A22EF6836000F7751 /* DemoAppDelegate+LoadA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoAppDelegate+LoadA.h"; sourceTree = "<group>"; };
 		1EC25E2B22EF6836000F7751 /* DemoAppDelegate+LoadA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoAppDelegate+LoadA.m"; sourceTree = "<group>"; };
 		1EC25E2D22EF6888000F7751 /* DemoAppDelegate+LoadB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoAppDelegate+LoadB.h"; sourceTree = "<group>"; };
@@ -160,6 +176,7 @@
 		1EC25E3422EF6937000F7751 /* SPAppDelegate+LoadB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SPAppDelegate+LoadB.m"; sourceTree = "<group>"; };
 		1EC25E3722EF6B71000F7751 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		1EC25E3822EF6B71000F7751 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		1EDE9D1524642AC3002EB46C /* SafeData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SafeData.xcodeproj; path = SafeData/SafeData.xcodeproj; sourceTree = "<group>"; };
 		215C14150A2520B979314DA6 /* Pods-lishipingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2F9294A0CE39565024DF82B0 /* libPods-lishipingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lishipingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318F81A5D873B69C3651676B /* Pods-lishipingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lishipingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-lishipingTest/Pods-lishipingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +344,10 @@
 				925BD0F9234F15EE000066E5 /* SPSuperActionSheet.m */,
 				1E9482672092025600B5F82C /* ViewController+All.h */,
 				1E9482682092025600B5F82C /* ViewController+All.m */,
+				1EA0A5DF2479276800DDEF70 /* SPLog.h */,
+				1EA0A5E02479276800DDEF70 /* SPLog.m */,
+				1EA0A5E32479430400DDEF70 /* BaseLogFileManager.h */,
+				1EA0A5E42479430400DDEF70 /* BaseLogFileManager.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -349,6 +370,15 @@
 				1E38698221B4514E0066F030 /* SPAppDelegate.m */,
 			);
 			path = VirtualApp;
+			sourceTree = "<group>";
+		};
+		1EB7E8F5247D19FE0055E8E0 /* LRUCache */ = {
+			isa = PBXGroup;
+			children = (
+				1EB7E8F8247D1A140055E8E0 /* LRUCache.h */,
+				1EB7E8F7247D1A140055E8E0 /* LRUCache.m */,
+			);
+			path = LRUCache;
 			sourceTree = "<group>";
 		};
 		1EC25E2922EF680B000F7751 /* LoadTest */ = {
@@ -381,6 +411,14 @@
 				1E96092D22EF6E7F0096C9E2 /* People+eatB.m */,
 			);
 			path = CategoryTest;
+			sourceTree = "<group>";
+		};
+		1EDE9D1624642AC3002EB46C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EDE9D1A24642AC3002EB46C /* SafeData.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2CD8AD4940738AF683D5C013 /* Pods */ = {
@@ -460,6 +498,7 @@
 		96ACE6F21FAB14EC005B7CB0 = {
 			isa = PBXGroup;
 			children = (
+				1EDE9D1524642AC3002EB46C /* SafeData.xcodeproj */,
 				96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */,
 				96ACE7161FAB14EC005B7CB0 /* lishipingTestTests */,
 				96ACE7211FAB14EC005B7CB0 /* lishipingTestUITests */,
@@ -484,6 +523,7 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1EB7E8F5247D19FE0055E8E0 /* LRUCache */,
 				1EC25E3622EF6B4E000F7751 /* CategoryTest */,
 				1EC25E2922EF680B000F7751 /* LoadTest */,
 				7A9EC64821D4C5A400473A8E /* Third */,
@@ -666,6 +706,12 @@
 			mainGroup = 96ACE6F21FAB14EC005B7CB0;
 			productRefGroup = 96ACE6FC1FAB14EC005B7CB0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1EDE9D1624642AC3002EB46C /* Products */;
+					ProjectRef = 1EDE9D1524642AC3002EB46C /* SafeData.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				96ACE6FA1FAB14EC005B7CB0 /* lishipingTest */,
@@ -675,6 +721,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1EDE9D1A24642AC3002EB46C /* SafeData.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SafeData.app;
+			remoteRef = 1EDE9D1924642AC3002EB46C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		96165CC11FCD6333001D98F3 /* Resources */ = {
@@ -777,12 +833,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB7E8F9247D1A140055E8E0 /* LRUCache.m in Sources */,
 				92A61CD623615D01004D1559 /* SPHUD.m in Sources */,
 				925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */,
 				92A61CCD23615C28004D1559 /* SPBaseTabBarController.m in Sources */,
+				1EA0A5E52479430400DDEF70 /* BaseLogFileManager.m in Sources */,
 				924EC017234F0F9300E1D4BD /* AlertDemoVC.m in Sources */,
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				92A61CCC23615C28004D1559 /* SPLocalNotificationUtil.m in Sources */,
+				1EA0A5E12479276800DDEF70 /* SPLog.m in Sources */,
 				925BD0F4234F13A8000066E5 /* UILabel+SPAction.m in Sources */,
 				92A61CD723615D01004D1559 /* SPAlert.m in Sources */,
 				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
