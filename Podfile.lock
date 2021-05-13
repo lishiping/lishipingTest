@@ -35,52 +35,6 @@ PODS:
     - ObjectiveSugar (~> 1.1.0)
   - JSBridge (0.2.6)
   - JSONModel (1.8.0)
-  - LLDebugTool (1.3.8):
-    - LLDebugTool/AppInfo (= 1.3.8)
-    - LLDebugTool/Core (= 1.3.8)
-    - LLDebugTool/Crash (= 1.3.8)
-    - LLDebugTool/Hierarchy (= 1.3.8)
-    - LLDebugTool/Html (= 1.3.8)
-    - LLDebugTool/Location (= 1.3.8)
-    - LLDebugTool/Log (= 1.3.8)
-    - LLDebugTool/Magnifier (= 1.3.8)
-    - LLDebugTool/Network (= 1.3.8)
-    - LLDebugTool/Ruler (= 1.3.8)
-    - LLDebugTool/Sandbox (= 1.3.8)
-    - LLDebugTool/Screenshot (= 1.3.8)
-    - LLDebugTool/ShortCut (= 1.3.8)
-    - LLDebugTool/Storage (= 1.3.8)
-    - LLDebugTool/WidgetBorder (= 1.3.8)
-  - LLDebugTool/AppInfo (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Core (1.3.8)
-  - LLDebugTool/Crash (1.3.8):
-    - LLDebugTool/Storage
-  - LLDebugTool/Hierarchy (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Html (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Location (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Log (1.3.8):
-    - LLDebugTool/Storage
-  - LLDebugTool/Magnifier (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Network (1.3.8):
-    - LLDebugTool/Storage
-  - LLDebugTool/Ruler (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Sandbox (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Screenshot (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/ShortCut (1.3.8):
-    - LLDebugTool/Core
-  - LLDebugTool/Storage (1.3.8):
-    - FMDB (~> 2.0)
-    - LLDebugTool/Core
-  - LLDebugTool/WidgetBorder (1.3.8):
-    - LLDebugTool/Core
   - Mantle (2.1.1):
     - Mantle/extobjc (= 2.1.1)
   - Mantle/extobjc (2.1.1)
@@ -111,6 +65,52 @@ PODS:
     - SafeData
     - SPMacro
   - SPDebugBar (1.0.2)
+  - SPDebugTool (0.2.3):
+    - SPDebugTool/AppInfo (= 0.2.3)
+    - SPDebugTool/Core (= 0.2.3)
+    - SPDebugTool/Crash (= 0.2.3)
+    - SPDebugTool/Hierarchy (= 0.2.3)
+    - SPDebugTool/Html (= 0.2.3)
+    - SPDebugTool/Location (= 0.2.3)
+    - SPDebugTool/Log (= 0.2.3)
+    - SPDebugTool/Magnifier (= 0.2.3)
+    - SPDebugTool/Network (= 0.2.3)
+    - SPDebugTool/Ruler (= 0.2.3)
+    - SPDebugTool/Sandbox (= 0.2.3)
+    - SPDebugTool/Screenshot (= 0.2.3)
+    - SPDebugTool/ShortCut (= 0.2.3)
+    - SPDebugTool/Storage (= 0.2.3)
+    - SPDebugTool/WidgetBorder (= 0.2.3)
+  - SPDebugTool/AppInfo (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Core (0.2.3)
+  - SPDebugTool/Crash (0.2.3):
+    - SPDebugTool/Storage
+  - SPDebugTool/Hierarchy (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Html (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Location (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Log (0.2.3):
+    - SPDebugTool/Storage
+  - SPDebugTool/Magnifier (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Network (0.2.3):
+    - SPDebugTool/Storage
+  - SPDebugTool/Ruler (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Sandbox (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Screenshot (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/ShortCut (0.2.3):
+    - SPDebugTool/Core
+  - SPDebugTool/Storage (0.2.3):
+    - FMDB (~> 2.0)
+    - SPDebugTool/Core
+  - SPDebugTool/WidgetBorder (0.2.3):
+    - SPDebugTool/Core
   - SPFastPush (1.0.0)
   - SPMacro (0.3.7)
   - SPWebView (0.0.14):
@@ -132,7 +132,6 @@ DEPENDENCIES:
   - JavaScriptCoreOpalAdditions
   - JSBridge
   - JSONModel
-  - LLDebugTool
   - Mantle
   - Masonry
   - MJExtension
@@ -144,6 +143,7 @@ DEPENDENCIES:
   - SDWebImage
   - SPCategory
   - SPDebugBar
+  - SPDebugTool (= 0.2.3)
   - SPFastPush
   - SPMacro
   - SPWebView
@@ -163,7 +163,6 @@ SPEC REPOS:
     - JavaScriptCoreOpalAdditions
     - JSBridge
     - JSONModel
-    - LLDebugTool
     - Mantle
     - Masonry
     - MBProgressHUD
@@ -181,6 +180,7 @@ SPEC REPOS:
     - SDWebImage
     - SPCategory
     - SPDebugBar
+    - SPDebugTool
     - SPFastPush
     - SPMacro
     - SPWebView
@@ -199,7 +199,6 @@ SPEC CHECKSUMS:
   JavaScriptCoreOpalAdditions: c353b40e993f0e8f816e5dbb2e693ac7c4e75570
   JSBridge: 3d60067490d82a2954547e13b7bc483108686611
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  LLDebugTool: 9d53ccea0f70491c50b47dcd71493f9d2ce3bbb2
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -217,11 +216,12 @@ SPEC CHECKSUMS:
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
   SPDebugBar: 7a8af5988f7560d7c4b4140f11143dbf568aecbd
+  SPDebugTool: 06823626f49fc99caf48031666982d2d429b52c3
   SPFastPush: da1d277f10bb9636adce4e74a425400eb23438d2
   SPMacro: e6148a12ff383dc3b73b4edb45ba116371b562e8
   SPWebView: 0503106fe6e5346b7a8aa0a81db52e61645caf74
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 2f3ab8f1dd4f4319c54531ed685cafa1fe98915d
+PODFILE CHECKSUM: f8951850d1854b6183339a69e75ac34c29c522ee
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

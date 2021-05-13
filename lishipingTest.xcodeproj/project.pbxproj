@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A670B9724D96DB500C5A0E8 /* UIDevice+SPOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A670B9524D96DB500C5A0E8 /* UIDevice+SPOrientation.m */; };
+		1A71E814264D04800076E129 /* XDFZXUIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E813264D04800076E129 /* XDFZXUIMenuController.m */; };
+		1A71E81B264D051A0076E129 /* AVPermissionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E81A264D051A0076E129 /* AVPermissionHelper.m */; };
+		1AE1FE9C261343EA00A23DAC /* LSPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE88261343EA00A23DAC /* LSPLog.m */; };
+		1AE1FE9D261343EA00A23DAC /* LSPDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE8A261343EA00A23DAC /* LSPDebugView.m */; };
+		1AE1FE9E261343EA00A23DAC /* AKLMainViewController+LGLDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE8B261343EA00A23DAC /* AKLMainViewController+LGLDebug.m */; };
+		1AE1FE9F261343EA00A23DAC /* UIWindow+LGLDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE8D261343EA00A23DAC /* UIWindow+LGLDebug.m */; };
+		1AE1FEA0261343EA00A23DAC /* LSPLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE91261343EA00A23DAC /* LSPLogFileManager.m */; };
+		1AE1FEA1261343EA00A23DAC /* LSPAppInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE94261343EA00A23DAC /* LSPAppInfoHelper.m */; };
+		1AE1FEA2261343EA00A23DAC /* UIDevice+LSP_AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE96261343EA00A23DAC /* UIDevice+LSP_AppInfo.m */; };
+		1AE1FEA3261343EA00A23DAC /* LSPNetWorkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1FE97261343EA00A23DAC /* LSPNetWorkReachability.m */; };
 		1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E03C38F2010D531002EEDA4 /* SPURLRouter.m */; };
 		1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D731FF389A500CA80FC /* SPPushManager.m */; };
 		1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D1D761FF389CC00CA80FC /* SPLocationManager.m */; };
@@ -128,6 +139,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A670B9524D96DB500C5A0E8 /* UIDevice+SPOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SPOrientation.m"; sourceTree = "<group>"; };
+		1A670B9624D96DB500C5A0E8 /* UIDevice+SPOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SPOrientation.h"; sourceTree = "<group>"; };
+		1A71E812264D04800076E129 /* XDFZXUIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDFZXUIMenuController.h; sourceTree = "<group>"; };
+		1A71E813264D04800076E129 /* XDFZXUIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDFZXUIMenuController.m; sourceTree = "<group>"; };
+		1A71E819264D051A0076E129 /* AVPermissionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPermissionHelper.h; sourceTree = "<group>"; };
+		1A71E81A264D051A0076E129 /* AVPermissionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPermissionHelper.m; sourceTree = "<group>"; };
+		1AE1FE88261343EA00A23DAC /* LSPLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPLog.m; sourceTree = "<group>"; };
+		1AE1FE89261343EA00A23DAC /* UIWindow+LGLDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LGLDebug.h"; sourceTree = "<group>"; };
+		1AE1FE8A261343EA00A23DAC /* LSPDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPDebugView.m; sourceTree = "<group>"; };
+		1AE1FE8B261343EA00A23DAC /* AKLMainViewController+LGLDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKLMainViewController+LGLDebug.m"; sourceTree = "<group>"; };
+		1AE1FE8C261343EA00A23DAC /* LSPLogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPLogFileManager.h; sourceTree = "<group>"; };
+		1AE1FE8D261343EA00A23DAC /* UIWindow+LGLDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LGLDebug.m"; sourceTree = "<group>"; };
+		1AE1FE8E261343EA00A23DAC /* LSPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPLog.h; sourceTree = "<group>"; };
+		1AE1FE8F261343EA00A23DAC /* LSPDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPDebugView.h; sourceTree = "<group>"; };
+		1AE1FE90261343EA00A23DAC /* AKLMainViewController+LGLDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKLMainViewController+LGLDebug.h"; sourceTree = "<group>"; };
+		1AE1FE91261343EA00A23DAC /* LSPLogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPLogFileManager.m; sourceTree = "<group>"; };
+		1AE1FE94261343EA00A23DAC /* LSPAppInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPAppInfoHelper.m; sourceTree = "<group>"; };
+		1AE1FE96261343EA00A23DAC /* UIDevice+LSP_AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+LSP_AppInfo.m"; sourceTree = "<group>"; };
+		1AE1FE97261343EA00A23DAC /* LSPNetWorkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPNetWorkReachability.m; sourceTree = "<group>"; };
+		1AE1FE98261343EA00A23DAC /* LSPNetWorkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPNetWorkReachability.h; sourceTree = "<group>"; };
+		1AE1FE99261343EA00A23DAC /* UIDevice+LSP_AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+LSP_AppInfo.h"; sourceTree = "<group>"; };
+		1AE1FE9A261343EA00A23DAC /* LSPAppInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPAppInfoHelper.h; sourceTree = "<group>"; };
+		1AE1FE9B261343EA00A23DAC /* LSPAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPAppInfo.h; sourceTree = "<group>"; };
 		1E03C38C2010AAD7002EEDA4 /* lishipingTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lishipingTest-Prefix.pch"; sourceTree = "<group>"; };
 		1E03C38E2010D531002EEDA4 /* SPURLRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPURLRouter.h; sourceTree = "<group>"; };
 		1E03C38F2010D531002EEDA4 /* SPURLRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPURLRouter.m; sourceTree = "<group>"; };
@@ -289,6 +323,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A71E811264D04620076E129 /* LSPMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E812264D04800076E129 /* XDFZXUIMenuController.h */,
+				1A71E813264D04800076E129 /* XDFZXUIMenuController.m */,
+			);
+			path = LSPMenuView;
+			sourceTree = "<group>";
+		};
+		1A71E818264D04DB0076E129 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E819264D051A0076E129 /* AVPermissionHelper.h */,
+				1A71E81A264D051A0076E129 /* AVPermissionHelper.m */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		1AE1FE87261343EA00A23DAC /* LSPLog */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1FE88261343EA00A23DAC /* LSPLog.m */,
+				1AE1FE89261343EA00A23DAC /* UIWindow+LGLDebug.h */,
+				1AE1FE8A261343EA00A23DAC /* LSPDebugView.m */,
+				1AE1FE8B261343EA00A23DAC /* AKLMainViewController+LGLDebug.m */,
+				1AE1FE8C261343EA00A23DAC /* LSPLogFileManager.h */,
+				1AE1FE8D261343EA00A23DAC /* UIWindow+LGLDebug.m */,
+				1AE1FE8E261343EA00A23DAC /* LSPLog.h */,
+				1AE1FE8F261343EA00A23DAC /* LSPDebugView.h */,
+				1AE1FE90261343EA00A23DAC /* AKLMainViewController+LGLDebug.h */,
+				1AE1FE91261343EA00A23DAC /* LSPLogFileManager.m */,
+				1AE1FE92261343EA00A23DAC /* AppInfo */,
+			);
+			name = LSPLog;
+			path = ../../ApolloArchiveiOS_xzk/ApolloAPIDemo/ApolloApi/ApolloLib/LSPLog;
+			sourceTree = "<group>";
+		};
+		1AE1FE92261343EA00A23DAC /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1FE93261343EA00A23DAC /* Function */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		1AE1FE93261343EA00A23DAC /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1FE94261343EA00A23DAC /* LSPAppInfoHelper.m */,
+				1AE1FE95261343EA00A23DAC /* UIDevice */,
+				1AE1FE9A261343EA00A23DAC /* LSPAppInfoHelper.h */,
+				1AE1FE9B261343EA00A23DAC /* LSPAppInfo.h */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		1AE1FE95261343EA00A23DAC /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1FE96261343EA00A23DAC /* UIDevice+LSP_AppInfo.m */,
+				1AE1FE97261343EA00A23DAC /* LSPNetWorkReachability.m */,
+				1AE1FE98261343EA00A23DAC /* LSPNetWorkReachability.h */,
+				1AE1FE99261343EA00A23DAC /* UIDevice+LSP_AppInfo.h */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
 		1E03C38D2010D4D5002EEDA4 /* SPURLRouter */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +624,9 @@
 		96ACE6FD1FAB14EC005B7CB0 /* lishipingTest */ = {
 			isa = PBXGroup;
 			children = (
+				1A71E818264D04DB0076E129 /* Permission */,
+				1A71E811264D04620076E129 /* LSPMenuView */,
+				1AE1FE87261343EA00A23DAC /* LSPLog */,
 				1EB7E8F5247D19FE0055E8E0 /* LRUCache */,
 				1EC25E3622EF6B4E000F7751 /* CategoryTest */,
 				1EC25E2922EF680B000F7751 /* LoadTest */,
@@ -537,6 +641,8 @@
 				925BD0ED234F13A7000066E5 /* UILabel+SPAction.m */,
 				925BD0F3234F13A8000066E5 /* UIView+SPAction.h */,
 				925BD0F2234F13A8000066E5 /* UIView+SPAction.m */,
+				1A670B9624D96DB500C5A0E8 /* UIDevice+SPOrientation.h */,
+				1A670B9524D96DB500C5A0E8 /* UIDevice+SPOrientation.m */,
 				1E03C38D2010D4D5002EEDA4 /* SPURLRouter */,
 				1E0D1D7A1FF39C5200CA80FC /* User */,
 				1E0D1D711FF3898100CA80FC /* Location */,
@@ -778,18 +884,18 @@
 				"${PODS_ROOT}/Target Support Files/Pods-lishipingTest/Pods-lishipingTest-resources.sh",
 				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
 				"${PODS_ROOT}/JavaScriptCoreOpalAdditions/JavaScriptCoreOpalAdditions/Opal.bundle",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/Core/Others/Resource/LLDebugTool.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle",
+				"${PODS_ROOT}/SPDebugTool/SPDebugTool/Core/Others/Resource/LLDebugTool.bundle",
 				"${PODS_ROOT}/SPWebView/SPWebView/SPWebView/Resource/SPWebView.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GCDWebUploader.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Opal.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLDebugTool.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPCategory.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLDebugTool.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPWebView.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,16 +939,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE1FE9C261343EA00A23DAC /* LSPLog.m in Sources */,
 				1EB7E8F9247D1A140055E8E0 /* LRUCache.m in Sources */,
 				92A61CD623615D01004D1559 /* SPHUD.m in Sources */,
 				925BD0FD234F15EE000066E5 /* SPSuperActionSheet.m in Sources */,
 				92A61CCD23615C28004D1559 /* SPBaseTabBarController.m in Sources */,
 				1EA0A5E52479430400DDEF70 /* BaseLogFileManager.m in Sources */,
 				924EC017234F0F9300E1D4BD /* AlertDemoVC.m in Sources */,
+				1A71E81B264D051A0076E129 /* AVPermissionHelper.m in Sources */,
 				96ACE7031FAB14EC005B7CB0 /* ViewController.m in Sources */,
 				92A61CCC23615C28004D1559 /* SPLocalNotificationUtil.m in Sources */,
+				1AE1FE9F261343EA00A23DAC /* UIWindow+LGLDebug.m in Sources */,
 				1EA0A5E12479276800DDEF70 /* SPLog.m in Sources */,
 				925BD0F4234F13A8000066E5 /* UILabel+SPAction.m in Sources */,
+				1AE1FEA0261343EA00A23DAC /* LSPLogFileManager.m in Sources */,
 				92A61CD723615D01004D1559 /* SPAlert.m in Sources */,
 				7A9EC64E21D4C95300473A8E /* YBCustomCameraVC.m in Sources */,
 				1EC25E3222EF68E0000F7751 /* SPAppDelegate+LoadA.m in Sources */,
@@ -851,6 +961,7 @@
 				96F4383E1FD80B9D00F10335 /* SPNetworkManager.m in Sources */,
 				1E0E430E2019848100493C05 /* LoginVC.m in Sources */,
 				1E38698821B4514E0066F030 /* SPAppDelegate.m in Sources */,
+				1AE1FEA3261343EA00A23DAC /* LSPNetWorkReachability.m in Sources */,
 				1EC25E3922EF6B71000F7751 /* Animal.m in Sources */,
 				925BD0F7234F13A8000066E5 /* UIView+SPAction.m in Sources */,
 				1E03C3902010D531002EEDA4 /* SPURLRouter.m in Sources */,
@@ -861,6 +972,7 @@
 				1E9482692092025600B5F82C /* ViewController+All.m in Sources */,
 				1E0D1D741FF389A500CA80FC /* SPPushManager.m in Sources */,
 				7A9EC65121D4F01200473A8E /* SPSocketManager.m in Sources */,
+				1A71E814264D04800076E129 /* XDFZXUIMenuController.m in Sources */,
 				1E96093322EF6E7F0096C9E2 /* People+eatA.m in Sources */,
 				92A61CCF23615C28004D1559 /* SPBaseVC.m in Sources */,
 				96ACE70E1FAB14EC005B7CB0 /* main.m in Sources */,
@@ -868,17 +980,22 @@
 				925BD0F5234F13A8000066E5 /* UIButton+SPAction.m in Sources */,
 				7A1B48AC21CA3EF2002B88EE /* PreloadAppDelegate.m in Sources */,
 				1E38698321B4514E0066F030 /* SPAppManager.m in Sources */,
+				1AE1FEA2261343EA00A23DAC /* UIDevice+LSP_AppInfo.m in Sources */,
 				92A61CD023615C28004D1559 /* SPBaseNavigationController.m in Sources */,
 				1EC25E2C22EF6836000F7751 /* DemoAppDelegate+LoadA.m in Sources */,
 				7A1B48A921CA373E002B88EE /* DemoAppDelegate.m in Sources */,
 				96ACE7001FAB14EC005B7CB0 /* AppDelegate.m in Sources */,
 				1EC25E3522EF6937000F7751 /* SPAppDelegate+LoadB.m in Sources */,
+				1AE1FEA1261343EA00A23DAC /* LSPAppInfoHelper.m in Sources */,
 				92A61CCE23615C28004D1559 /* SPDashLineView.m in Sources */,
 				1E0D1D771FF389CC00CA80FC /* SPLocationManager.m in Sources */,
 				1E96093222EF6E7F0096C9E2 /* People.m in Sources */,
+				1A670B9724D96DB500C5A0E8 /* UIDevice+SPOrientation.m in Sources */,
 				1EC25E2F22EF6888000F7751 /* DemoAppDelegate+LoadB.m in Sources */,
+				1AE1FE9E261343EA00A23DAC /* AKLMainViewController+LGLDebug.m in Sources */,
 				1E96093122EF6E7F0096C9E2 /* People+eatB.m in Sources */,
 				1E27B80C21AE7F0200E44C35 /* SecondHomeVC.m in Sources */,
+				1AE1FE9D261343EA00A23DAC /* LSPDebugView.m in Sources */,
 				925BD0FC234F15EE000066E5 /* SPAutoPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

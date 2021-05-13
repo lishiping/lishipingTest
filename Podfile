@@ -43,7 +43,7 @@ target 'lishipingTest' do
     pod 'RDVTabBarController'
     pod 'SCNavigationController'
     pod 'MMProgressHUD'
-    pod 'LLDebugTool'
+#    pod 'LLDebugTool'
 
 #    pod 'GData'
 #    pod 'UIImageGIF'
@@ -53,6 +53,6 @@ target 'lishipingTest' do
     pod 'CocoaLumberjack'
     #    pod 'BlocksKit'
 #    pod 'XCGLogger'
-    
-    
+pod 'SPDebugTool', '0.2.3',:configurations => ['Debug']
+
 end

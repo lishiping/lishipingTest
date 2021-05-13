@@ -44,12 +44,12 @@
     [[SPURLRouter manager] setViewControllerClassPlist:@"open_url"];
 
     
-//    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-//
-//    //2. 启动http server服务
-//  GCDWebUploader  *webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
-//    [webUploader start];
-//    NSLog(@"Visit %@ in your web browser", webUploader.serverURL);
+    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+
+    //2. 启动http server服务
+  GCDWebUploader  *webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
+    [webUploader start];
+    NSLog(@"Visit %@ in your web browser", webUploader.serverURL);
 //
 //    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    [application delegate].window = window;

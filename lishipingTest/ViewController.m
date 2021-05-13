@@ -52,7 +52,10 @@ typedef struct BTree
     self.view.backgroundColor = [UIColor greenColor];
     
     SP_LOG(@"比例%f",SP_SCREEN_SCALE)
-
+    
+//    NSString *string = @"123";
+//    NSArray *arr = [string componentsSeparatedByString:@""];
+//    NSString *ss = [arr componentsJoinedByString:@""]
 //    [self blockTest];
     
 //    [self printClass];
@@ -298,5 +301,87 @@ typedef struct BTree
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//int main(int argc, char * argv[]) {
+    //    int x;
+    //    scanf("%d",&x);
+    //    printf("%d是%s",x,(isAnOddNumber(x)?"奇数":"偶数"));
+
+//    int a=4,b=5,t=0;
+//    if (a<b)
+//        t=a;a=b;b=t;
+//    printf("%d,%d,%d\n",a,b,t);
+//}
+//bool isAnOddNumber(int num)
+//{
+//    return (num%2)==1;
+//
+//}
+
+//int main () {
+//    int p[]={8,5,4,3,9,6,11,23,56,22};
+//    int size=sizeof(p)/sizeof(int);
+//    printf("1、最大值是：%d\n",getMax(p,size));
+//    return 0;
+//}
+////1、求最大值
+//int getMax(int p[],int size){
+//    int t;
+//        for (int i=1;i<size;i++)
+//        {
+//            if(p[0]<p[i])
+//            {
+//                t=p[i];
+//                p[i]=p[0];
+//                p[0]=t;
+//            }
+//        }
+//    return p[0];
+//}
+
+
+//int main()
+//{
+//    int i,j,a[3][3];
+//    int sum1 = 0,sum2 = 0; //sum1 主对角线值bai，sum2 副对du角线值。
+//    // 输入3*3的矩阵。zhi
+//    for(i=0;i<3;i++)
+//        for(j=0;j<3;j++)
+//        {
+//            printf("请输入a[%d][%d]的值是：dao",i,j);
+//            scanf("%d",&a[i][j]);
+//        }
+//    // 计算对角线的值
+//    for(i=0;i<3;i++)
+//        for(j=0;j<3;j++)
+//        {
+//            if(i==j)
+//                sum1 = sum1 + a[i][j];
+//            if(i+j==2)
+//                sum2 = sum2 + a[i][j];
+//        }
+//    printf("主对角线之和是：%d\n副对角线之和是：%d",sum1,sum2);
+//    return 0;
+//}
+
+//int main(int argc, char *argv[])
+//{
+//    long sum = fact(1) +fact(3)+fact(5)+fact(7)+fact(9);
+//    printf("su =%ld\n",sum);//打印1!+3！+5！+7！+9！
+//    return 0;
+//}
+//
+//long fact(int n) //递归函数求阶乘
+//{
+//    if(n<0)//输入数据检测
+//    {
+//        printf("输入数据n应>=0!\n");
+//        return -1;
+//    }
+//    if(n<=1) //0！=1，1！=1
+//        return 1;
+//    else
+//        return (n*fact(n-1)); //递归调用
+//}
 
 @end

@@ -33,6 +33,7 @@
             gs_manager = [[[self class] alloc] init];
             
             AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            manager.operationQueue.maxConcurrentOperationCount= 5;
             gs_manager.afHTTPSessionManager =manager;
             [gs_manager defaultConfig];
         });
